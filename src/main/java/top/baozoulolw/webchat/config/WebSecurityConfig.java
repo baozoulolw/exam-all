@@ -38,14 +38,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .successHandler((request, response, authentication) -> {
                     response.setContentType("application/json;charset=utf-8");
                     PrintWriter out = response.getWriter();
-                    out.write("{\"code\": 2000,\"message\":\"登录成功!\"}");
+                    out.write("{\"status\": 200,\"message\":\"登录成功!\"}");
                     out.flush();
                     out.close();
                 })
                 .failureHandler((request, response, exception) -> {
                     response.setContentType("application/json;charset=utf-8");
                     PrintWriter out = response.getWriter();
-                    out.write("{\"code\": 9000,\"message\":\"账号或密码错误!\"}");
+                    out.write("{\"status\": 9000,\"message\":\"账号或密码错误!\"}");
                     out.flush();
                     out.close();
                 })
@@ -71,7 +71,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutSuccessHandler((request, response, authentication) -> {
                     response.setContentType("application/json;charset=utf-8");
                     PrintWriter out = response.getWriter();
-                    out.write("{\"code\": 2000,\"message\":\"注销成功!\"}");
+                    out.write("{\"status\": 200,\"message\":\"注销成功!\"}");
                     out.flush();
                     out.close();
                 })

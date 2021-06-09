@@ -39,50 +39,30 @@ public class User extends IdEntity implements UserDetails, Serializable {
     /**
      * 账户是否未过期,过期无法验证，在springSecurity 验证中自动调用
      */
-    boolean isAccountNonExpired;
+    @TableField(exist = false)
+    private boolean isAccountNonExpired = true;
 
     /**
      * 指定用户是否解锁,锁定的用户无法进行身份验证，在springSecurity 验证中自动调用
      */
-    boolean isAccountNonLocked;
+    @TableField(exist = false)
+    private boolean isAccountNonLocked = true;
 
     /**
      * 指示是否已过期的用户的凭据(密码),过期的凭据防止认证，在springSecurity 验证中自动调用
      */
-    boolean isCredentialsNonExpired;
+    @TableField(exist = false)
+    private boolean isCredentialsNonExpired = true;
 
     /**
      * 是否可用 ,禁用的用户不能身份验证，在springSecurity 验证中自动调用
      */
-    boolean isEnabled;
+    @TableField(exist = false)
+    private boolean isEnabled = true;
 
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
-    }
-
-    @Override
-    @JsonIgnore
-    public boolean isEnabled() {
-        return true;
-    }
-
-    @Override
-    @JsonIgnore
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @Override
-    @JsonIgnore
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    @JsonIgnore
-    public boolean isCredentialsNonExpired() {
-        return true;
     }
 }

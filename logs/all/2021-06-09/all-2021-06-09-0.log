@@ -402,3 +402,374 @@ Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'oper_change_time' i
 [INFO ] [2021-06-09 15:28:10] [http-nio-8001-exec-1] org.springframework.web.servlet.DispatcherServlet  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
 [INFO ] [2021-06-09 15:28:12] [http-nio-8001-exec-4] com.zaxxer.hikari.HikariDataSource  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
 [INFO ] [2021-06-09 15:28:13] [http-nio-8001-exec-4] com.zaxxer.hikari.HikariDataSource  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] [2021-06-09 20:04:14] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - Starting WebchatApplication using Java 1.8.0_212 on DESKTOP-P5QJ30K with PID 15288 (G:\STUDY\WebChat\my\webchat\target\classes started by Baozoulolw in G:\STUDY\WebChat\my\webchat)
+[INFO ] [2021-06-09 20:04:14] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - The following profiles are active: dev
+[WARN ] [2021-06-09 20:04:14] [background-preinit] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder  o.s.h.c.j.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+[INFO ] [2021-06-09 20:04:16] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO ] [2021-06-09 20:04:16] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[INFO ] [2021-06-09 20:04:16] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+[INFO ] [2021-06-09 20:04:16] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3f049056' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] [2021-06-09 20:04:16] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] [2021-06-09 20:04:17] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+[INFO ] [2021-06-09 20:04:17] [main] org.apache.coyote.http11.Http11NioProtocol  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+[INFO ] [2021-06-09 20:04:17] [main] org.apache.catalina.core.StandardService  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ] [2021-06-09 20:04:17] [main] org.apache.catalina.core.StandardEngine  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.46]
+[INFO ] [2021-06-09 20:04:17] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] [2021-06-09 20:04:17] [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2222 ms
+[INFO ] [2021-06-09 20:04:18] [main] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[INFO ] [2021-06-09 20:04:19] [main] org.springframework.security.web.DefaultSecurityFilterChain  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5864e8bf, org.springframework.security.web.context.SecurityContextPersistenceFilter@256589a1, org.springframework.security.web.header.HeaderWriterFilter@19a5b637, org.springframework.security.web.authentication.logout.LogoutFilter@1e56bc9b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@307cf964, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@67c6f4d8, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@37ca3ca8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@9b367c8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@87f501f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@191ec193, org.springframework.security.web.session.SessionManagementFilter@4b4969ea, org.springframework.security.web.access.ExceptionTranslationFilter@79195c22, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5329f6b3]
+[INFO ] [2021-06-09 20:04:19] [main] org.apache.coyote.http11.Http11NioProtocol  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+[INFO ] [2021-06-09 20:04:19] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+[INFO ] [2021-06-09 20:04:19] [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+[INFO ] [2021-06-09 20:04:19] [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+[INFO ] [2021-06-09 20:04:19] [main] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+[INFO ] [2021-06-09 20:04:19] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - Started WebchatApplication in 5.525 seconds (JVM running for 7.085)
+[INFO ] [2021-06-09 20:04:19] [main] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state LivenessState changed to CORRECT
+[INFO ] [2021-06-09 20:04:19] [main] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+[INFO ] [2021-06-09 20:04:37] [http-nio-8001-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] [2021-06-09 20:04:37] [http-nio-8001-exec-1] org.springframework.web.servlet.DispatcherServlet  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] [2021-06-09 20:04:37] [http-nio-8001-exec-1] org.springframework.web.servlet.DispatcherServlet  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[INFO ] [2021-06-09 20:04:48] [http-nio-8001-exec-5] com.zaxxer.hikari.HikariDataSource  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[INFO ] [2021-06-09 20:04:49] [http-nio-8001-exec-5] com.zaxxer.hikari.HikariDataSource  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[ERROR] [2021-06-09 20:04:49] [http-nio-8001-exec-5] org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter  o.s.s.w.a.UsernamePasswordAuthenticationFilter - An internal error occurred while trying to authenticate the user.
+org.springframework.security.authentication.InternalAuthenticationServiceException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'is_account_non_expired' in 'field list'
+### The error may exist in top/baozoulolw/webchat/dao/UserDao.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,username,password,phone,email,status,is_account_non_expired,is_account_non_locked,is_credentials_non_expired,is_enabled,oper_user,change_time,create_time  FROM tb_user     WHERE (username = ?)
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'is_account_non_expired' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'is_account_non_expired' in 'field list'
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:108)
+	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:133)
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:182)
+	at org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.attemptAuthentication(UsernamePasswordAuthenticationFilter.java:85)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:222)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'is_account_non_expired' in 'field list'
+### The error may exist in top/baozoulolw/webchat/dao/UserDao.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,username,password,phone,email,status,is_account_non_expired,is_account_non_locked,is_credentials_non_expired,is_enabled,oper_user,change_time,create_time  FROM tb_user     WHERE (username = ?)
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'is_account_non_expired' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'is_account_non_expired' in 'field list'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:239)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:88)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
+	at com.sun.proxy.$Proxy75.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:108)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:96)
+	at com.sun.proxy.$Proxy79.selectOne(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy80.selectOne(Unknown Source)
+	at top.baozoulolw.webchat.service.impl.UserServiceImpl.loadUserByUsername(UserServiceImpl.java:23)
+	at top.baozoulolw.webchat.service.impl.UserServiceImpl.loadUserByUsername(UserServiceImpl.java:13)
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:93)
+	... 53 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'is_account_non_expired' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doQuery(MybatisSimpleExecutor.java:67)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.query(MybatisCachingExecutor.java:163)
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.query(MybatisCachingExecutor.java:90)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	... 72 common frames omitted
+[ERROR] [2021-06-09 20:05:01] [http-nio-8001-exec-1] org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter  o.s.s.w.a.UsernamePasswordAuthenticationFilter - An internal error occurred while trying to authenticate the user.
+org.springframework.security.authentication.InternalAuthenticationServiceException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'is_account_non_expired' in 'field list'
+### The error may exist in top/baozoulolw/webchat/dao/UserDao.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,username,password,phone,email,status,is_account_non_expired,is_account_non_locked,is_credentials_non_expired,is_enabled,oper_user,change_time,create_time  FROM tb_user     WHERE (username = ?)
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'is_account_non_expired' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'is_account_non_expired' in 'field list'
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:108)
+	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:133)
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:182)
+	at org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.attemptAuthentication(UsernamePasswordAuthenticationFilter.java:85)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:222)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'is_account_non_expired' in 'field list'
+### The error may exist in top/baozoulolw/webchat/dao/UserDao.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,username,password,phone,email,status,is_account_non_expired,is_account_non_locked,is_credentials_non_expired,is_enabled,oper_user,change_time,create_time  FROM tb_user     WHERE (username = ?)
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'is_account_non_expired' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'is_account_non_expired' in 'field list'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:239)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:88)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
+	at com.sun.proxy.$Proxy75.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:108)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:96)
+	at com.sun.proxy.$Proxy79.selectOne(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy80.selectOne(Unknown Source)
+	at top.baozoulolw.webchat.service.impl.UserServiceImpl.loadUserByUsername(UserServiceImpl.java:23)
+	at top.baozoulolw.webchat.service.impl.UserServiceImpl.loadUserByUsername(UserServiceImpl.java:13)
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:93)
+	... 53 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'is_account_non_expired' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doQuery(MybatisSimpleExecutor.java:67)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.query(MybatisCachingExecutor.java:163)
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.query(MybatisCachingExecutor.java:90)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	... 72 common frames omitted
+[INFO ] [2021-06-09 20:07:17] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - Starting WebchatApplication using Java 1.8.0_212 on DESKTOP-P5QJ30K with PID 3484 (G:\STUDY\WebChat\my\webchat\target\classes started by Baozoulolw in G:\STUDY\WebChat\my\webchat)
+[INFO ] [2021-06-09 20:07:17] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - The following profiles are active: dev
+[WARN ] [2021-06-09 20:07:17] [background-preinit] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder  o.s.h.c.j.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+[INFO ] [2021-06-09 20:07:18] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO ] [2021-06-09 20:07:18] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[INFO ] [2021-06-09 20:07:18] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+[INFO ] [2021-06-09 20:07:18] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3f049056' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] [2021-06-09 20:07:18] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] [2021-06-09 20:07:18] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+[INFO ] [2021-06-09 20:07:18] [main] org.apache.coyote.http11.Http11NioProtocol  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+[INFO ] [2021-06-09 20:07:18] [main] org.apache.catalina.core.StandardService  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ] [2021-06-09 20:07:18] [main] org.apache.catalina.core.StandardEngine  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.46]
+[INFO ] [2021-06-09 20:07:18] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] [2021-06-09 20:07:18] [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1438 ms
+[INFO ] [2021-06-09 20:07:19] [main] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[INFO ] [2021-06-09 20:07:20] [main] org.springframework.security.web.DefaultSecurityFilterChain  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2f09e6b2, org.springframework.security.web.context.SecurityContextPersistenceFilter@2ce524d2, org.springframework.security.web.header.HeaderWriterFilter@255d9277, org.springframework.security.web.authentication.logout.LogoutFilter@70be89ec, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@33e3bd2e, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@578c3fd9, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@1bee0085, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@e3899fd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@712e787e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@16e1219f, org.springframework.security.web.session.SessionManagementFilter@7e191fda, org.springframework.security.web.access.ExceptionTranslationFilter@36d582cb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@22a4ca4a]
+[INFO ] [2021-06-09 20:07:20] [main] org.apache.coyote.http11.Http11NioProtocol  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+[INFO ] [2021-06-09 20:07:20] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+[INFO ] [2021-06-09 20:07:20] [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+[INFO ] [2021-06-09 20:07:20] [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+[INFO ] [2021-06-09 20:07:20] [main] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+[INFO ] [2021-06-09 20:07:20] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - Started WebchatApplication in 3.916 seconds (JVM running for 4.698)
+[INFO ] [2021-06-09 20:07:20] [main] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state LivenessState changed to CORRECT
+[INFO ] [2021-06-09 20:07:20] [main] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+[INFO ] [2021-06-09 20:07:33] [http-nio-8001-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] [2021-06-09 20:07:33] [http-nio-8001-exec-1] org.springframework.web.servlet.DispatcherServlet  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] [2021-06-09 20:07:33] [http-nio-8001-exec-1] org.springframework.web.servlet.DispatcherServlet  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[INFO ] [2021-06-09 20:07:38] [http-nio-8001-exec-4] com.zaxxer.hikari.HikariDataSource  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[INFO ] [2021-06-09 20:07:39] [http-nio-8001-exec-4] com.zaxxer.hikari.HikariDataSource  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] [2021-06-09 20:09:09] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - Starting WebchatApplication using Java 1.8.0_212 on DESKTOP-P5QJ30K with PID 4288 (G:\STUDY\WebChat\my\webchat\target\classes started by Baozoulolw in G:\STUDY\WebChat\my\webchat)
+[INFO ] [2021-06-09 20:09:09] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - The following profiles are active: dev
+[WARN ] [2021-06-09 20:09:09] [background-preinit] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder  o.s.h.c.j.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+[INFO ] [2021-06-09 20:09:10] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO ] [2021-06-09 20:09:10] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[INFO ] [2021-06-09 20:09:10] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+[INFO ] [2021-06-09 20:09:10] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@55fdf7f9' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] [2021-06-09 20:09:10] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] [2021-06-09 20:09:11] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+[INFO ] [2021-06-09 20:09:11] [main] org.apache.coyote.http11.Http11NioProtocol  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+[INFO ] [2021-06-09 20:09:11] [main] org.apache.catalina.core.StandardService  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ] [2021-06-09 20:09:11] [main] org.apache.catalina.core.StandardEngine  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.46]
+[INFO ] [2021-06-09 20:09:11] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] [2021-06-09 20:09:11] [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1763 ms
+[INFO ] [2021-06-09 20:09:12] [main] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[INFO ] [2021-06-09 20:09:13] [main] org.springframework.security.web.DefaultSecurityFilterChain  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@66944c7c, org.springframework.security.web.context.SecurityContextPersistenceFilter@7544260a, org.springframework.security.web.header.HeaderWriterFilter@2932e15f, org.springframework.security.web.authentication.logout.LogoutFilter@14b26e90, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7981963f, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@708f7386, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@14993306, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@506b083, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7b2d58e6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@73ae82da, org.springframework.security.web.session.SessionManagementFilter@2375a976, org.springframework.security.web.access.ExceptionTranslationFilter@3b66ac74, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@39342614]
+[INFO ] [2021-06-09 20:09:13] [main] org.apache.coyote.http11.Http11NioProtocol  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+[INFO ] [2021-06-09 20:09:13] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+[INFO ] [2021-06-09 20:09:13] [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+[INFO ] [2021-06-09 20:09:13] [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+[INFO ] [2021-06-09 20:09:13] [main] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+[INFO ] [2021-06-09 20:09:13] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - Started WebchatApplication in 4.479 seconds (JVM running for 6.571)
+[INFO ] [2021-06-09 20:09:13] [main] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state LivenessState changed to CORRECT
+[INFO ] [2021-06-09 20:09:13] [main] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+[INFO ] [2021-06-09 20:09:36] [http-nio-8001-exec-3] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] [2021-06-09 20:09:36] [http-nio-8001-exec-3] org.springframework.web.servlet.DispatcherServlet  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] [2021-06-09 20:09:36] [http-nio-8001-exec-3] org.springframework.web.servlet.DispatcherServlet  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+[INFO ] [2021-06-09 20:09:42] [http-nio-8001-exec-4] com.zaxxer.hikari.HikariDataSource  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[INFO ] [2021-06-09 20:09:43] [http-nio-8001-exec-4] com.zaxxer.hikari.HikariDataSource  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[WARN ] [2021-06-09 20:10:41] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=58s490ms581µs900ns).
+[INFO ] [2021-06-09 20:10:41] [SpringContextShutdownHook] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+[INFO ] [2021-06-09 20:10:47] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - Starting WebchatApplication using Java 1.8.0_212 on DESKTOP-P5QJ30K with PID 8284 (G:\STUDY\WebChat\my\webchat\target\classes started by Baozoulolw in G:\STUDY\WebChat\my\webchat)
+[INFO ] [2021-06-09 20:10:47] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - The following profiles are active: dev
+[WARN ] [2021-06-09 20:10:47] [background-preinit] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder  o.s.h.c.j.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+[INFO ] [2021-06-09 20:10:48] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO ] [2021-06-09 20:10:48] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[INFO ] [2021-06-09 20:10:48] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+[INFO ] [2021-06-09 20:10:48] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@9f86dc3' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] [2021-06-09 20:10:48] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] [2021-06-09 20:10:49] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+[INFO ] [2021-06-09 20:10:49] [main] org.apache.coyote.http11.Http11NioProtocol  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+[INFO ] [2021-06-09 20:10:49] [main] org.apache.catalina.core.StandardService  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ] [2021-06-09 20:10:49] [main] org.apache.catalina.core.StandardEngine  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.46]
+[INFO ] [2021-06-09 20:10:49] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] [2021-06-09 20:10:49] [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1544 ms
+[INFO ] [2021-06-09 20:10:50] [main] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[INFO ] [2021-06-09 20:10:50] [main] org.springframework.security.web.DefaultSecurityFilterChain  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4c79ca55, org.springframework.security.web.context.SecurityContextPersistenceFilter@6ff8e744, org.springframework.security.web.header.HeaderWriterFilter@c83ed77, org.springframework.security.web.authentication.logout.LogoutFilter@6fcc0a1, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2ac9e53c, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@6a878778, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@3a63d248, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@409395b9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@78861d9e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3c4ad54, org.springframework.security.web.session.SessionManagementFilter@d271a54, org.springframework.security.web.access.ExceptionTranslationFilter@57bac3f0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7793b55d]
+[INFO ] [2021-06-09 20:10:51] [main] org.apache.coyote.http11.Http11NioProtocol  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+[INFO ] [2021-06-09 20:10:51] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+[INFO ] [2021-06-09 20:10:51] [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+[INFO ] [2021-06-09 20:10:51] [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+[INFO ] [2021-06-09 20:10:51] [main] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+[INFO ] [2021-06-09 20:10:51] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - Started WebchatApplication in 4.029 seconds (JVM running for 5.147)
+[INFO ] [2021-06-09 20:10:51] [main] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state LivenessState changed to CORRECT
+[INFO ] [2021-06-09 20:10:51] [main] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+[INFO ] [2021-06-09 20:13:46] [http-nio-8001-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] [2021-06-09 20:13:46] [http-nio-8001-exec-2] org.springframework.web.servlet.DispatcherServlet  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] [2021-06-09 20:13:46] [http-nio-8001-exec-2] org.springframework.web.servlet.DispatcherServlet  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[INFO ] [2021-06-09 20:13:51] [http-nio-8001-exec-5] com.zaxxer.hikari.HikariDataSource  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[INFO ] [2021-06-09 20:13:52] [http-nio-8001-exec-5] com.zaxxer.hikari.HikariDataSource  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] [2021-06-09 20:14:33] [SpringContextShutdownHook] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+[INFO ] [2021-06-09 23:42:42] [main] top.baozoulolw.webchat.WebchatApplicationTests  t.b.webchat.WebchatApplicationTests - Starting WebchatApplicationTests using Java 1.8.0_212 on DESKTOP-P5QJ30K with PID 408 (started by Baozoulolw in G:\STUDY\WebChat\my\webchat)
+[INFO ] [2021-06-09 23:42:42] [main] top.baozoulolw.webchat.WebchatApplicationTests  t.b.webchat.WebchatApplicationTests - The following profiles are active: dev
+[WARN ] [2021-06-09 23:42:42] [background-preinit] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder  o.s.h.c.j.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+[INFO ] [2021-06-09 23:42:43] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO ] [2021-06-09 23:42:43] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[INFO ] [2021-06-09 23:42:43] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+[INFO ] [2021-06-09 23:42:44] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@22d9bc14' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] [2021-06-09 23:42:44] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] [2021-06-09 23:42:45] [main] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[INFO ] [2021-06-09 23:42:47] [main] org.springframework.security.web.DefaultSecurityFilterChain  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4070ace9, org.springframework.security.web.context.SecurityContextPersistenceFilter@53f495f0, org.springframework.security.web.header.HeaderWriterFilter@525b8922, org.springframework.security.web.authentication.logout.LogoutFilter@77a2688d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5ca22e19, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@17354708, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@722b2728, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@45707f76, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@26463a6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@740c4868, org.springframework.security.web.session.SessionManagementFilter@6caa4dc5, org.springframework.security.web.access.ExceptionTranslationFilter@74764622, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@71039ce1]
+[INFO ] [2021-06-09 23:42:47] [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+[INFO ] [2021-06-09 23:42:47] [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+[INFO ] [2021-06-09 23:42:47] [main] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+[INFO ] [2021-06-09 23:42:48] [main] top.baozoulolw.webchat.WebchatApplicationTests  t.b.webchat.WebchatApplicationTests - Started WebchatApplicationTests in 6.637 seconds (JVM running for 7.988)
+[INFO ] [2021-06-09 23:42:48] [main] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state LivenessState changed to CORRECT
+[INFO ] [2021-06-09 23:42:48] [main] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state ReadinessState changed to ACCEPTING_TRAFFIC

@@ -8,6 +8,6 @@ import top.baozoulolw.webchat.entity.User;
 
 @RestController
 @RequestMapping(value = "/User")
-@Api(tags = "用于用户登录，获取用户信息等的接口")
+@Api("用于用户登录，获取用户信息等的接口")
 public class UserController {
 }
