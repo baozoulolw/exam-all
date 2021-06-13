@@ -24,6 +24,7 @@ public class JwtUtils {
      */
     private static final String JWT_SECRET = "asdfghjkl1234567890";
 
+    public static final String TOKEN_HEADER = "Authorization";
 
 
     /**

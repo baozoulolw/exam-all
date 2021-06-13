@@ -1,0 +1,366 @@
+[INFO ] [2021-06-11 18:45:28] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - Starting WebchatApplication using Java 1.8.0_212 on DESKTOP-P5QJ30K with PID 6048 (G:\STUDY\WebChat\my\webchat\target\classes started by Baozoulolw in G:\STUDY\WebChat\my\webchat)
+[INFO ] [2021-06-11 18:45:28] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - The following profiles are active: dev
+[WARN ] [2021-06-11 18:45:28] [background-preinit] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder  o.s.h.c.j.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+[INFO ] [2021-06-11 18:45:29] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO ] [2021-06-11 18:45:29] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[INFO ] [2021-06-11 18:45:29] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25 ms. Found 0 Redis repository interfaces.
+[INFO ] [2021-06-11 18:45:30] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@222afc67' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] [2021-06-11 18:45:30] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] [2021-06-11 18:45:30] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+[INFO ] [2021-06-11 18:45:30] [main] org.apache.coyote.http11.Http11NioProtocol  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+[INFO ] [2021-06-11 18:45:30] [main] org.apache.catalina.core.StandardService  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ] [2021-06-11 18:45:30] [main] org.apache.catalina.core.StandardEngine  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.46]
+[INFO ] [2021-06-11 18:45:31] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] [2021-06-11 18:45:31] [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2367 ms
+[INFO ] [2021-06-11 18:45:32] [main] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[INFO ] [2021-06-11 18:45:32] [main] org.springframework.security.web.DefaultSecurityFilterChain  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@66713605, org.springframework.security.web.context.SecurityContextPersistenceFilter@4f3c7808, org.springframework.security.web.header.HeaderWriterFilter@c9b5a99, org.springframework.security.web.authentication.logout.LogoutFilter@251a90ce, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@597d48ca, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@99a8de3, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@2ab09943, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@11c581a0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1eb85a47, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7d50f2a8, org.springframework.security.web.session.SessionManagementFilter@2aee0704, org.springframework.security.web.access.ExceptionTranslationFilter@5384ce66, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4409cae6]
+[INFO ] [2021-06-11 18:45:32] [main] org.apache.coyote.http11.Http11NioProtocol  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+[INFO ] [2021-06-11 18:45:32] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+[INFO ] [2021-06-11 18:45:32] [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+[INFO ] [2021-06-11 18:45:32] [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+[INFO ] [2021-06-11 18:45:32] [main] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+[INFO ] [2021-06-11 18:45:32] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - Started WebchatApplication in 5.043 seconds (JVM running for 6.25)
+[INFO ] [2021-06-11 18:45:32] [main] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state LivenessState changed to CORRECT
+[INFO ] [2021-06-11 18:45:32] [main] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+[INFO ] [2021-06-11 18:46:34] [http-nio-8001-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] [2021-06-11 18:46:34] [http-nio-8001-exec-1] org.springframework.web.servlet.DispatcherServlet  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] [2021-06-11 18:46:34] [http-nio-8001-exec-1] org.springframework.web.servlet.DispatcherServlet  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+[INFO ] [2021-06-11 18:46:34] [http-nio-8001-exec-1] com.zaxxer.hikari.HikariDataSource  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[INFO ] [2021-06-11 18:46:35] [http-nio-8001-exec-1] com.zaxxer.hikari.HikariDataSource  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] [2021-06-11 19:39:14] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - Starting WebchatApplication using Java 1.8.0_212 on DESKTOP-P5QJ30K with PID 10476 (G:\STUDY\WebChat\my\webchat\target\classes started by Baozoulolw in G:\STUDY\WebChat\my\webchat)
+[INFO ] [2021-06-11 19:39:14] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - The following profiles are active: dev
+[WARN ] [2021-06-11 19:39:14] [background-preinit] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder  o.s.h.c.j.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+[INFO ] [2021-06-11 19:39:15] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO ] [2021-06-11 19:39:15] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[INFO ] [2021-06-11 19:39:15] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+[INFO ] [2021-06-11 19:39:15] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5e671e20' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] [2021-06-11 19:39:15] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] [2021-06-11 19:39:16] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+[INFO ] [2021-06-11 19:39:16] [main] org.apache.coyote.http11.Http11NioProtocol  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+[INFO ] [2021-06-11 19:39:16] [main] org.apache.catalina.core.StandardService  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ] [2021-06-11 19:39:16] [main] org.apache.catalina.core.StandardEngine  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.46]
+[INFO ] [2021-06-11 19:39:16] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] [2021-06-11 19:39:16] [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1562 ms
+[INFO ] [2021-06-11 19:39:17] [main] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[INFO ] [2021-06-11 19:39:17] [main] org.springframework.security.web.DefaultSecurityFilterChain  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2e0ad709, org.springframework.security.web.context.SecurityContextPersistenceFilter@34c62fdf, org.springframework.security.web.header.HeaderWriterFilter@11c581a0, org.springframework.security.web.authentication.logout.LogoutFilter@447521e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@154b8cb6, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@56fda064, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@1fe8f5e8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1eb85a47, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3a6e9856, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@39449465, org.springframework.security.web.session.SessionManagementFilter@935493d, org.springframework.security.web.access.ExceptionTranslationFilter@2aee0704, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@191ec193]
+[INFO ] [2021-06-11 19:39:17] [main] org.apache.coyote.http11.Http11NioProtocol  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+[INFO ] [2021-06-11 19:39:17] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+[INFO ] [2021-06-11 19:39:17] [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+[INFO ] [2021-06-11 19:39:17] [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+[INFO ] [2021-06-11 19:39:17] [main] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+[INFO ] [2021-06-11 19:39:17] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - Started WebchatApplication in 4.148 seconds (JVM running for 4.859)
+[INFO ] [2021-06-11 19:39:17] [main] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state LivenessState changed to CORRECT
+[INFO ] [2021-06-11 19:39:17] [main] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+[INFO ] [2021-06-11 21:11:28] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - Starting WebchatApplication using Java 1.8.0_212 on DESKTOP-P5QJ30K with PID 5156 (G:\STUDY\WebChat\my\webchat\target\classes started by Baozoulolw in G:\STUDY\WebChat\my\webchat)
+[INFO ] [2021-06-11 21:11:28] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - The following profiles are active: dev
+[WARN ] [2021-06-11 21:11:28] [background-preinit] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder  o.s.h.c.j.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+[INFO ] [2021-06-11 21:11:29] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO ] [2021-06-11 21:11:29] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[INFO ] [2021-06-11 21:11:29] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+[INFO ] [2021-06-11 21:11:29] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@75cf0de5' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] [2021-06-11 21:11:29] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] [2021-06-11 21:11:30] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+[INFO ] [2021-06-11 21:11:30] [main] org.apache.coyote.http11.Http11NioProtocol  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+[INFO ] [2021-06-11 21:11:30] [main] org.apache.catalina.core.StandardService  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ] [2021-06-11 21:11:30] [main] org.apache.catalina.core.StandardEngine  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.46]
+[INFO ] [2021-06-11 21:11:30] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] [2021-06-11 21:11:30] [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1863 ms
+[INFO ] [2021-06-11 21:11:31] [main] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[INFO ] [2021-06-11 21:11:32] [main] org.springframework.security.web.DefaultSecurityFilterChain  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/chat'] with []
+[INFO ] [2021-06-11 21:11:32] [main] org.springframework.security.web.DefaultSecurityFilterChain  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@24e2355c, org.springframework.security.web.context.SecurityContextPersistenceFilter@5cd701e4, org.springframework.security.web.header.HeaderWriterFilter@1f4dd016, org.springframework.security.web.csrf.CsrfFilter@29bd2796, org.springframework.security.web.authentication.logout.LogoutFilter@153c6603, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2c3679e5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1169fdfd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@19739906, org.springframework.security.web.session.SessionManagementFilter@6774f264, org.springframework.security.web.access.ExceptionTranslationFilter@20a946d9]
+[INFO ] [2021-06-11 21:11:32] [main] org.apache.coyote.http11.Http11NioProtocol  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+[INFO ] [2021-06-11 21:11:32] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+[INFO ] [2021-06-11 21:11:32] [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+[INFO ] [2021-06-11 21:11:32] [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+[INFO ] [2021-06-11 21:11:32] [main] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+[INFO ] [2021-06-11 21:11:32] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - Started WebchatApplication in 4.888 seconds (JVM running for 7.538)
+[INFO ] [2021-06-11 21:11:32] [main] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state LivenessState changed to CORRECT
+[INFO ] [2021-06-11 21:11:32] [main] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+[INFO ] [2021-06-11 21:12:10] [http-nio-8001-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] [2021-06-11 21:12:10] [http-nio-8001-exec-2] org.springframework.web.servlet.DispatcherServlet  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] [2021-06-11 21:12:10] [http-nio-8001-exec-2] org.springframework.web.servlet.DispatcherServlet  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+[INFO ] [2021-06-11 21:20:53] [SpringContextShutdownHook] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+[INFO ] [2021-06-11 21:21:01] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - Starting WebchatApplication using Java 1.8.0_212 on DESKTOP-P5QJ30K with PID 11840 (G:\STUDY\WebChat\my\webchat\target\classes started by Baozoulolw in G:\STUDY\WebChat\my\webchat)
+[INFO ] [2021-06-11 21:21:01] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - The following profiles are active: dev
+[WARN ] [2021-06-11 21:21:01] [background-preinit] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder  o.s.h.c.j.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+[INFO ] [2021-06-11 21:21:02] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO ] [2021-06-11 21:21:02] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[INFO ] [2021-06-11 21:21:02] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+[INFO ] [2021-06-11 21:21:02] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@4214ae8f' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] [2021-06-11 21:21:02] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] [2021-06-11 21:21:02] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+[INFO ] [2021-06-11 21:21:02] [main] org.apache.coyote.http11.Http11NioProtocol  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+[INFO ] [2021-06-11 21:21:02] [main] org.apache.catalina.core.StandardService  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ] [2021-06-11 21:21:02] [main] org.apache.catalina.core.StandardEngine  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.46]
+[INFO ] [2021-06-11 21:21:02] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] [2021-06-11 21:21:02] [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1648 ms
+[INFO ] [2021-06-11 21:21:04] [main] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[INFO ] [2021-06-11 21:21:04] [main] org.springframework.security.web.DefaultSecurityFilterChain  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/chat'] with []
+[INFO ] [2021-06-11 21:21:04] [main] org.springframework.security.web.DefaultSecurityFilterChain  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6dbbdf92, org.springframework.security.web.context.SecurityContextPersistenceFilter@70ee9d31, org.springframework.security.web.header.HeaderWriterFilter@7bdb4f17, org.springframework.security.web.csrf.CsrfFilter@3c64339f, org.springframework.security.web.authentication.logout.LogoutFilter@7c4ca87c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@a99c42c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@60a4e619, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1dbeedff, org.springframework.security.web.session.SessionManagementFilter@794d28a3, org.springframework.security.web.access.ExceptionTranslationFilter@60844992]
+[INFO ] [2021-06-11 21:21:05] [main] org.apache.coyote.http11.Http11NioProtocol  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+[INFO ] [2021-06-11 21:21:05] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+[INFO ] [2021-06-11 21:21:05] [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+[INFO ] [2021-06-11 21:21:05] [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+[INFO ] [2021-06-11 21:21:05] [main] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+[INFO ] [2021-06-11 21:21:05] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - Started WebchatApplication in 4.813 seconds (JVM running for 6.005)
+[INFO ] [2021-06-11 21:21:05] [main] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state LivenessState changed to CORRECT
+[INFO ] [2021-06-11 21:21:05] [main] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+[INFO ] [2021-06-11 21:21:13] [http-nio-8001-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] [2021-06-11 21:21:13] [http-nio-8001-exec-1] org.springframework.web.servlet.DispatcherServlet  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] [2021-06-11 21:21:13] [http-nio-8001-exec-1] org.springframework.web.servlet.DispatcherServlet  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[INFO ] [2021-06-11 23:48:57] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - Starting WebchatApplication using Java 1.8.0_212 on DESKTOP-P5QJ30K with PID 6088 (G:\STUDY\WebChat\my\webchat\target\classes started by Baozoulolw in G:\STUDY\WebChat\my\webchat)
+[INFO ] [2021-06-11 23:48:57] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - The following profiles are active: dev
+[WARN ] [2021-06-11 23:48:57] [background-preinit] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder  o.s.h.c.j.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+[INFO ] [2021-06-11 23:48:58] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO ] [2021-06-11 23:48:58] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[INFO ] [2021-06-11 23:48:58] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+[INFO ] [2021-06-11 23:48:58] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3a401749' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] [2021-06-11 23:48:58] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] [2021-06-11 23:48:58] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+[INFO ] [2021-06-11 23:48:58] [main] org.apache.coyote.http11.Http11NioProtocol  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+[INFO ] [2021-06-11 23:48:58] [main] org.apache.catalina.core.StandardService  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ] [2021-06-11 23:48:58] [main] org.apache.catalina.core.StandardEngine  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.46]
+[INFO ] [2021-06-11 23:48:58] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] [2021-06-11 23:48:58] [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1620 ms
+[INFO ] [2021-06-11 23:48:59] [main] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[INFO ] [2021-06-11 23:49:00] [main] org.springframework.security.web.DefaultSecurityFilterChain  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/chat'] with []
+[INFO ] [2021-06-11 23:49:00] [main] org.springframework.security.web.DefaultSecurityFilterChain  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@151a6598, org.springframework.security.web.context.SecurityContextPersistenceFilter@3e4f2300, org.springframework.security.web.header.HeaderWriterFilter@6e49b011, org.springframework.web.filter.CorsFilter@6fa3def8, org.springframework.security.web.authentication.logout.LogoutFilter@25421809, top.baozoulolw.webchat.filter.JwtLoginFilter@1c3d9e28, top.baozoulolw.webchat.filter.JwtPreFilter@a1cb94, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5f33e6d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@25e6c22a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6bf0f70a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@46d148bd, org.springframework.security.web.session.SessionManagementFilter@19a7906c, org.springframework.security.web.access.ExceptionTranslationFilter@10d905c1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@432a6a69]
+[INFO ] [2021-06-11 23:49:00] [main] org.apache.coyote.http11.Http11NioProtocol  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+[INFO ] [2021-06-11 23:49:00] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+[INFO ] [2021-06-11 23:49:00] [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+[INFO ] [2021-06-11 23:49:00] [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+[INFO ] [2021-06-11 23:49:00] [main] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+[INFO ] [2021-06-11 23:49:00] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - Started WebchatApplication in 4.503 seconds (JVM running for 5.879)
+[INFO ] [2021-06-11 23:49:00] [main] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state LivenessState changed to CORRECT
+[INFO ] [2021-06-11 23:49:00] [main] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+[INFO ] [2021-06-11 23:49:19] [http-nio-8001-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] [2021-06-11 23:49:19] [http-nio-8001-exec-1] org.springframework.web.servlet.DispatcherServlet  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] [2021-06-11 23:49:19] [http-nio-8001-exec-1] org.springframework.web.servlet.DispatcherServlet  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[ERROR] [2021-06-11 23:49:33] [http-nio-8001-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet]  o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+java.lang.NullPointerException: null
+	at top.baozoulolw.webchat.filter.JwtLoginFilter.attemptAuthentication(JwtLoginFilter.java:51)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:222)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR] [2021-06-11 23:51:05] [http-nio-8001-exec-3] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet]  o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+java.lang.NullPointerException: null
+	at top.baozoulolw.webchat.filter.JwtLoginFilter.attemptAuthentication(JwtLoginFilter.java:51)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:222)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+[INFO ] [2021-06-11 23:51:05] [SpringContextShutdownHook] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+[INFO ] [2021-06-11 23:51:36] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - Starting WebchatApplication using Java 1.8.0_212 on DESKTOP-P5QJ30K with PID 8168 (G:\STUDY\WebChat\my\webchat\target\classes started by Baozoulolw in G:\STUDY\WebChat\my\webchat)
+[INFO ] [2021-06-11 23:51:36] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - The following profiles are active: dev
+[WARN ] [2021-06-11 23:51:36] [background-preinit] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder  o.s.h.c.j.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+[INFO ] [2021-06-11 23:51:37] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO ] [2021-06-11 23:51:37] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[INFO ] [2021-06-11 23:51:37] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+[INFO ] [2021-06-11 23:51:37] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6ccac6f4' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] [2021-06-11 23:51:37] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] [2021-06-11 23:51:37] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+[INFO ] [2021-06-11 23:51:37] [main] org.apache.coyote.http11.Http11NioProtocol  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+[INFO ] [2021-06-11 23:51:37] [main] org.apache.catalina.core.StandardService  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ] [2021-06-11 23:51:37] [main] org.apache.catalina.core.StandardEngine  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.46]
+[INFO ] [2021-06-11 23:51:37] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] [2021-06-11 23:51:37] [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1615 ms
+[INFO ] [2021-06-11 23:51:39] [main] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[INFO ] [2021-06-11 23:51:39] [main] org.springframework.security.web.DefaultSecurityFilterChain  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/chat'] with []
+[INFO ] [2021-06-11 23:51:39] [main] org.springframework.security.web.DefaultSecurityFilterChain  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3a3316b6, org.springframework.security.web.context.SecurityContextPersistenceFilter@73d91faf, org.springframework.security.web.header.HeaderWriterFilter@3ba97962, org.springframework.web.filter.CorsFilter@4db46344, org.springframework.security.web.authentication.logout.LogoutFilter@31b6fb14, top.baozoulolw.webchat.filter.JwtLoginFilter@56c6d515, top.baozoulolw.webchat.filter.JwtPreFilter@702b656a, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@c4551c6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6f112f70, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1c58d7be, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@528f5b7f, org.springframework.security.web.session.SessionManagementFilter@3bcc8f13, org.springframework.security.web.access.ExceptionTranslationFilter@732d078d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2d73767e]
+[INFO ] [2021-06-11 23:51:39] [main] org.apache.coyote.http11.Http11NioProtocol  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+[INFO ] [2021-06-11 23:51:39] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+[INFO ] [2021-06-11 23:51:39] [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+[INFO ] [2021-06-11 23:51:39] [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+[INFO ] [2021-06-11 23:51:39] [main] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+[INFO ] [2021-06-11 23:51:40] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - Started WebchatApplication in 4.789 seconds (JVM running for 6.094)
+[INFO ] [2021-06-11 23:51:40] [main] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state LivenessState changed to CORRECT
+[INFO ] [2021-06-11 23:51:40] [main] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+[INFO ] [2021-06-11 23:51:50] [http-nio-8001-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] [2021-06-11 23:51:50] [http-nio-8001-exec-1] org.springframework.web.servlet.DispatcherServlet  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] [2021-06-11 23:51:50] [http-nio-8001-exec-1] org.springframework.web.servlet.DispatcherServlet  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+[ERROR] [2021-06-11 23:51:54] [http-nio-8001-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet]  o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+java.lang.NullPointerException: null
+	at top.baozoulolw.webchat.filter.JwtLoginFilter.attemptAuthentication(JwtLoginFilter.java:51)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:222)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+[INFO ] [2021-06-11 23:51:54] [SpringContextShutdownHook] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+[INFO ] [2021-06-11 23:53:24] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - Starting WebchatApplication using Java 1.8.0_212 on DESKTOP-P5QJ30K with PID 2936 (G:\STUDY\WebChat\my\webchat\target\classes started by Baozoulolw in G:\STUDY\WebChat\my\webchat)
+[INFO ] [2021-06-11 23:53:24] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - The following profiles are active: dev
+[WARN ] [2021-06-11 23:53:24] [background-preinit] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder  o.s.h.c.j.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+[INFO ] [2021-06-11 23:53:24] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO ] [2021-06-11 23:53:24] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[INFO ] [2021-06-11 23:53:25] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+[INFO ] [2021-06-11 23:53:25] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@38ee7a9d' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] [2021-06-11 23:53:25] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] [2021-06-11 23:53:25] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+[INFO ] [2021-06-11 23:53:25] [main] org.apache.coyote.http11.Http11NioProtocol  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+[INFO ] [2021-06-11 23:53:25] [main] org.apache.catalina.core.StandardService  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ] [2021-06-11 23:53:25] [main] org.apache.catalina.core.StandardEngine  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.46]
+[INFO ] [2021-06-11 23:53:25] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] [2021-06-11 23:53:25] [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1829 ms
+[INFO ] [2021-06-11 23:53:27] [main] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[INFO ] [2021-06-11 23:53:27] [main] org.springframework.security.web.DefaultSecurityFilterChain  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/chat'] with []
+[INFO ] [2021-06-11 23:53:27] [main] org.springframework.security.web.DefaultSecurityFilterChain  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@48ee3c2d, org.springframework.security.web.context.SecurityContextPersistenceFilter@31b6fb14, org.springframework.security.web.header.HeaderWriterFilter@26270b77, org.springframework.web.filter.CorsFilter@54387873, org.springframework.security.web.authentication.logout.LogoutFilter@ce2eaa7, top.baozoulolw.webchat.filter.JwtLoginFilter@3a80c534, top.baozoulolw.webchat.filter.JwtPreFilter@fd5689d, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1ff542a3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@246df37b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@56881196, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@36e3321e, org.springframework.security.web.session.SessionManagementFilter@18b04526, org.springframework.security.web.access.ExceptionTranslationFilter@61b8c9de, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@66863941]
+[INFO ] [2021-06-11 23:53:27] [main] org.apache.coyote.http11.Http11NioProtocol  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+[INFO ] [2021-06-11 23:53:27] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+[INFO ] [2021-06-11 23:53:27] [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+[INFO ] [2021-06-11 23:53:28] [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+[INFO ] [2021-06-11 23:53:28] [main] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+[INFO ] [2021-06-11 23:53:28] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - Started WebchatApplication in 5.088 seconds (JVM running for 6.189)
+[INFO ] [2021-06-11 23:53:28] [main] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state LivenessState changed to CORRECT
+[INFO ] [2021-06-11 23:53:28] [main] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+[INFO ] [2021-06-11 23:53:39] [http-nio-8001-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] [2021-06-11 23:53:39] [http-nio-8001-exec-2] org.springframework.web.servlet.DispatcherServlet  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] [2021-06-11 23:53:39] [http-nio-8001-exec-2] org.springframework.web.servlet.DispatcherServlet  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+[INFO ] [2021-06-11 23:53:45] [http-nio-8001-exec-2] com.zaxxer.hikari.HikariDataSource  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[INFO ] [2021-06-11 23:53:46] [http-nio-8001-exec-2] com.zaxxer.hikari.HikariDataSource  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.

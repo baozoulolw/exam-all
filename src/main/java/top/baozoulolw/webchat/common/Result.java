@@ -49,6 +49,35 @@ public class Result<T> {
     }
 
     /**
+     * 成功，创建ResResult：有data数据，指定status
+     */
+    public static <T> Result<T> success(Integer status,T data) {
+        Result<T> result = new Result<>();
+        result.setStatus(status);
+        result.setData(data);
+        return result;
+    }
+
+    /**
+     * 成功，创建ResResult：无data数据，指定status
+     */
+    public static <T> Result<T> success(ResultCode resultCode) {
+        Result<T> result = new Result<>();
+        result.setResultCode(resultCode);
+        return result;
+    }
+
+    /**
+     * 成功，创建ResResult：有data数据，指定status
+     */
+    public static <T> Result<T> success(ResultCode resultCode,T data) {
+        Result<T> result = new Result<>();
+        result.setResultCode(resultCode);
+        result.data = data;
+        return result;
+    }
+
+    /**
      * 失败，指定status、desc
      */
     public static <T> Result<T> fail(Integer status, String desc) {

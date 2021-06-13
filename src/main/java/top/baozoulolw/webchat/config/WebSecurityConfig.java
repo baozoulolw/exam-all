@@ -2,11 +2,20 @@ package top.baozoulolw.webchat.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.access.AccessDeniedHandler;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import top.baozoulolw.webchat.common.UnAuthEntryPoint;
+import top.baozoulolw.webchat.filter.JwtLoginFilter;
+import top.baozoulolw.webchat.filter.JwtPreFilter;
+import top.baozoulolw.webchat.handler.ChatLogoutSuccessHandler;
 import top.baozoulolw.webchat.service.UserService;
 
 import javax.annotation.Resource;
@@ -21,64 +30,53 @@ import java.io.PrintWriter;
  * @date 2021-03-01 9:16
  */
 @Configuration
+@EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Resource
     private UserService userService;
 
+    /**
+     * 加载 userDetailsService，用于从数据库中取用户信息
+     * @param auth
+     * @throws Exception
+     */
     @Override
-    public void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                .antMatchers("/**/*.js", "/**/*.css", "/**/images/**/*.*").permitAll()
-                .antMatchers("/chat").permitAll()
-                .anyRequest().authenticated()
-                .and().formLogin()
-                .loginProcessingUrl("/login")
-                .successHandler((request, response, authentication) -> {
-                    response.setContentType("application/json;charset=utf-8");
-                    PrintWriter out = response.getWriter();
-                    out.write("{\"status\": 200,\"message\":\"登录成功!\"}");
-                    out.flush();
-                    out.close();
-                })
-                .failureHandler((request, response, exception) -> {
-                    response.setContentType("application/json;charset=utf-8");
-                    PrintWriter out = response.getWriter();
-                    out.write("{\"status\": 9000,\"message\":\"账号或密码错误!\"}");
-                    out.flush();
-                    out.close();
-                })
-                /*.and().exceptionHandling()
-                .authenticationEntryPoint((request, response, authException) -> {
-                    response.setContentType("application/json;charset=utf-8");
-                    response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-                    PrintWriter out = response.getWriter();
-                    out.write("{\"code\": 9000,\"message\":\"授权已过期，请重新登录。\"}");
-                    out.flush();
-                    out.close();
-                })
-                .accessDeniedHandler((request, response, exception) -> {
-                    response.setContentType("application/json;charset=utf-8");
-                    response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-                    PrintWriter out = response.getWriter();
-                    out.write("{\"code\": 9000,\"message\":\"您没有权限进行此操作!\"}");
-                    out.flush();
-                    out.close();
-                })*/
-                .and().logout()
-                .logoutUrl("/logout")
-                .logoutSuccessHandler((request, response, authentication) -> {
-                    response.setContentType("application/json;charset=utf-8");
-                    PrintWriter out = response.getWriter();
-                    out.write("{\"status\": 200,\"message\":\"注销成功!\"}");
-                    out.flush();
-                    out.close();
-                })
-                .and().userDetailsService(userService)
-                .csrf().disable();
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userService).passwordEncoder(passwordEncoder());
     }
 
+    /**
+     * 不进行认证的路径
+     * @param web
+     * @throws Exception
+     */
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        //巨坑，这里不能加上context-path:/chat，不然不能拦截
+        web.ignoring().antMatchers("/chat"
+        );
+    }
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        // 开启跨域资源共享
+        http.cors()
+                .and().csrf().disable() // 关闭csrf
+                // 关闭session（无状态）
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and().authorizeRequests() //设置认证请求
+                // 放行静态资源
+                .antMatchers("/expression/**", "/face/**", "/img/**", "/uploads/**").permitAll()
+                .anyRequest().authenticated()
+                .and().logout().logoutSuccessHandler(new ChatLogoutSuccessHandler()).and()
+                // 先是UsernamePasswordAuthenticationFilter用于login校验
+                .addFilter(new JwtLoginFilter(authenticationManager(),userService))
+                // 再通过OncePerRequestFilter，对其它请求过滤
+                .addFilter(new JwtPreFilter(authenticationManager()))
+                .httpBasic().authenticationEntryPoint(new UnAuthEntryPoint()); //没有权限访问
+    }
     @Bean
     BCryptPasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();

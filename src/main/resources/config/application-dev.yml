@@ -6,6 +6,9 @@ spring:
       username: Baozoulolw
       hikari:
         max-lifetime: 500000
+        minimum-idle: 3
+        maximum-pool-size: 10
+        connection-test-query: select 1
   redis:
     database: 5
     host: 8.136.191.185
@@ -13,10 +16,3 @@ spring:
 
 server:
   port: 8001
-
-jwt:
-  header: Authorization
-  secret: mySecret
-  #token有效期一天
-  expiration: 86400
-  tokenHead: "Bearer "

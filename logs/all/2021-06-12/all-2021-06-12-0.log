@@ -1,0 +1,407 @@
+[INFO ] [2021-06-12 00:43:01] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - Starting WebchatApplication using Java 1.8.0_212 on DESKTOP-P5QJ30K with PID 9512 (G:\STUDY\WebChat\my\webchat\target\classes started by Baozoulolw in G:\STUDY\WebChat\my\webchat)
+[INFO ] [2021-06-12 00:43:01] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - The following profiles are active: dev
+[WARN ] [2021-06-12 00:43:02] [background-preinit] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder  o.s.h.c.j.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+[INFO ] [2021-06-12 00:43:02] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO ] [2021-06-12 00:43:02] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[INFO ] [2021-06-12 00:43:02] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+[INFO ] [2021-06-12 00:43:03] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@168b4cb0' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] [2021-06-12 00:43:03] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] [2021-06-12 00:43:03] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+[INFO ] [2021-06-12 00:43:03] [main] org.apache.coyote.http11.Http11NioProtocol  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+[INFO ] [2021-06-12 00:43:03] [main] org.apache.catalina.core.StandardService  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ] [2021-06-12 00:43:03] [main] org.apache.catalina.core.StandardEngine  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.46]
+[INFO ] [2021-06-12 00:43:03] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] [2021-06-12 00:43:03] [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1580 ms
+[INFO ] [2021-06-12 00:43:04] [main] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[INFO ] [2021-06-12 00:43:04] [main] org.springframework.security.web.DefaultSecurityFilterChain  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/chat'] with []
+[INFO ] [2021-06-12 00:43:05] [main] org.springframework.security.web.DefaultSecurityFilterChain  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@70697478, org.springframework.security.web.context.SecurityContextPersistenceFilter@6533629, org.springframework.security.web.header.HeaderWriterFilter@5d5574c7, org.springframework.web.filter.CorsFilter@42b43a6, org.springframework.security.web.authentication.logout.LogoutFilter@92e2c93, top.baozoulolw.webchat.filter.JwtLoginFilter@1d622556, top.baozoulolw.webchat.filter.JwtPreFilter@4b9f7edc, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@78f5cbc5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1b444b5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a4ff5ed, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@70ee1963, org.springframework.security.web.session.SessionManagementFilter@36871e98, org.springframework.security.web.access.ExceptionTranslationFilter@7b1c501d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@cf08c97]
+[INFO ] [2021-06-12 00:43:05] [main] org.apache.coyote.http11.Http11NioProtocol  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+[INFO ] [2021-06-12 00:43:05] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+[INFO ] [2021-06-12 00:43:05] [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+[INFO ] [2021-06-12 00:43:05] [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+[INFO ] [2021-06-12 00:43:05] [main] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+[INFO ] [2021-06-12 00:43:05] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - Started WebchatApplication in 4.34 seconds (JVM running for 6.087)
+[INFO ] [2021-06-12 00:43:05] [main] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state LivenessState changed to CORRECT
+[INFO ] [2021-06-12 00:43:05] [main] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+[INFO ] [2021-06-12 00:47:57] [http-nio-8001-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] [2021-06-12 00:47:57] [http-nio-8001-exec-1] org.springframework.web.servlet.DispatcherServlet  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] [2021-06-12 00:47:57] [http-nio-8001-exec-1] org.springframework.web.servlet.DispatcherServlet  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+[INFO ] [2021-06-12 00:48:50] [http-nio-8001-exec-1] com.zaxxer.hikari.HikariDataSource  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[INFO ] [2021-06-12 00:48:51] [http-nio-8001-exec-1] com.zaxxer.hikari.HikariDataSource  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[WARN ] [2021-06-12 01:13:44] [http-nio-8001-exec-4] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2d29dbd1 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 01:46:28] [http-nio-8001-exec-8] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@85bb082 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 01:46:31] [http-nio-8001-exec-10] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@47197749 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 01:46:32] [http-nio-8001-exec-9] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@e488ca0 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 01:46:33] [http-nio-8001-exec-1] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@18efa5bc (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 01:46:33] [http-nio-8001-exec-3] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@318ba6f5 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 01:46:33] [http-nio-8001-exec-8] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@53533679 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 01:46:36] [http-nio-8001-exec-10] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@74821cb5 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:18:48] [http-nio-8001-exec-5] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@47db5043 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:18:53] [http-nio-8001-exec-5] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@65485afb (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:18:58] [http-nio-8001-exec-5] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1c7ffed2 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:19:03] [http-nio-8001-exec-5] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@543f053 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:19:08] [http-nio-8001-exec-5] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@227bed82 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:19:13] [http-nio-8001-exec-5] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1f8b4a0c (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[ERROR] [2021-06-12 02:19:13] [http-nio-8001-exec-5] top.baozoulolw.webchat.filter.JwtLoginFilter  t.b.webchat.filter.JwtLoginFilter - An internal error occurred while trying to authenticate the user.
+org.springframework.security.authentication.InternalAuthenticationServiceException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30058ms.
+### The error may exist in top/baozoulolw/webchat/dao/UserDao.java (best guess)
+### The error may involve top.baozoulolw.webchat.dao.UserDao.selectOne
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30058ms.
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:108)
+	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:133)
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:182)
+	at top.baozoulolw.webchat.filter.JwtLoginFilter.attemptAuthentication(JwtLoginFilter.java:51)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:222)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30058ms.
+### The error may exist in top/baozoulolw/webchat/dao/UserDao.java (best guess)
+### The error may involve top.baozoulolw.webchat.dao.UserDao.selectOne
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30058ms.
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
+	at com.sun.proxy.$Proxy75.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:108)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:96)
+	at com.sun.proxy.$Proxy79.selectOne(Unknown Source)
+	at sun.reflect.GeneratedMethodAccessor48.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy80.selectOne(Unknown Source)
+	at top.baozoulolw.webchat.service.impl.UserServiceImpl.loadUserByUsername(UserServiceImpl.java:26)
+	at top.baozoulolw.webchat.service.impl.UserServiceImpl.loadUserByUsername(UserServiceImpl.java:13)
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:93)
+	... 56 common frames omitted
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30058ms.
+### The error may exist in top/baozoulolw/webchat/dao/UserDao.java (best guess)
+### The error may involve top.baozoulolw.webchat.dao.UserDao.selectOne
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30058ms.
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:149)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at sun.reflect.GeneratedMethodAccessor50.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	... 74 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30058ms.
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:82)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:80)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:67)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:336)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.prepareStatement(MybatisSimpleExecutor.java:91)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doQuery(MybatisSimpleExecutor.java:66)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.query(MybatisCachingExecutor.java:163)
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.query(MybatisCachingExecutor.java:90)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	... 80 common frames omitted
+Caused by: java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30058ms.
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:197)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:162)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:128)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79)
+	... 90 common frames omitted
+Caused by: java.sql.SQLNonTransientConnectionException: No operations allowed after connection closed.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:73)
+	at com.mysql.cj.jdbc.ConnectionImpl.setNetworkTimeout(ConnectionImpl.java:2496)
+	at com.zaxxer.hikari.pool.PoolBase.setNetworkTimeout(PoolBase.java:566)
+	at com.zaxxer.hikari.pool.PoolBase.isConnectionAlive(PoolBase.java:173)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:186)
+	... 95 common frames omitted
+Caused by: com.mysql.cj.exceptions.ConnectionIsClosedException: No operations allowed after connection closed.
+	at sun.reflect.GeneratedConstructorAccessor64.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.NativeSession.checkClosed(NativeSession.java:1171)
+	at com.mysql.cj.jdbc.ConnectionImpl.checkClosed(ConnectionImpl.java:573)
+	at com.mysql.cj.jdbc.ConnectionImpl.setNetworkTimeout(ConnectionImpl.java:2492)
+	... 98 common frames omitted
+[WARN ] [2021-06-12 02:23:26] [http-nio-8001-exec-6] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@576ebcb (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:23:31] [http-nio-8001-exec-6] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@253371f8 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:23:36] [http-nio-8001-exec-6] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@5a298c29 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:23:41] [http-nio-8001-exec-6] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3c99a053 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:23:46] [http-nio-8001-exec-6] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@40e1eda6 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:23:51] [http-nio-8001-exec-6] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@991e73c (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[ERROR] [2021-06-12 02:23:51] [http-nio-8001-exec-6] top.baozoulolw.webchat.filter.JwtLoginFilter  t.b.webchat.filter.JwtLoginFilter - An internal error occurred while trying to authenticate the user.
+org.springframework.security.authentication.InternalAuthenticationServiceException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30057ms.
+### The error may exist in top/baozoulolw/webchat/dao/UserDao.java (best guess)
+### The error may involve top.baozoulolw.webchat.dao.UserDao.selectOne
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30057ms.
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:108)
+	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:133)
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:182)
+	at top.baozoulolw.webchat.filter.JwtLoginFilter.attemptAuthentication(JwtLoginFilter.java:51)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:222)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30057ms.
+### The error may exist in top/baozoulolw/webchat/dao/UserDao.java (best guess)
+### The error may involve top.baozoulolw.webchat.dao.UserDao.selectOne
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30057ms.
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
+	at com.sun.proxy.$Proxy75.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:108)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:96)
+	at com.sun.proxy.$Proxy79.selectOne(Unknown Source)
+	at sun.reflect.GeneratedMethodAccessor48.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy80.selectOne(Unknown Source)
+	at top.baozoulolw.webchat.service.impl.UserServiceImpl.loadUserByUsername(UserServiceImpl.java:26)
+	at top.baozoulolw.webchat.service.impl.UserServiceImpl.loadUserByUsername(UserServiceImpl.java:13)
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:93)
+	... 56 common frames omitted
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30057ms.
+### The error may exist in top/baozoulolw/webchat/dao/UserDao.java (best guess)
+### The error may involve top.baozoulolw.webchat.dao.UserDao.selectOne
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30057ms.
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:149)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at sun.reflect.GeneratedMethodAccessor50.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	... 74 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30057ms.
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:82)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:80)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:67)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:336)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.prepareStatement(MybatisSimpleExecutor.java:91)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doQuery(MybatisSimpleExecutor.java:66)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.query(MybatisCachingExecutor.java:163)
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.query(MybatisCachingExecutor.java:90)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	... 80 common frames omitted
+Caused by: java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30057ms.
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:197)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:162)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:128)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79)
+	... 90 common frames omitted
+Caused by: java.sql.SQLNonTransientConnectionException: No operations allowed after connection closed.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:73)
+	at com.mysql.cj.jdbc.ConnectionImpl.setNetworkTimeout(ConnectionImpl.java:2496)
+	at com.zaxxer.hikari.pool.PoolBase.setNetworkTimeout(PoolBase.java:566)
+	at com.zaxxer.hikari.pool.PoolBase.isConnectionAlive(PoolBase.java:173)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:186)
+	... 95 common frames omitted
+Caused by: com.mysql.cj.exceptions.ConnectionIsClosedException: No operations allowed after connection closed.
+	at sun.reflect.GeneratedConstructorAccessor64.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.NativeSession.checkClosed(NativeSession.java:1171)
+	at com.mysql.cj.jdbc.ConnectionImpl.checkClosed(ConnectionImpl.java:573)
+	at com.mysql.cj.jdbc.ConnectionImpl.setNetworkTimeout(ConnectionImpl.java:2492)
+	... 98 common frames omitted
+[WARN ] [2021-06-12 02:23:53] [http-nio-8001-exec-7] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@7f38d300 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:23:58] [http-nio-8001-exec-7] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2c589530 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:31:38] [http-nio-8001-exec-1] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@799adda2 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:31:43] [http-nio-8001-exec-1] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@5940d3f8 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:31:47] [http-nio-8001-exec-3] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@72bd141b (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:31:48] [http-nio-8001-exec-1] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@9d3d32 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:31:52] [http-nio-8001-exec-3] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@75849a5a (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:31:53] [http-nio-8001-exec-1] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@13bd846 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:31:56] [http-nio-8001-exec-8] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@31fd46a0 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:31:57] [http-nio-8001-exec-10] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@4412e102 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:37:15] [http-nio-8001-exec-2] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@325be206 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:37:20] [http-nio-8001-exec-2] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@4dd51fe (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:37:22] [http-nio-8001-exec-5] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@7ffacce2 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:37:25] [http-nio-8001-exec-2] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@193f80eb (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:37:26] [http-nio-8001-exec-6] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@78fb5565 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:37:27] [http-nio-8001-exec-5] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2902594b (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:37:30] [http-nio-8001-exec-2] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@74191a18 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:37:31] [http-nio-8001-exec-6] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@37b80b01 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:37:32] [http-nio-8001-exec-5] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@18107c21 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:37:35] [http-nio-8001-exec-2] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@30450ec9 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[INFO ] [2021-06-12 02:41:28] [SpringContextShutdownHook] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+[INFO ] [2021-06-12 02:41:34] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - Starting WebchatApplication using Java 1.8.0_212 on DESKTOP-P5QJ30K with PID 3428 (G:\STUDY\WebChat\my\webchat\target\classes started by Baozoulolw in G:\STUDY\WebChat\my\webchat)
+[INFO ] [2021-06-12 02:41:34] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - The following profiles are active: dev
+[WARN ] [2021-06-12 02:41:34] [background-preinit] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder  o.s.h.c.j.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+[INFO ] [2021-06-12 02:41:35] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO ] [2021-06-12 02:41:35] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[INFO ] [2021-06-12 02:41:35] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+[INFO ] [2021-06-12 02:41:35] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@50b0afd7' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] [2021-06-12 02:41:35] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] [2021-06-12 02:41:35] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+[INFO ] [2021-06-12 02:41:35] [main] org.apache.coyote.http11.Http11NioProtocol  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+[INFO ] [2021-06-12 02:41:35] [main] org.apache.catalina.core.StandardService  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ] [2021-06-12 02:41:35] [main] org.apache.catalina.core.StandardEngine  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.46]
+[INFO ] [2021-06-12 02:41:35] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] [2021-06-12 02:41:35] [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1651 ms
+[INFO ] [2021-06-12 02:41:37] [main] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[INFO ] [2021-06-12 02:41:37] [main] org.springframework.security.web.DefaultSecurityFilterChain  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/chat'] with []
+[INFO ] [2021-06-12 02:41:37] [main] org.springframework.security.web.DefaultSecurityFilterChain  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@a1cb94, org.springframework.security.web.context.SecurityContextPersistenceFilter@36665c11, org.springframework.security.web.header.HeaderWriterFilter@4152bd0f, org.springframework.web.filter.CorsFilter@46d148bd, org.springframework.security.web.authentication.logout.LogoutFilter@1827fc4e, top.baozoulolw.webchat.filter.JwtLoginFilter@37f41a81, top.baozoulolw.webchat.filter.JwtPreFilter@47c81e89, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1c3d9e28, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3a709cc7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@edbc2bf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@49bb808f, org.springframework.security.web.session.SessionManagementFilter@e4b54d3, org.springframework.security.web.access.ExceptionTranslationFilter@53ba25ff, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5f33e6d]
+[INFO ] [2021-06-12 02:41:37] [main] org.apache.coyote.http11.Http11NioProtocol  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+[INFO ] [2021-06-12 02:41:37] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+[INFO ] [2021-06-12 02:41:37] [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+[INFO ] [2021-06-12 02:41:37] [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+[INFO ] [2021-06-12 02:41:37] [main] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+[INFO ] [2021-06-12 02:41:37] [main] top.baozoulolw.webchat.WebchatApplication  t.b.webchat.WebchatApplication - Started WebchatApplication in 4.666 seconds (JVM running for 6.083)
+[INFO ] [2021-06-12 02:41:37] [main] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state LivenessState changed to CORRECT
+[INFO ] [2021-06-12 02:41:37] [main] org.springframework.boot.availability.ApplicationAvailabilityBean  o.s.b.a.ApplicationAvailabilityBean - Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+[INFO ] [2021-06-12 02:42:11] [http-nio-8001-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] [2021-06-12 02:42:11] [http-nio-8001-exec-2] org.springframework.web.servlet.DispatcherServlet  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] [2021-06-12 02:42:11] [http-nio-8001-exec-2] org.springframework.web.servlet.DispatcherServlet  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[WARN ] [2021-06-12 02:42:11] [http-nio-8001-exec-2] com.zaxxer.hikari.HikariConfig  com.zaxxer.hikari.HikariConfig - HikariPool-1 - idleTimeout is close to or more than maxLifetime, disabling it.
+[INFO ] [2021-06-12 02:42:11] [http-nio-8001-exec-2] com.zaxxer.hikari.HikariDataSource  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[INFO ] [2021-06-12 02:42:13] [http-nio-8001-exec-2] com.zaxxer.hikari.HikariDataSource  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[WARN ] [2021-06-12 02:57:44] [http-nio-8001-exec-6] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3b240072 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:57:49] [http-nio-8001-exec-6] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1ffa71b1 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[WARN ] [2021-06-12 02:57:54] [http-nio-8001-exec-6] com.zaxxer.hikari.pool.PoolBase  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@15726af0 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.

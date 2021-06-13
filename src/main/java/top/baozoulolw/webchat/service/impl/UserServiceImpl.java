@@ -18,6 +18,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User loadUserByUsername(String username) throws UsernameNotFoundException {
+        if(StringUtils.isBlank(username)){
+            throw new UsernameNotFoundException("用户名错误");
+        }
         LambdaQueryWrapper<User> wrapper = new LambdaQueryWrapper<>();
         wrapper.eq(StringUtils.isNotBlank(username),User::getUsername,username);
         User user = userDao.selectOne(wrapper);
