@@ -1,7 +1,7 @@
 #定义服务应用名称
 spring:
   application:
-    name: webchat
+    name: exam
   profiles:
     active: dev
   jackson:

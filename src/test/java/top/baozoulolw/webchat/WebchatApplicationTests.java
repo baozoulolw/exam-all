@@ -2,8 +2,7 @@ package top.baozoulolw.webchat;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.redis.core.RedisTemplate;
-import top.baozoulolw.webchat.utils.RedisUtils;
+import top.baozoulolw.exam.utils.RedisUtils;
 
 import javax.annotation.Resource;
 

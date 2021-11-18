@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>top.baozoulolw</groupId>
-    <artifactId>webchat</artifactId>
+    <artifactId>exam</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>webchat</name>
+    <name>exam</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
