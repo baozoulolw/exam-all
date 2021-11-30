@@ -35,6 +35,12 @@ public class User extends IdEntity implements UserDetails, Serializable {
     @TableField(value = "status")
     private int status;
 
+    @TableField(value = "class_id")
+    private Long classId;
+
+    @TableField(value = "avatar")
+    private String avatar;
+
     /**
      * 账户是否未过期,过期无法验证，在springSecurity 验证中自动调用
      */

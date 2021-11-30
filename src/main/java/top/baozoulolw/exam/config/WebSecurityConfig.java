@@ -71,7 +71,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .addFilter(new JwtLoginFilter(authenticationManager(),userService))
                 // 再通过OncePerRequestFilter，对其它请求过滤
                 .addFilter(new JwtPreFilter(authenticationManager()))
-                .httpBasic().authenticationEntryPoint(new UnAuthEntryPoint()); //没有权限访问
+                // 没有权限访问
+                .httpBasic().authenticationEntryPoint(new UnAuthEntryPoint());
     }
     @Bean
     BCryptPasswordEncoder passwordEncoder(){

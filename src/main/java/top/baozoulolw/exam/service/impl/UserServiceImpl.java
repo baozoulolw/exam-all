@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import top.baozoulolw.exam.dao.RoleDao;
 import top.baozoulolw.exam.service.UserService;
 import top.baozoulolw.exam.dao.UserDao;
 import top.baozoulolw.exam.entity.User;
@@ -15,6 +16,9 @@ public class UserServiceImpl implements UserService {
 
     @Resource
     private UserDao userDao;
+
+    @Resource
+    private RoleDao roleDao;
 
     @Override
     public User loadUserByUsername(String username) throws UsernameNotFoundException {
