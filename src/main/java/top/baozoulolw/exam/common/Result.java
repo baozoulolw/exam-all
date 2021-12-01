@@ -95,6 +95,15 @@ public class Result<T> {
         result.setResultCode(resultCode);
         return result;
     }
+    /**
+     * 失败，指定ResultCode枚举
+     */
+    public static <T> Result<T> fail(ResultCode resultCode, String desc) {
+        Result<T> result = new Result<>();
+        result.setStatus(resultCode.code());
+        result.setDesc(desc);
+        return result;
+    }
 
     /**
      * 把ResultCode枚举转换为ResResult

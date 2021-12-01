@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import top.baozoulolw.exam.common.Result;
 import top.baozoulolw.exam.common.page.PageResult;
 import top.baozoulolw.exam.common.page.PageSearch;
+import top.baozoulolw.exam.entity.Role;
 import top.baozoulolw.exam.service.RoleService;
 import top.baozoulolw.exam.vo.RoleListParam;
 
@@ -24,5 +25,15 @@ public class RoleController {
     @PostMapping(value = "/roleList")
     public Result<PageResult> getRoleListByPage(@RequestBody PageSearch<RoleListParam> param){
         return roleService.getRoleListByPage(param);
+    }
+
+    @PostMapping(value = "/add_role")
+    public Result addRole(@RequestBody Role role){
+        return roleService.addRole(role);
+    }
+
+    @PostMapping(value = "/edit_role")
+    public Result editRole(@RequestBody Role role){
+        return roleService.editRole(role);
     }
 }

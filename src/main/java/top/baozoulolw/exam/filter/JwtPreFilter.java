@@ -42,15 +42,19 @@ public class JwtPreFilter extends BasicAuthenticationFilter {
         try {
             //解析token
             Claims claims = JwtUtils.parseJwt(token);
+            System.out.println(claims);
+            System.out.println(";;;;;;");
             // System.out.println("解析得到的token信息为：" + claims);
-            String userId = claims.getSubject(); //用户唯一标识id，这里跟创建token时有关
+            //String userId = claims.getSubject();
+            Long userId = (Long)claims.get("userId");
+            //用户唯一标识id，这里跟创建token时有关
             if (userId != null) {
                 return new UsernamePasswordAuthenticationToken(userId, null, new ArrayList<>());
             }
         } catch (ExpiredJwtException e) {
             logger.error("Token过期了，获取到的过期凭证为：{}", e);
             //若token过期了，则清除 uid->user 表对应的用户信息，以防下次登录时还显示用户在线
-            String userId = e.getClaims().getSubject();
+            //String userId = e.getClaims().getSubject();
             // SocketIoServerMapUtil.removeUser(userId);
             //这里需要移除在线用户列表中登录过期凭证的用户id
             //onlineUserService.removeClientAndUidInSet("", userId);
