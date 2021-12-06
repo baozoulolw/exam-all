@@ -3,6 +3,6 @@ package top.baozoulolw.exam.vo;
 import lombok.Data;
 
 @Data
-public class RoleListParam {
+public class RoleListParamVO {
     private String roleName;
 }

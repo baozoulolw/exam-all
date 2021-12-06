@@ -27,7 +27,7 @@ public class Role extends IdEntity implements Serializable {
      * 是否为默认角色 0：否 1：是
      */
     @TableField(value = "is_default")
-    private String isDefault;
+    private int isDefault;
 
     /**
      * 最后操作人名

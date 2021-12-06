@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd">
+<mapper namespace = "top.baozoulolw.exam.dao.UserDao">
+    <sql id="Base_User_List">
+        u.id uid, u.real_name, u.username, u.password, u.gender, u.address,
+        u.phone, u.oper_user uOperUser, u.change_time uChangeTime, u.create_time uCreateTime, u.email,
+        u.avatar, u.class_id
+    </sql>
+    <sql id="Base_Role_List">
+        r.id rid, r.role_name,r.oper_user rOperUser, r.change_time rChangeTime, r.create_time rCreateTime,
+        r.remark,r.is_default
+    </sql>
+    <sql id="Base_Class_List">
+        c.id cid, c.class_name,c.oper_user cOperUser, c.change_time cChangeTime, c.create_time cCreateTime,
+        c.head_teacher,c.grade_id
+    </sql>
+    <resultMap id="user" type="top.baozoulolw.exam.entity.User">
+        <id property="id" column="uid"/>
+        <result  property="username" column="username" jdbcType="VARCHAR"/>
+        <result  property="password" column="password" jdbcType="VARCHAR"/>
+        <result  property="address" column="address" jdbcType="VARCHAR"/>
+        <result  property="gender" column="gender" jdbcType="VARCHAR"/>
+        <result  property="operUser" column="uOperUser"/>
+        <result  property="phone" column="phone"/>
+        <result  property="realName" column="real_name"/>
+        <result  property="email" column="email"/>
+        <result  property="avatar" column="avatar"/>
+        <result  property="createTime" column="uCreateTime"/>
+        <result  property="changeTime" column="uChangeTime"/>
+        <association property="changeUser" column="{userId=uOperUser}" select="selectRealName">
+        </association>
+        <collection property="roles" ofType="top.baozoulolw.exam.entity.Role">
+            <id property="id" column="rid"/>
+            <result  property="roleName" column="role_name"/>
+            <result  property="operUser" column="rOperUser"/>
+            <result  property="createTime" column="rCreateTime"/>
+            <result  property="changeTime" column="rChangeTime"/>
+            <result  property="remark" column="remark"/>
+            <result  property="isDefault" column="is_default"/>
+            <association property="changeUserName" column="{userId=rOperUser}" select="selectRealName">
+            </association>
+        </collection>
+        <collection property="classExam" ofType="top.baozoulolw.exam.entity.ClassExam">
+            <id property="id" column="cid"/>
+            <result  property="className" column="class_name"/>
+            <result  property="operUser" column="cOperUser"/>
+            <result  property="createTime" column="cCreateTime"/>
+            <result  property="changeTime" column="cChangeTime"/>
+            <result  property="headTeacher" column="head_teacher"/>
+            <result  property="gradeId" column="grade_id"/>
+            <association property="changeUser" column="{userId=cOperUser}" select="selectRealName">
+            </association>
+            <association property="grade" column="grade_id" select="selectGrade"/>
+        </collection>
+    </resultMap>
+    <select id="getUserList" resultMap="user" parameterType="top.baozoulolw.exam.vo.UserLIstParamVO">
+        select
+        <include refid="Base_User_List"/>,
+        <include refid="Base_Role_List"/>,
+        <include refid="Base_Class_List"/>
+        from
+        tb_user u
+        left join tb_user_role ur on ur.user_id = u.id
+        left Join tb_role r on r.id = ur.role_id
+        left join tb_class c on c.id = u.class_id
+        left join tb_grade g on g.id = c.grade_id
+        <where>
+            <if test="upVo.keyword != null and upVo.keyword != ''">
+                AND (u.username like "%"#{upVo.keyword}"%"
+                OR u.real_name like "%"#{upVo.keyword}"%"
+                OR u.email like "%"#{upVo.keyword}"%"
+                OR u.phone like "%"#{upVo.keyword}"%"
+                OR u.address like "%"#{upVo.keyword}"%"
+                )
+            </if>
+            <if test="upVo.gradeId != null and upVo.gradeId != ''">
+                AND g.id = #{upVo.gradeId}
+            </if>
+            <if test="upVo.classId != null and upVo.classId != ''">
+                AND c.id = #{upVo.classId}
+            </if>
+        </where>
+    </select>
+    <select id="selectRealName" resultType="String" parameterType="java.util.Map">
+        select
+        real_name
+        from
+        tb_user
+        where id = #{userId}
+    </select>
+
+    <select id="selectGrade" resultType="top.baozoulolw.exam.entity.Grade" parameterType="java.lang.Long">
+        select
+        *
+        from tb_grade
+        where id = #{user_id}
+    </select>
+</mapper>

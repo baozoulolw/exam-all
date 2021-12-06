@@ -13,7 +13,7 @@ import top.baozoulolw.exam.dao.RoleDao;
 import top.baozoulolw.exam.dao.UserDao;
 import top.baozoulolw.exam.entity.Role;
 import top.baozoulolw.exam.service.RoleService;
-import top.baozoulolw.exam.vo.RoleListParam;
+import top.baozoulolw.exam.vo.RoleListParamVO;
 
 import javax.annotation.Resource;
 
@@ -27,7 +27,7 @@ public class RoleServiceImpl implements RoleService {
     private UserDao userDao;
 
     @Override
-    public Result<PageResult> getRoleListByPage(PageSearch<RoleListParam> param) {
+    public Result<PageResult> getRoleListByPage(PageSearch<RoleListParamVO> param) {
         IPage<Role> page = new Page<>(param.getPageNumber(), param.getPageSize());
         QueryWrapper<Role> wrapper = new QueryWrapper<>();
         wrapper.like(StringUtils.isNotBlank(param.getParam().getRoleName()), "role_name", param.getParam().getRoleName());

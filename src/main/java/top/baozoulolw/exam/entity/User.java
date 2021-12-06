@@ -9,6 +9,7 @@ import top.baozoulolw.exam.common.publicfields.IdEntity;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * 用户实体类
@@ -32,6 +33,9 @@ public class User extends IdEntity implements UserDetails, Serializable {
     @TableField(value = "email")
     private String email;
 
+    @TableField(value = "address")
+    private String address;
+
     @TableField(value = "status")
     private int status;
 
@@ -43,6 +47,20 @@ public class User extends IdEntity implements UserDetails, Serializable {
 
     @TableField(value = "real_name")
     private String realName;
+
+    @TableField(value = "gender")
+    private String gender;
+
+    @TableField(exist = false)
+    private String changeUser;
+
+    @TableField(exist = false)
+    private List<Role> roles;
+
+    @TableField(exist = false)
+    private ClassExam classExam;
+
+
 
     /**
      * 账户是否未过期,过期无法验证，在springSecurity 验证中自动调用

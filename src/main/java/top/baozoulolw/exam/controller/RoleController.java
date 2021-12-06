@@ -10,7 +10,7 @@ import top.baozoulolw.exam.common.page.PageResult;
 import top.baozoulolw.exam.common.page.PageSearch;
 import top.baozoulolw.exam.entity.Role;
 import top.baozoulolw.exam.service.RoleService;
-import top.baozoulolw.exam.vo.RoleListParam;
+import top.baozoulolw.exam.vo.RoleListParamVO;
 
 import javax.annotation.Resource;
 
@@ -23,7 +23,7 @@ public class RoleController {
     private RoleService roleService;
 
     @PostMapping(value = "/roleList")
-    public Result<PageResult> getRoleListByPage(@RequestBody PageSearch<RoleListParam> param){
+    public Result<PageResult> getRoleListByPage(@RequestBody PageSearch<RoleListParamVO> param){
         return roleService.getRoleListByPage(param);
     }
 
