@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd">
+<mapper namespace = "top.baozoulolw.exam.dao.QuestionDao">
+    <select id="getQuestionList" resultType="top.baozoulolw.exam.entity.Question"
+            parameterType="top.baozoulolw.exam.entity.Question">
+        select q.*,u.real_name from
+        tb_question q ,tb_user u where u.id = q.oper_user
+        <if test="param.type != null and param.type != ''">
+            AND q.type = #{param.type}
+        </if>
+        <if test="param.hard != null and param.hard != ''">
+            AND q.hard = #{param.hard}
+        </if>
+        <if test="param.keyword != null and param.keyword != ''">
+            AND (q.options like "%"#{param.keyword}"%"
+            OR q.answer like "%"#{param.keyword}"%"
+            OR u.topic like "%"#{param.keyword}"%"
+            )
+        </if>
+    </select>
+</mapper>
