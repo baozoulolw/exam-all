@@ -10,4 +10,6 @@ public interface QuestionService {
     Result insertQuestion(Question question);
 
     Result<PageResult> pageQueryQuestion(PageSearch<QuestionParamVO> param);
+
+    Result editQuestion(Question question);
 }

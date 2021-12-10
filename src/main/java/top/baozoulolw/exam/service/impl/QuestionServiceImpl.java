@@ -32,4 +32,10 @@ public class QuestionServiceImpl implements QuestionService {
         PageResult pageResult = new PageResult(result);
         return Result.success(pageResult);
     }
+
+    @Override
+    public Result editQuestion(Question question) {
+        questionDao.updateById(question);
+        return Result.success();
+    }
 }

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd">
 <mapper namespace = "top.baozoulolw.exam.dao.QuestionDao">
     <select id="getQuestionList" resultType="top.baozoulolw.exam.entity.Question"
-            parameterType="top.baozoulolw.exam.entity.Question">
+            parameterType="top.baozoulolw.exam.vo.QuestionParamVO">
         select q.*,u.real_name as change_user from
         tb_question q ,tb_user u where u.id = q.oper_user
         <if test="param.type != null and param.type != ''">

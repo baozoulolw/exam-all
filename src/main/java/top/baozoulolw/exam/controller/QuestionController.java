@@ -25,6 +25,11 @@ public class QuestionController {
         return questionService.insertQuestion(question);
     }
 
+    @PostMapping(value = "/edit")
+    public Result editQuestion(@RequestBody Question question){
+        return questionService.editQuestion(question);
+    }
+
     @PostMapping(value = "/page")
     public Result<PageResult> pageQueryQuestion(@RequestBody PageSearch<QuestionParamVO> param){
         return questionService.pageQueryQuestion(param);
