@@ -3,10 +3,10 @@
 <mapper namespace="top.baozoulolw.exam.dao.PaperDao">
     <select id="getPaperList" resultType="top.baozoulolw.exam.entity.Paper"
             parameterType="top.baozoulolw.exam.vo.PaperParamVO">
-        select p.*,u1.real_name change_user, u2 drawer_user from
+        select p.*,u1.real_name change_user, u2.real_name drawer_user from
         tb_paper p
-        left join tb_user u1 on u1.id === p.oper_user
-        left join tb_user u2 on u2.id === p.drawer
+        left join tb_user u1 on u1.id = p.oper_user
+        left join tb_user u2 on u2.id = p.drawer
         <where>
             <if test="param.keyword != null and param.keyword != ''">
                 AND (p.content like "%"#{param.keyword}"%"

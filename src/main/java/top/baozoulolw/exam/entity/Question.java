@@ -21,10 +21,10 @@ public class Question extends IdEntity implements Serializable {
     private String options;
 
     @TableField(value = "type")
-    private int type;
+    private Integer type;
 
     @TableField(value = "hard")
-    private String hard;
+    private Integer hard;
 
     @TableField(exist = false)
     private String changeUser;

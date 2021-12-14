@@ -5,16 +5,16 @@
             parameterType="top.baozoulolw.exam.vo.QuestionParamVO">
         select q.*,u.real_name as change_user from
         tb_question q ,tb_user u where u.id = q.oper_user
-        <if test="param.type != null and param.type != ''">
+        <if test="param.type != null">
             AND q.type = #{param.type}
         </if>
-        <if test="param.hard != null and param.hard != ''">
+        <if test="param.hard != null">
             AND q.hard = #{param.hard}
         </if>
         <if test="param.keyword != null and param.keyword != ''">
             AND (q.options like "%"#{param.keyword}"%"
             OR q.answer like "%"#{param.keyword}"%"
-            OR u.topic like "%"#{param.keyword}"%"
+            OR q.topic like "%"#{param.keyword}"%"
             )
         </if>
     </select>

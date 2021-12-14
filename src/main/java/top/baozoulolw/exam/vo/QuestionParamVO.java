@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class QuestionParamVO {
-    private int hard;
-    private int type;
+    private Integer hard;
+    private Integer type;
     private String keyword;
 }
