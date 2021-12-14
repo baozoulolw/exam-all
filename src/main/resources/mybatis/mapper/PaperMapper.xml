@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd">
+<mapper namespace="top.baozoulolw.exam.dao.PaperDao">
+    <select id="getPaperList" resultType="top.baozoulolw.exam.entity.Paper"
+            parameterType="top.baozoulolw.exam.vo.PaperParamVO">
+        select p.*,u1.real_name change_user, u2 drawer_user from
+        tb_paper p
+        left join tb_user u1 on u1.id === p.oper_user
+        left join tb_user u2 on u2.id === p.drawer
+        <where>
+            <if test="param.keyword != null and param.keyword != ''">
+                AND (p.content like "%"#{param.keyword}"%"
+                OR u2.real_name like "%"#{param.keyword}"%"
+                OR p.paper_name like "%"#{param.keyword}"%"
+                )
+            </if>
+            <if test="param.hard != null and param.hard != ''">
+                AND p.hard = #{param.hard}
+            </if>
+        </where>
+    </select>
+</mapper>
