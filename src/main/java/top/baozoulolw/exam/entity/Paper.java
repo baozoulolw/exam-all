@@ -34,4 +34,7 @@ public class Paper extends IdEntity implements Serializable {
 
     @TableField(exist = false)
     private String drawerUser;
+
+    @TableField(exist = false)
+    private String teacherGender;
 }
