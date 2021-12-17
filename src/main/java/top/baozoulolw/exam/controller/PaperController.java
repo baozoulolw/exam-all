@@ -1,9 +1,6 @@
 package top.baozoulolw.exam.controller;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import top.baozoulolw.exam.common.Result;
 import top.baozoulolw.exam.common.page.PageResult;
 import top.baozoulolw.exam.common.page.PageSearch;
@@ -26,7 +23,22 @@ public class PaperController {
     }
 
     @PostMapping(value = "/add")
-    public Result queryPaperPage(@RequestBody Paper paper){
+    public Result addPaper(@RequestBody Paper paper){
         return paperService.addPaper(paper);
+    }
+
+    @PostMapping(value = "/update")
+    public Result updatePaper(@RequestBody Paper paper){
+        return paperService.updatePaper(paper);
+    }
+
+    @GetMapping(value = "/del/{id}")
+    public Result delPaper(@PathVariable(value = "id") Long id){
+        return paperService.delPaper(id);
+    }
+
+    @GetMapping(value = "/one/{id}")
+    public Result<Paper> getPaperById(@PathVariable(value = "id")Long id){
+        return paperService.getPaperById(id);
     }
 }

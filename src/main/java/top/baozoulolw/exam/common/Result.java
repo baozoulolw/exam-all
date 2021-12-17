@@ -86,6 +86,15 @@ public class Result<T> {
         result.setDesc(desc);
         return result;
     }
+    /**
+     * 失败，desc
+     */
+    public static <T> Result<T> fail(String desc) {
+        Result<T> result = new Result<>();
+        result.setResultCode(ResultCode.SYSTEM_ERROR);
+        result.setDesc(desc);
+        return result;
+    }
 
     /**
      * 失败，指定ResultCode枚举

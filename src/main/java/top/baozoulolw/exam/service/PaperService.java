@@ -10,4 +10,10 @@ public interface PaperService {
     Result<PageResult> queryPage(PageSearch<PaperParamVO> param);
 
     Result<PageResult> addPaper(Paper paper);
+
+    Result<Paper> getPaperById(Long id);
+
+    Result updatePaper(Paper paper);
+
+    Result delPaper(Long id);
 }

@@ -14,7 +14,7 @@
                 OR p.paper_name like "%"#{param.keyword}"%"
                 )
             </if>
-            <if test="param.hard != null and param.hard != ''">
+            <if test="param.hard != null">
                 AND p.hard = #{param.hard}
             </if>
         </where>
