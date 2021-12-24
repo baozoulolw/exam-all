@@ -12,4 +12,6 @@ public interface QuestionService {
     Result<PageResult> pageQueryQuestion(PageSearch<QuestionParamVO> param);
 
     Result editQuestion(Question question);
+
+    Result<Question> getQuestionById(Long id);
 }

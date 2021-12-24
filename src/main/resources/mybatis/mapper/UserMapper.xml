@@ -41,7 +41,6 @@
             </association>
         </collection>
         <collection property="classExam" ofType="top.baozoulolw.exam.entity.ClassExam">
-            <id property="id" column="cid"/>
             <result  property="className" column="class_name"/>
             <result  property="operUser" column="cOperUser"/>
             <result  property="createTime" column="cCreateTime"/>

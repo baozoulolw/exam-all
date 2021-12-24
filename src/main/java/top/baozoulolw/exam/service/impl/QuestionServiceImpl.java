@@ -38,4 +38,9 @@ public class QuestionServiceImpl implements QuestionService {
         questionDao.updateById(question);
         return Result.success();
     }
+
+    @Override
+    public Result<Question> getQuestionById(Long id) {
+        return Result.success(questionDao.selectById(id));
+    }
 }

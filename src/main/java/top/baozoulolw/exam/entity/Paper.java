@@ -6,6 +6,7 @@ import lombok.Data;
 import top.baozoulolw.exam.common.publicfields.IdEntity;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Data
 @TableName(value = "tb_paper")
@@ -37,4 +38,13 @@ public class Paper extends IdEntity implements Serializable {
 
     @TableField(exist = false)
     private String teacherGender;
+
+    @TableField(exist = false)
+    private User drawerUserInfo;
+
+    @TableField(exist = false)
+    private User changeUserInfo;
+
+    @TableField(exist = false)
+    private List<PaperQuestion> questions;
 }

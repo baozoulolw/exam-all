@@ -18,5 +18,7 @@ public interface PaperDao extends BaseMapper<Paper> {
      * @param param 查询条件参数
      * @return 查询结果
      */
-    IPage<User> getPaperList(Page<Paper> page, @Param("param") PaperParamVO param);
+    IPage<Paper> getPaperList(Page<Paper> page, @Param("param") PaperParamVO param);
+
+    Paper getPaperById(@Param("param")Long id);
 }

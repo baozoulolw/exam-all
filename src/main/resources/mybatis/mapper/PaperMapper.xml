@@ -19,4 +19,59 @@
             </if>
         </where>
     </select>
+
+    <resultMap id="paper" type="top.baozoulolw.exam.entity.Paper">
+        <id property="id" column="pid"/>
+        <result  property="createTime" column="uCreateTime"/>
+        <result  property="totalScore" column="total_score"/>
+        <result  property="paperName" column="paper_name"/>
+        <result  property="remark" column="remark"/>
+        <result  property="drawer" column="drawer"/>
+        <result  property="changeTime" column="pChangeTime"/>
+        <result  property="operUser" column="pOperUser"/>
+        <result  property="createTime" column="pCreateTime"/>
+        <association property="changeUserInfo" column="{userId=pOperUser}" select="selectUser"/>
+        <association property="drawerUserInfo" column="{userId=drawer}" select="selectUser"/>
+        <collection property="questions" ofType="top.baozoulolw.exam.entity.PaperQuestion">
+            <id property="id" column="pqid"/>
+            <result  property="questionId" column="question_id"/>
+            <result  property="paperId" column="paper_id"/>
+            <result  property="score" column="score"/>
+            <result  property="index" column="index"/>
+            <result  property="changeTime" column="pqChangeTime"/>
+            <result  property="operUser" column="pqOperUser"/>
+            <result  property="createTime" column="pqCreateTime"/>
+            <association property="question" column="{questionId=question_id}" select="selectQuestion"/>
+        </collection>
+    </resultMap>
+    <select id="getPaperById" resultMap="paper" parameterType="Long">
+        select
+        p.id pid,
+        p.total_score,
+        p.paper_name,
+        p.remark,
+        p.drawer,
+        p.change_time pChangeTime,
+        p.oper_user pOperUser,
+        p.create_time pCreateTime,
+        pq.id pqid,
+        pq.question_id,
+        pq.paper_id,
+        pq.score,
+        pq.index,
+        pq.change_time pqChangeTime,
+        pq.oper_user pqOperUser,
+        pq.create_time pqCreateTime
+        from tb_paper p
+        left join tb_question_paper pq on pq.paper_id = p.id
+        where p.id = #{param}
+    </select>
+
+    <select id="selectUser" resultType="top.baozoulolw.exam.entity.User" parameterType="java.util.Map">
+        select * from tb_user where id = #{userId}
+    </select>
+
+    <select id="selectQuestion" resultType="top.baozoulolw.exam.entity.Question" parameterType="java.util.Map">
+        select * from tb_question where id = #{questionId}
+    </select>
 </mapper>

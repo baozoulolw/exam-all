@@ -28,7 +28,7 @@ public class PaperServiceImpl implements PaperService {
     @Override
     public Result<PageResult> queryPage(PageSearch<PaperParamVO> param) {
         Page<Paper> page = new Page<>(param.getPageNumber(), param.getPageSize());
-        IPage<User> result = paperDao.getPaperList(page, param.getParam());
+        IPage<Paper> result = paperDao.getPaperList(page, param.getParam());
         return Result.success(new PageResult(result));
     }
 
@@ -41,11 +41,14 @@ public class PaperServiceImpl implements PaperService {
 
     @Override
     public Result<Paper> getPaperById(Long id) {
-        Paper paper = paperDao.selectById(id);
-        User drawer = userDao.selectById(paper.getDrawer());
-        paper.setDrawerUser(drawer.getRealName());
-        paper.setTeacherGender(drawer.getGender());
-        paper.setChangeUser(userDao.selectById(paper.getOperUser()).getRealName());
+//        Paper paper = paperDao.selectById(id);
+//        User drawer = userDao.selectById(paper.getDrawer());
+//        User changeUser = userDao.selectById(paper.getOperUser());
+//        paper.setDrawerUser(drawer.getRealName());
+//        paper.setTeacherGender(drawer.getGender());
+//        paper.setChangeUser(changeUser.getRealName());
+//        paper.setChangeUserInfo(changeUser);
+        Paper paper = paperDao.getPaperById(id);
         return Result.success(paper);
     }
 
