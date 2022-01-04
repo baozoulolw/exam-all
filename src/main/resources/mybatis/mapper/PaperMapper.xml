@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd">
 <mapper namespace="top.baozoulolw.exam.dao.PaperDao">
+    <sql id="paper_columns">
+        p.id,p.oper_user,p.change_time,p.create_time,p.hard,p.content,p.paper_name,p.remark,p.drawer
+    </sql>
     <select id="getPaperList" resultType="top.baozoulolw.exam.entity.Paper"
             parameterType="top.baozoulolw.exam.vo.PaperParamVO">
-        select p.*,u1.real_name change_user, u2.real_name drawer_user,u2.gender teacherGender from
+        select
+        <include refid="paper_columns"/>,
+        IFNULL(sum( qp.score ),0) total_score,
+        u1.real_name change_user,
+        u2.real_name drawer_user,
+        u2.gender teacherGender from
         tb_paper p
         left join tb_user u1 on u1.id = p.oper_user
         left join tb_user u2 on u2.id = p.drawer
+        LEFT JOIN tb_question_paper qp ON qp.paper_id = p.id
         <where>
             <if test="param.keyword != null and param.keyword != ''">
                 AND (p.content like "%"#{param.keyword}"%"
@@ -18,36 +27,49 @@
                 AND p.hard = #{param.hard}
             </if>
         </where>
+        GROUP BY
+        qp.score,
+        p.id,
+        p.oper_user,
+        p.change_time,
+        p.create_time,
+        p.hard,
+        p.content,
+        p.paper_name,
+        p.remark,
+        p.drawer,
+        change_user,
+        drawer_user,
+        teacherGender
     </select>
 
     <resultMap id="paper" type="top.baozoulolw.exam.entity.Paper">
         <id property="id" column="pid"/>
-        <result  property="createTime" column="uCreateTime"/>
-        <result  property="totalScore" column="total_score"/>
-        <result  property="paperName" column="paper_name"/>
-        <result  property="remark" column="remark"/>
-        <result  property="drawer" column="drawer"/>
-        <result  property="changeTime" column="pChangeTime"/>
-        <result  property="operUser" column="pOperUser"/>
-        <result  property="createTime" column="pCreateTime"/>
+        <result property="createTime" column="uCreateTime"/>
+        <result property="totalScore" column="total_score"/>
+        <result property="paperName" column="paper_name"/>
+        <result property="remark" column="remark"/>
+        <result property="drawer" column="drawer"/>
+        <result property="changeTime" column="pChangeTime"/>
+        <result property="operUser" column="pOperUser"/>
+        <result property="createTime" column="pCreateTime"/>
         <association property="changeUserInfo" column="{userId=pOperUser}" select="selectUser"/>
         <association property="drawerUserInfo" column="{userId=drawer}" select="selectUser"/>
         <collection property="questions" ofType="top.baozoulolw.exam.entity.PaperQuestion">
             <id property="id" column="pqid"/>
-            <result  property="questionId" column="question_id"/>
-            <result  property="paperId" column="paper_id"/>
-            <result  property="score" column="score"/>
-            <result  property="index" column="index"/>
-            <result  property="changeTime" column="pqChangeTime"/>
-            <result  property="operUser" column="pqOperUser"/>
-            <result  property="createTime" column="pqCreateTime"/>
+            <result property="questionId" column="question_id"/>
+            <result property="paperId" column="paper_id"/>
+            <result property="score" column="score"/>
+            <result property="index" column="index"/>
+            <result property="changeTime" column="pqChangeTime"/>
+            <result property="operUser" column="pqOperUser"/>
+            <result property="createTime" column="pqCreateTime"/>
             <association property="question" column="{questionId=question_id}" select="selectQuestion"/>
         </collection>
     </resultMap>
     <select id="getPaperById" resultMap="paper" parameterType="Long">
         select
         p.id pid,
-        p.total_score,
         p.paper_name,
         p.remark,
         p.drawer,

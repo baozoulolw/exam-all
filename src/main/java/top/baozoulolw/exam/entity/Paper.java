@@ -18,7 +18,7 @@ public class Paper extends IdEntity implements Serializable {
     @TableField(value = "content")
     private String content;
 
-    @TableField(value = "total_score")
+    @TableField(exist = false)
     private Integer totalScore;
 
     @TableField(value = "paper_name")
