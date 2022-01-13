@@ -17,5 +17,14 @@
             OR q.topic like "%"#{param.keyword}"%"
             )
         </if>
+        <if test="param.selectPaperId != null and param.selectPaperId != ''">
+            and q.id NOT IN (
+            SELECT
+            tqp.question_id
+            FROM
+            tb_question_paper tqp
+            WHERE
+            tqp.paper_id = #{param.selectPaperId} )
+        </if>
     </select>
 </mapper>
