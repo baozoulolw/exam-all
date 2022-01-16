@@ -20,8 +20,8 @@ public class PaperQuestion extends IdEntity implements Serializable {
     @TableField(value = "score")
     private Integer score;
 
-    @TableField(value = "index")
-    private Integer index;
+    @TableField(value = "sort")
+    private Integer sort;
 
     @TableField(exist = false)
     private Question question;

@@ -8,16 +8,14 @@ import top.baozoulolw.exam.common.Result;
 import top.baozoulolw.exam.common.page.PageResult;
 import top.baozoulolw.exam.common.page.PageSearch;
 import top.baozoulolw.exam.dao.PaperDao;
-import top.baozoulolw.exam.dao.PaperQuestionDao;
 import top.baozoulolw.exam.dao.QuestionDao;
 import top.baozoulolw.exam.dao.UserDao;
 import top.baozoulolw.exam.entity.Paper;
 import top.baozoulolw.exam.entity.PaperQuestion;
 import top.baozoulolw.exam.entity.Question;
-import top.baozoulolw.exam.entity.User;
 import top.baozoulolw.exam.service.PaperService;
 import top.baozoulolw.exam.utils.UserUtils;
-import top.baozoulolw.exam.vo.AddQuestionParam;
+import top.baozoulolw.exam.vo.ChangeSortPaperParamVO;
 import top.baozoulolw.exam.vo.PaperParamVO;
 import top.baozoulolw.exam.vo.QuestionParamVO;
 
@@ -95,6 +93,29 @@ public class PaperServiceImpl extends ServiceImpl<PaperDao, Paper> implements  P
     @Override
     public Result addQuestion(List<PaperQuestion> param) {
         paperQuestionImpl.saveBatch(param,param.size());
+        return Result.success();
+    }
+
+    @Override
+    public Result changeSort(ChangeSortPaperParamVO param) {
+        List<Long> delIds = param.getDelIds();
+        List<PaperQuestion> sorts = param.getSorts();
+        if(delIds.size() > 0){
+            paperQuestionImpl.removeByIds(delIds);
+        }
+        if(sorts.size() > 0){
+            paperQuestionImpl.saveOrUpdateBatch(sorts);
+        }
+        return Result.success();
+    }
+
+    @Override
+    public Result changeScore(PaperQuestion param) {
+        Integer score = param.getScore();
+        if(score < 0){
+            return Result.fail("输入成绩有误");
+        }
+        paperQuestionImpl.saveOrUpdate(param);
         return Result.success();
     }
 }

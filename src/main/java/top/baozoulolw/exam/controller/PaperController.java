@@ -7,7 +7,7 @@ import top.baozoulolw.exam.common.page.PageSearch;
 import top.baozoulolw.exam.entity.Paper;
 import top.baozoulolw.exam.entity.PaperQuestion;
 import top.baozoulolw.exam.service.PaperService;
-import top.baozoulolw.exam.vo.AddQuestionParam;
+import top.baozoulolw.exam.vo.ChangeSortPaperParamVO;
 import top.baozoulolw.exam.vo.PaperParamVO;
 import top.baozoulolw.exam.vo.QuestionParamVO;
 
@@ -54,5 +54,14 @@ public class PaperController {
     @PostMapping(value = "/addQue")
     public Result addQuestion(@RequestBody List<PaperQuestion> param){
         return paperService.addQuestion(param);
+    }
+
+    @PostMapping(value = "/sort")
+    public Result changeSort(@RequestBody ChangeSortPaperParamVO param){
+        return paperService.changeSort(param);
+    }
+    @PostMapping(value = "/score")
+    public Result changeScore(@RequestBody PaperQuestion param){
+        return paperService.changeScore(param);
     }
 }

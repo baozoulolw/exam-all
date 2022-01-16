@@ -6,7 +6,7 @@ import top.baozoulolw.exam.common.page.PageResult;
 import top.baozoulolw.exam.common.page.PageSearch;
 import top.baozoulolw.exam.entity.Paper;
 import top.baozoulolw.exam.entity.PaperQuestion;
-import top.baozoulolw.exam.vo.AddQuestionParam;
+import top.baozoulolw.exam.vo.ChangeSortPaperParamVO;
 import top.baozoulolw.exam.vo.PaperParamVO;
 import top.baozoulolw.exam.vo.QuestionParamVO;
 
@@ -26,4 +26,8 @@ public interface PaperService extends IService<Paper> {
     Result<PageResult> getSelectQuestion(PageSearch<QuestionParamVO> param);
 
     Result addQuestion(List<PaperQuestion> param);
+
+    Result changeSort(ChangeSortPaperParamVO param);
+
+    Result changeScore(PaperQuestion param);
 }
