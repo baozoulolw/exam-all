@@ -1,18 +1,25 @@
 spring:
   datasource:
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://8.136.191.185/exam?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&userSSL=false
-      password: w123456789
-      username: Baozoulolw
-      hikari:
-        max-lifetime: 500000
-        minimum-idle: 3
-        maximum-pool-size: 10
-        connection-test-query: select 1
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://8.136.191.185/exam?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&userSSL=false
+    password: w123456789
+    username: Baozoulolw
+    hikari:
+      max-lifetime: 500000
+      minimum-idle: 3
+      maximum-pool-size: 10
+      connection-test-query: select 1
   redis:
     database: 5
     host: 8.136.191.185
     port: 6379
+
+aliyun:
+  oss:
+    access-key: LTAI5tPEJtQHQYgrLagy29Ev
+    secret-key: lWZLyKhTyhHNiESwj2LVCTvqX5T77I
+    end-point: http://oss-cn-chengdu.aliyuncs.com
+    bucket-name: baozoulol
 
 server:
   port: 8282
