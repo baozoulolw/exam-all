@@ -60,6 +60,7 @@ public class PaperController {
     public Result changeSort(@RequestBody ChangeSortPaperParamVO param){
         return paperService.changeSort(param);
     }
+
     @PostMapping(value = "/score")
     public Result changeScore(@RequestBody PaperQuestion param){
         return paperService.changeScore(param);

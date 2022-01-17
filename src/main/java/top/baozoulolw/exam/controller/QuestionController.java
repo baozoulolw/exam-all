@@ -36,4 +36,9 @@ public class QuestionController {
     public Result<Question> getQuestionById(@PathVariable(value = "id")Long id){
         return questionService.getQuestionById(id);
     }
+
+    @GetMapping(value = "/delById/{id}")
+    public Result delQuestionById(@PathVariable(value = "id")Long id){
+        return questionService.delQuestionById(id);
+    }
 }

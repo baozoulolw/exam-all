@@ -14,4 +14,6 @@ public interface QuestionService {
     Result editQuestion(Question question);
 
     Result<Question> getQuestionById(Long id);
+
+    Result delQuestionById(Long id);
 }
