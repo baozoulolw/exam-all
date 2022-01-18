@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class OccClientBeanConfig {
+public class OssClientBeanConfig {
 
     @Value("${aliyun.oss.end-point}")
     private String endpoint;

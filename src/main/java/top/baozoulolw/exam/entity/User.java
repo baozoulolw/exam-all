@@ -60,6 +60,9 @@ public class User extends IdEntity implements UserDetails, Serializable {
     @TableField(exist = false)
     private ClassExam classExam;
 
+    @TableField(exist = false)
+    private String avatarUrl;
+
 
 
     /**
