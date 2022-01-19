@@ -1,32 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd">
-<mapper namespace="top.baozoulolw.exam.dao.ResourceDaoDao">
+<mapper namespace="top.baozoulolw.exam.dao.ResourceDao">
 
     <resultMap id="resource" type="top.baozoulolw.exam.entity.Resource">
-        <id property="id" column="pid"/>
-        <result property="createTime" column="uCreateTime"/>
+        <id property="id" column="id"/>
+        <result property="createTime" column="create_time"/>
         <result property="resourceName" column="resource_name"/>
         <result property="type" column="type"/>
         <result property="weights" column="weights"/>
         <result property="parent" column="parent"/>
-        <result property="isRoot" column="isRoot"/>
-        <result property="isRoot" column="isRoot"/>
+        <result property="isRoot" column="is_root"/>
         <result property="path" column="path"/>
         <result property="icon" column="icon"/>
-        <result property="operUser" column="pOperUser"/>
-        <result property="createTime" column="pCreateTime"/>
-        <association property="changeUserInfo" column="{userId=pOperUser}" select="selectUser"/>
-        <association property="drawerUserInfo" column="{userId=drawer}" select="selectUser"/>
-        <collection property="questions" ofType="top.baozoulolw.exam.entity.PaperQuestion">
-            <id property="id" column="pqid"/>
-            <result property="questionId" column="question_id"/>
-            <result property="paperId" column="paper_id"/>
-            <result property="score" column="score"/>
-            <result property="sort" column="sort"/>
-            <result property="changeTime" column="pqChangeTime"/>
-            <result property="operUser" column="pqOperUser"/>
-            <result property="createTime" column="pqCreateTime"/>
-            <association property="question" column="{questionId=question_id}" select="selectQuestion"/>
+        <result property="note" column="note"/>
+        <result property="operUser" column="oper_user"/>
+        <result property="changeTime" column="change_time"/>
+        <result property="changUser" column="change_user"/>
+        <collection property="children" ofType="top.baozoulolw.exam.entity.Resource">
+            <id property="id" column="c_id"/>
+            <result property="createTime" column="c_create_time"/>
+            <result property="resourceName" column="c_resource_name"/>
+            <result property="type" column="c_type"/>
+            <result property="weights" column="c_weights"/>
+            <result property="parent" column="c_parent"/>
+            <result property="isRoot" column="c_is_root"/>
+            <result property="path" column="c_path"/>
+            <result property="note" column="c_note"/>
+            <result property="icon" column="c_icon"/>
+            <result property="operUser" column="c_oper_user"/>
+            <result property="changeTime" column="c_change_time"/>
+            <result property="changUser" column="c_change_user"/>
         </collection>
     </resultMap>
+    <select id="getAllResource" resultMap="resource">
+        select
+        r.id,
+        r.resource_name,
+        r.type,
+        r.weights,
+        r.parent,
+        r.is_root,
+        r.change_time,
+        r.oper_user,
+        r.create_time,
+        r.path,
+        r.note,
+        r.icon,
+        u.real_name change_user,
+        r1.id c_id,
+        r1.resource_name c_resource_name,
+        r1.type c_type,
+        r1.weights c_weights,
+        r1.parent c_parent,
+        r1.is_root c_is_root,
+        r1.change_time c_change_time,
+        r1.oper_user c_oper_user,
+        r1.create_time c_create_time,
+        r1.path c_path,
+        r1.note c_note,
+        r1.icon c_icon,
+        u1.real_name c_change_user
+        from tb_resource r
+        left join tb_resource r1 on r1.parent = r.id
+        left join tb_user u on u.id = r.oper_user
+        left join tb_user u1 on u1.id = r1.oper_user
+        where r.is_root = 1
+    </select>
 </mapper>

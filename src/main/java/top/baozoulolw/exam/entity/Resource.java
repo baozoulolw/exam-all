@@ -24,6 +24,9 @@ public class Resource extends IdEntity implements Serializable {
     @TableField(value = "parent")
     private Long parent;
 
+    @TableField(value = "note")
+    private String note;
+
     @TableField(value = "is_root")
     private int isRoot;
 

@@ -29,7 +29,7 @@ public class ResourceController {
         return resourceService.updateResource(resource);
     }
 
-    @PostMapping(value = "/getAll")
+    @GetMapping(value = "/getAll")
     public Result<List<Resource>> getAllResource(){
         return resourceService.getAllResource();
     }

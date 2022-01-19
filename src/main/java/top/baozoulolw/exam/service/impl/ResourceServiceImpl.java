@@ -12,6 +12,8 @@ import java.util.List;
 @Service
 public class ResourceServiceImpl extends ServiceImpl<ResourceDao, Resource> implements ResourceService {
 
+    @javax.annotation.Resource
+    private ResourceDao resourceDao;
 
     @Override
     public Result<List<Resource>> getResById(Long id) {
@@ -38,6 +40,7 @@ public class ResourceServiceImpl extends ServiceImpl<ResourceDao, Resource> impl
 
     @Override
     public Result<List<Resource>> getAllResource() {
-
+        List<Resource> allResource = resourceDao.getAllResource();
+        return Result.success(allResource);
     }
 }
