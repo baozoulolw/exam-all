@@ -1,9 +1,6 @@
 package top.baozoulolw.exam.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import top.baozoulolw.exam.common.Result;
 import top.baozoulolw.exam.entity.Resource;
 import top.baozoulolw.exam.service.ResourceService;
@@ -20,5 +17,20 @@ public class ResourceController {
     @GetMapping(value = "/{id}")
     public Result<List<Resource>> getResByRole(@PathVariable(value = "id")Long id){
         return resourceService.getResById(id);
+    }
+
+    @PostMapping(value = "/add")
+    public Result addResource(@RequestBody Resource resource){
+        return resourceService.addResource(resource);
+    }
+
+    @PostMapping(value = "/update")
+    public Result updateResource(@RequestBody Resource resource){
+        return resourceService.updateResource(resource);
+    }
+
+    @PostMapping(value = "/getAll")
+    public Result<List<Resource>> getAllResource(){
+        return resourceService.getAllResource();
     }
 }

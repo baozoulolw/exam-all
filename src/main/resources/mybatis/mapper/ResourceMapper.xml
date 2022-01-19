@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd">
+<mapper namespace="top.baozoulolw.exam.dao.ResourceDaoDao">
+
+    <resultMap id="resource" type="top.baozoulolw.exam.entity.Resource">
+        <id property="id" column="pid"/>
+        <result property="createTime" column="uCreateTime"/>
+        <result property="resourceName" column="resource_name"/>
+        <result property="type" column="type"/>
+        <result property="weights" column="weights"/>
+        <result property="parent" column="parent"/>
+        <result property="isRoot" column="isRoot"/>
+        <result property="isRoot" column="isRoot"/>
+        <result property="path" column="path"/>
+        <result property="icon" column="icon"/>
+        <result property="operUser" column="pOperUser"/>
+        <result property="createTime" column="pCreateTime"/>
+        <association property="changeUserInfo" column="{userId=pOperUser}" select="selectUser"/>
+        <association property="drawerUserInfo" column="{userId=drawer}" select="selectUser"/>
+        <collection property="questions" ofType="top.baozoulolw.exam.entity.PaperQuestion">
+            <id property="id" column="pqid"/>
+            <result property="questionId" column="question_id"/>
+            <result property="paperId" column="paper_id"/>
+            <result property="score" column="score"/>
+            <result property="sort" column="sort"/>
+            <result property="changeTime" column="pqChangeTime"/>
+            <result property="operUser" column="pqOperUser"/>
+            <result property="createTime" column="pqCreateTime"/>
+            <association property="question" column="{questionId=question_id}" select="selectQuestion"/>
+        </collection>
+    </resultMap>
+</mapper>

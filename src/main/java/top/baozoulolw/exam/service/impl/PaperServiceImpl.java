@@ -104,7 +104,7 @@ public class PaperServiceImpl extends ServiceImpl<PaperDao, Paper> implements  P
             paperQuestionImpl.removeByIds(delIds);
         }
         if(sorts.size() > 0){
-            paperQuestionImpl.saveOrUpdateBatch(sorts);
+            paperQuestionImpl.updateBatchById(sorts,sorts.size());
         }
         return Result.success();
     }
@@ -115,7 +115,7 @@ public class PaperServiceImpl extends ServiceImpl<PaperDao, Paper> implements  P
         if(score < 0){
             return Result.fail("输入成绩有误");
         }
-        paperQuestionImpl.saveOrUpdate(param);
+        paperQuestionImpl.updateById(param);
         return Result.success();
     }
 }

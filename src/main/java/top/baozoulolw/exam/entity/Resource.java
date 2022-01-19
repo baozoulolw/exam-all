@@ -30,7 +30,7 @@ public class Resource extends IdEntity implements Serializable {
     @TableField(value = "path")
     private String path;
 
-    @TableField(value = "path")
+    @TableField(value = "icon")
     private String icon;
 
     @TableField(exist = false)

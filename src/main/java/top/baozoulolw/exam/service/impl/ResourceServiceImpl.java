@@ -11,8 +11,33 @@ import java.util.List;
 
 @Service
 public class ResourceServiceImpl extends ServiceImpl<ResourceDao, Resource> implements ResourceService {
+
+
     @Override
     public Result<List<Resource>> getResById(Long id) {
         return null;
+    }
+
+    @Override
+    public Result addResource(Resource resource) {
+        boolean save = this.save(resource);
+        if(!save){
+            return Result.fail("新增资源失败");
+        }
+        return Result.success();
+    }
+
+    @Override
+    public Result updateResource(Resource resource) {
+        boolean b = this.updateById(resource);
+        if(!b){
+            return Result.fail("更新资源失败");
+        }
+        return Result.success();
+    }
+
+    @Override
+    public Result<List<Resource>> getAllResource() {
+
     }
 }
