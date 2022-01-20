@@ -33,4 +33,9 @@ public class ResourceController {
     public Result<List<Resource>> getAllResource(){
         return resourceService.getAllResource();
     }
+
+    @GetMapping(value = "/del/{id}")
+    public Result delResource(@PathVariable("id")Long id){
+        return resourceService.delResource(id);
+    }
 }

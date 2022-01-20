@@ -14,4 +14,6 @@ public interface ResourceService extends IService<Resource> {
     Result updateResource(Resource resource);
 
     Result<List<Resource>> getAllResource();
+
+    Result delResource(Long id);
 }

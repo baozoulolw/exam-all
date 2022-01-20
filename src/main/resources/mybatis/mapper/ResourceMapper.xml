@@ -65,5 +65,6 @@
         left join tb_user u on u.id = r.oper_user
         left join tb_user u1 on u1.id = r1.oper_user
         where r.is_root = 1
+        order by r.weights ASC, r1.weights ASC
     </select>
 </mapper>
