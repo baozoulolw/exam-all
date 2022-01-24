@@ -1,10 +1,7 @@
 package top.baozoulolw.exam.controller;
 
 import io.swagger.annotations.Api;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import top.baozoulolw.exam.common.Result;
 import top.baozoulolw.exam.common.page.PageResult;
 import top.baozoulolw.exam.common.page.PageSearch;
@@ -13,6 +10,8 @@ import top.baozoulolw.exam.service.RoleService;
 import top.baozoulolw.exam.vo.RoleListParamVO;
 
 import javax.annotation.Resource;
+import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping(value = "/role")
@@ -36,4 +35,15 @@ public class RoleController {
     public Result editRole(@RequestBody Role role){
         return roleService.editRole(role);
     }
+
+    @GetMapping(value = "/resources/{id}")
+    public Result<List<Long>> getResources(@PathVariable("id")Long id){
+        return roleService.getResourcesById(id);
+    }
+
+    @PostMapping(value = "/resource/edit/{id}")
+    public Result editResourceByIds(@RequestBody Map<String,List<Long>> ids, @PathVariable("id")Long roleId){
+        return roleService.editResourceByIds(ids.get("add"),ids.get("del"),roleId);
+    }
+
 }
