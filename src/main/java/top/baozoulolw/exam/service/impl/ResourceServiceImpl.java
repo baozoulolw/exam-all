@@ -19,7 +19,8 @@ public class ResourceServiceImpl extends ServiceImpl<ResourceDao, Resource> impl
 
     @Override
     public Result<List<Resource>> getResById(Long id) {
-        return null;
+        List<Resource> resourceByUserId = resourceDao.getResourceByUserId(id);
+        return Result.success(resourceByUserId);
     }
 
     @Override

@@ -38,4 +38,6 @@ public class ResourceController {
     public Result delResource(@PathVariable("id")Long id){
         return resourceService.delResource(id);
     }
+
+
 }

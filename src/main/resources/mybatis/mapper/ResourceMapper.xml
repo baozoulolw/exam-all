@@ -67,4 +67,42 @@
         where r.is_root = 1
         order by r.weights ASC, r1.weights ASC
     </select>
+    <select id="getResourceByUserId" resultMap="resource" parameterType="Long">
+        select
+        r.id,
+        r.resource_name,
+        r.type,
+        r.weights,
+        r.parent,
+        r.is_root,
+        r.change_time,
+        r.oper_user,
+        r.create_time,
+        r.path,
+        r.note,
+        r.icon,
+        u.real_name change_user,
+        r1.id c_id,
+        r1.resource_name c_resource_name,
+        r1.type c_type,
+        r1.weights c_weights,
+        r1.parent c_parent,
+        r1.is_root c_is_root,
+        r1.change_time c_change_time,
+        r1.oper_user c_oper_user,
+        r1.create_time c_create_time,
+        r1.path c_path,
+        r1.note c_note,
+        r1.icon c_icon,
+        u1.real_name c_change_user
+        from tb_resource r
+        left join tb_resource r1 on r1.parent = r.id
+        left join tb_user u on u.id = r.oper_user
+        left join tb_user u1 on u1.id = r1.oper_user
+        left join tb_role_resource trr on trr.resource_id = r.id
+        left join tb_role_resource trr1 on trr1.resource_id = r1.id
+        left join tb_user_role tur on tur.role_id = trr.role_id
+        where r.is_root = 1 and tur.user_id = #{param}
+        order by r.weights ASC, r1.weights ASC
+    </select>
 </mapper>
