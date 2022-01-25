@@ -76,7 +76,11 @@ public class JwtLoginFilter extends UsernamePasswordAuthenticationFilter {
             String token = JwtUtils.createJwt(claim, UUID.randomUUID().toString(), 1000 * 60 * 60 * 24L);
             Map<String, Object> result = new HashMap<>(2);
             result.put("token",token);
+            String id = user.getId().toString();
+            String operuser = user.getOperUser().toString();
             result.put("user",user);
+            result.put("id",id);
+            result.put("operuser",operuser);
             ResponseUtils.out(response, Result.success(ResultCode.LOGIN_SUCCESS,result));
         } catch (Exception e) {
             e.printStackTrace();

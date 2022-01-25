@@ -1,8 +1,6 @@
 package top.baozoulolw.exam.common.publicfields;
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Data;
 
 /**
@@ -17,4 +15,5 @@ public class IdEntity extends BaseEntity {
 
     @TableField(value = "id", fill = FieldFill.INSERT)
     private Long id;
+
 }
