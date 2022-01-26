@@ -42,8 +42,6 @@ public class JwtPreFilter extends BasicAuthenticationFilter {
         try {
             //解析token
             Claims claims = JwtUtils.parseJwt(token);
-            System.out.println(claims);
-            System.out.println(";;;;;;");
             // System.out.println("解析得到的token信息为：" + claims);
             //String userId = claims.getSubject();
             Long userId = (Long)claims.get("userId");

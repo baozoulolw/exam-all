@@ -68,7 +68,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and().logout().logoutSuccessHandler(new ChatLogoutSuccessHandler()).and()
                 // 先是UsernamePasswordAuthenticationFilter用于login校验
-                .addFilter(new JwtLoginFilter(authenticationManager(),userService))
+                .addFilter(new JwtLoginFilter(authenticationManager(),userService,passwordEncoder()))
                 // 再通过OncePerRequestFilter，对其它请求过滤
                 .addFilter(new JwtPreFilter(authenticationManager()))
                 // 没有权限访问

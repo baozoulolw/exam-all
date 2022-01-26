@@ -1,9 +1,11 @@
 package top.baozoulolw.exam.filter;
 
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import top.baozoulolw.exam.entity.User;
 import top.baozoulolw.exam.service.UserService;
@@ -12,6 +14,7 @@ import top.baozoulolw.exam.common.enums.ResultCode;
 import top.baozoulolw.exam.utils.JwtUtils;
 import top.baozoulolw.exam.utils.ResponseUtils;
 
+import javax.annotation.Resource;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -25,9 +28,14 @@ public class JwtLoginFilter extends UsernamePasswordAuthenticationFilter {
 
     private UserService userService;
 
-    public JwtLoginFilter(AuthenticationManager authenticationManager,UserService userService) {
+    private PasswordEncoder passwordEncoder;
+
+
+
+    public JwtLoginFilter(AuthenticationManager authenticationManager,UserService userService,PasswordEncoder passwordEncoder) {
         this.authenticationManager = authenticationManager;
         this.userService = userService;
+        this.passwordEncoder = passwordEncoder;
         this.setFilterProcessesUrl("/login");
 
     }
@@ -45,6 +53,16 @@ public class JwtLoginFilter extends UsernamePasswordAuthenticationFilter {
 
         String username = obtainUsername(request);
         String password = obtainPassword(request);
+        String platform = request.getParameter("platform");
+        System.out.println(platform);
+        User user = (User) userService.loadUserByUsername(username);
+        //验证密码
+        if (!passwordEncoder.matches(password, user.getPassword())) {
+            throw new BadCredentialsException("输入密码错误!");
+        }
+        if(!userService.hasResource(user.getId(), platform)){
+            throw new BadCredentialsException("没有当前系统资源!");
+        }
         return authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(username, password, new ArrayList<>()));
 
@@ -74,7 +92,7 @@ public class JwtLoginFilter extends UsernamePasswordAuthenticationFilter {
             claim.put("username", username);
             claim.put("userId", user.getId());
             String token = JwtUtils.createJwt(claim, UUID.randomUUID().toString(), 1000 * 60 * 60 * 24L);
-            Map<String, Object> result = new HashMap<>(2);
+            Map<String, Object> result = new HashMap<>(4);
             result.put("token",token);
             String id = user.getId().toString();
             String operuser = user.getOperUser().toString();
@@ -99,6 +117,6 @@ public class JwtLoginFilter extends UsernamePasswordAuthenticationFilter {
     protected void unsuccessfulAuthentication(HttpServletRequest request,
                                               HttpServletResponse response,
                                               AuthenticationException failed) throws IOException, ServletException {
-        ResponseUtils.out(response, Result.fail(ResultCode.LOGIN_FAILED));
+        ResponseUtils.out(response,Result.fail(failed.getMessage()));
     }
 }

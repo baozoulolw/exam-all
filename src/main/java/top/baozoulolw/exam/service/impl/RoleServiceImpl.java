@@ -11,6 +11,7 @@ import top.baozoulolw.exam.common.Result;
 import top.baozoulolw.exam.common.enums.ResultCode;
 import top.baozoulolw.exam.common.page.PageResult;
 import top.baozoulolw.exam.common.page.PageSearch;
+import top.baozoulolw.exam.dao.ResourceDao;
 import top.baozoulolw.exam.dao.RoleDao;
 import top.baozoulolw.exam.dao.RoleResourceDao;
 import top.baozoulolw.exam.dao.UserDao;
@@ -35,6 +36,9 @@ public class RoleServiceImpl implements RoleService {
 
     @Resource
     private RoleResourceDao roleResourceDao;
+
+    @Resource
+    private ResourceDao resourceDao;
 
     @Override
     public Result<PageResult> getRoleListByPage(PageSearch<RoleListParamVO> param) {
@@ -81,32 +85,9 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    public Result<List<Long>> getResourcesById(Long id) {
-        QueryWrapper<RoleResource> wrapper = new QueryWrapper<>();
-        wrapper.select("resource_id").eq("role_id", id);
-        List<Object> objects = roleResourceDao.selectObjs(wrapper);
-        Stream<Long> longStream = objects.stream().map(i -> (Long) i);
-        List<Long> result = longStream.collect(Collectors.toList());
-        return Result.success(result);
-    }
-
-    @Override
-    public Result addResourceByIds(List<Long> ids, Long roleId) {
-        ids.forEach(i -> {
-            RoleResource roleResource = new RoleResource();
-            roleResource.setResourceId(i);
-            roleResource.setRoleId(roleId);
-            roleResourceDao.insert(roleResource);
-        });
-        return Result.success();
-    }
-
-    @Override
-    public Result delResourceByIds(List<Long> ids, Long roleId) {
-        UpdateWrapper<RoleResource> wrapper = new UpdateWrapper<>();
-        wrapper.in("resource_id", ids).eq("role_id", roleId);
-        roleResourceDao.delete(wrapper);
-        return Result.success();
+    public Result<List<Long>> getResourcesById(Long id,String platform) {
+        List<Long> keys = resourceDao.checkKeys(id, platform);
+        return Result.success(keys);
     }
 
     @Override

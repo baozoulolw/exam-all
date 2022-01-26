@@ -5,6 +5,7 @@ import top.baozoulolw.exam.common.Result;
 import top.baozoulolw.exam.entity.Resource;
 import top.baozoulolw.exam.service.ResourceService;
 
+import javax.websocket.server.PathParam;
 import java.util.List;
 
 @RestController
@@ -15,8 +16,8 @@ public class ResourceController {
     private ResourceService resourceService;
 
     @GetMapping(value = "/{id}")
-    public Result<List<Resource>> getResByRole(@PathVariable(value = "id")Long id){
-        return resourceService.getResById(id);
+    public Result<List<Resource>> getResByRole(@PathVariable(value = "id")Long id, @PathParam("platform")String platform){
+        return resourceService.getResById(id,platform);
     }
 
     @PostMapping(value = "/add")
@@ -29,9 +30,9 @@ public class ResourceController {
         return resourceService.updateResource(resource);
     }
 
-    @GetMapping(value = "/getAll")
-    public Result<List<Resource>> getAllResource(){
-        return resourceService.getAllResource();
+    @GetMapping(value = "/getAll/{platform}")
+    public Result<List<Resource>> getAllResource(@PathVariable("platform")String platform){
+        return resourceService.getAllResource(platform);
     }
 
     @GetMapping(value = "/del/{id}")

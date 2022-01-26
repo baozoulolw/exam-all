@@ -10,7 +10,11 @@ import java.util.List;
 @Repository
 public interface ResourceDao extends BaseMapper<Resource> {
 
-    List<Resource> getAllResource();
+    List<Resource> getAllResource(@Param("platform") String platform);
 
-    List<Resource> getResourceByUserId(@Param("param") Long id);
+    List<Resource> getResourceByUserId(@Param("param") Long id,@Param("platform") String platform);
+
+    int hasResource(@Param("id") Long id, @Param("platform")String platform);
+
+    List<Long> checkKeys(@Param("id") Long id, @Param("platform")String platform);
 }

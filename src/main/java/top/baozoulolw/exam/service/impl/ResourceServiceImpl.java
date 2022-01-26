@@ -23,8 +23,8 @@ public class ResourceServiceImpl extends ServiceImpl<ResourceDao, Resource> impl
     private RoleResourceDao roleResourceDao;
 
     @Override
-    public Result<List<Resource>> getResById(Long id) {
-        List<Resource> resourceByUserId = resourceDao.getResourceByUserId(id);
+    public Result<List<Resource>> getResById(Long id,String platform) {
+        List<Resource> resourceByUserId = resourceDao.getResourceByUserId(id,platform);
         return Result.success(resourceByUserId);
     }
 
@@ -47,8 +47,8 @@ public class ResourceServiceImpl extends ServiceImpl<ResourceDao, Resource> impl
     }
 
     @Override
-    public Result<List<Resource>> getAllResource() {
-        List<Resource> allResource = resourceDao.getAllResource();
+    public Result<List<Resource>> getAllResource(String platform) {
+        List<Resource> allResource = resourceDao.getAllResource(platform);
         return Result.success(allResource);
     }
 

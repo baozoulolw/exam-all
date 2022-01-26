@@ -19,4 +19,6 @@ public interface UserService extends UserDetailsService {
     Result uploadAvatar(MultipartFile file);
 
     Result delFile(String fileName);
+
+    Boolean hasResource(Long id,String platform);
 }

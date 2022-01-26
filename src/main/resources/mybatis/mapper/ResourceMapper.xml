@@ -32,7 +32,7 @@
             <result property="changUser" column="c_change_user"/>
         </collection>
     </resultMap>
-    <select id="getAllResource" resultMap="resource">
+    <select id="getAllResource" resultMap="resource" parameterType="string">
         select
         r.id,
         r.resource_name,
@@ -64,10 +64,10 @@
         left join tb_resource r1 on r1.parent = r.id
         left join tb_user u on u.id = r.oper_user
         left join tb_user u1 on u1.id = r1.oper_user
-        where r.is_root = 1
+        where r.is_root = 1 and (r1.platform = #{platform} or r.platform = #{platform})
         order by r.weights ASC, r1.weights ASC
     </select>
-    <select id="getResourceByUserId" resultMap="resource" parameterType="Long">
+    <select id="getResourceByUserId" resultMap="resource">
         select distinct
         r.id,
         r.resource_name,
@@ -101,7 +101,23 @@
         left join tb_user u1 on u1.id = r1.oper_user
         left join tb_role_resource trr on trr.resource_id = r.id or trr.resource_id = r1.id
         left join tb_user_role tur on tur.role_id = trr.role_id
-        where r.is_root = 1 and tur.user_id = #{param}
+        where r.is_root = 1 and tur.user_id = #{param} and (r1.platform = #{platform} or r.platform = #{platform})
         order by r.weights ASC, r1.weights ASC
     </select>
+    <select id="hasResource" resultType="int">
+        select count(distinct
+        r.id,
+        r1.id)
+        from tb_resource r
+        left join tb_resource r1 on r1.parent = r.id
+        left join tb_role_resource trr on trr.resource_id = r.id or trr.resource_id = r1.id
+        left join tb_user_role tur on tur.role_id = trr.role_id
+        where r.is_root = 1 and tur.user_id = #{id} and (r1.platform = #{platform} or r.platform = #{platform})
+        limit 1
+    </select>
+    <select id="checkKeys" resultType="java.lang.Long">
+        select rr.resource_id from tb_role_resource rr left join tb_resource r on r.id = rr.resource_id
+        where r.platform = #{platform} and rr.role_id = #{id}
+    </select>
+
 </mapper>

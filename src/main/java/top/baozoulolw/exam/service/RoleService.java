@@ -16,11 +16,7 @@ public interface RoleService {
 
     Result editRole(Role role);
 
-    Result<List<Long>> getResourcesById(Long id);
-
-    Result addResourceByIds(List<Long> ids,Long roleId);
-
-    Result delResourceByIds(List<Long> ids,Long roleId);
+    Result<List<Long>> getResourcesById(Long id,String platform);
 
     Result editResourceByIds(List<Long> add, List<Long> del, Long roleId);
 }

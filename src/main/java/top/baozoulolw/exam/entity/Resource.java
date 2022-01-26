@@ -36,6 +36,9 @@ public class Resource extends IdEntity implements Serializable {
     @TableField(value = "icon")
     private String icon;
 
+    @TableField(value = "platform")
+    private String platform;
+
     @TableField(exist = false)
     private String changUser;
 

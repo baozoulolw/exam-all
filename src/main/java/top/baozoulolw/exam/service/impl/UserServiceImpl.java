@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import top.baozoulolw.exam.common.Result;
 import top.baozoulolw.exam.common.page.PageResult;
 import top.baozoulolw.exam.common.page.PageSearch;
+import top.baozoulolw.exam.dao.ResourceDao;
 import top.baozoulolw.exam.dao.RoleDao;
 import top.baozoulolw.exam.service.UserService;
 import top.baozoulolw.exam.dao.UserDao;
@@ -36,6 +37,9 @@ public class UserServiceImpl implements UserService {
 
     @Resource
     private BCryptPasswordEncoder encoder;
+
+    @Resource
+    private ResourceDao resourceDao;
 
     @Override
     public User loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -100,6 +104,12 @@ public class UserServiceImpl implements UserService {
     public Result delFile(String fileName) {
         fileUploadUtil.delFile(fileName);
         return Result.success();
+    }
+
+    @Override
+    public Boolean hasResource(Long id,String platform) {
+        int i = resourceDao.hasResource(id, platform);
+        return i > 0;
     }
 
 

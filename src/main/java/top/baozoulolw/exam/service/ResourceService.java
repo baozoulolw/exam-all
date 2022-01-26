@@ -7,13 +7,13 @@ import top.baozoulolw.exam.entity.Resource;
 import java.util.List;
 
 public interface ResourceService extends IService<Resource> {
-    Result<List<Resource>> getResById(Long id);
+    Result<List<Resource>> getResById(Long id,String platform);
 
     Result addResource(Resource resource);
 
     Result updateResource(Resource resource);
 
-    Result<List<Resource>> getAllResource();
+    Result<List<Resource>> getAllResource(String platform);
 
     Result delResource(Long id);
 }

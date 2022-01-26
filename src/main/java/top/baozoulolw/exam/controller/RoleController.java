@@ -10,6 +10,7 @@ import top.baozoulolw.exam.service.RoleService;
 import top.baozoulolw.exam.vo.RoleListParamVO;
 
 import javax.annotation.Resource;
+import javax.websocket.server.PathParam;
 import java.util.List;
 import java.util.Map;
 
@@ -37,8 +38,8 @@ public class RoleController {
     }
 
     @GetMapping(value = "/resources/{id}")
-    public Result<List<Long>> getResources(@PathVariable("id")Long id){
-        return roleService.getResourcesById(id);
+    public Result<List<Long>> getResources(@PathVariable("id")Long id, @PathParam("platform")String platform){
+        return roleService.getResourcesById(id,platform);
     }
 
     @PostMapping(value = "/resource/edit/{id}")
