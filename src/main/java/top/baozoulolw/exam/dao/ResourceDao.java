@@ -14,7 +14,7 @@ public interface ResourceDao extends BaseMapper<Resource> {
 
     List<Resource> getResourceByUserId(@Param("param") Long id,@Param("platform") String platform);
 
-    int hasResource(@Param("id") Long id, @Param("platform")String platform);
+    List<Long> hasResource(@Param("id") Long id, @Param("platform")String platform);
 
     List<Long> checkKeys(@Param("id") Long id, @Param("platform")String platform);
 }

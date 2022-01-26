@@ -22,6 +22,7 @@ import top.baozoulolw.exam.utils.FileUploadUtil;
 import top.baozoulolw.exam.vo.UserLIstParamVO;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -108,8 +109,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Boolean hasResource(Long id,String platform) {
-        int i = resourceDao.hasResource(id, platform);
-        return i > 0;
+        List<Long> ids = resourceDao.hasResource(id, platform);
+        return ids.size() > 0;
     }
 
 

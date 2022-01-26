@@ -104,9 +104,14 @@
         where r.is_root = 1 and tur.user_id = #{param} and (r1.platform = #{platform} or r.platform = #{platform})
         order by r.weights ASC, r1.weights ASC
     </select>
-    <select id="hasResource" resultType="int">
-        select count(rr.resource_id) from tb_role_resource rr left join tb_resource r on r.id = rr.resource_id
-        where r.platform = #{platform} and rr.role_id = #{id}
+    <select id="hasResource" resultType="Long">
+        select distinct
+        r.id
+        from tb_resource r
+        left join tb_resource r1 on r1.parent = r.id
+        left join tb_role_resource trr on trr.resource_id = r.id or trr.resource_id = r1.id
+        left join tb_user_role tur on tur.role_id = trr.role_id
+        where r.is_root = 1 and tur.user_id = #{id} and (r1.platform = #{platform} or r.platform = #{platform})
         limit 1
     </select>
     <select id="checkKeys" resultType="java.lang.Long">
