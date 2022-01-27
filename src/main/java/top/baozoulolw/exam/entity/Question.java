@@ -26,6 +26,13 @@ public class Question extends IdEntity implements Serializable {
     @TableField(value = "hard")
     private Integer hard;
 
+    @TableField(value = "group_id")
+    private Long groupId;
+
     @TableField(exist = false)
     private String changeUser;
+
+    @TableField(exist = false)
+    private String groupName;
+
 }

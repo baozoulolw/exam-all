@@ -6,7 +6,10 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 import top.baozoulolw.exam.entity.Question;
+import top.baozoulolw.exam.entity.QuestionGroup;
 import top.baozoulolw.exam.vo.QuestionParamVO;
+
+import java.util.List;
 
 @Repository
 public interface QuestionDao extends BaseMapper<Question> {
@@ -18,4 +21,6 @@ public interface QuestionDao extends BaseMapper<Question> {
      * @return 查询结果
      */
     IPage<Question> getQuestionList(Page<Question> page, @Param("param") QuestionParamVO question);
+
+    List<QuestionGroup> getGroupList();
 }

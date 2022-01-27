@@ -7,5 +7,6 @@ public class QuestionParamVO {
     private Integer hard;
     private Integer type;
     private String keyword;
+    private Long groupId;
     private Long selectPaperId;
 }

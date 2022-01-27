@@ -5,14 +5,16 @@ import top.baozoulolw.exam.common.Result;
 import top.baozoulolw.exam.common.page.PageResult;
 import top.baozoulolw.exam.common.page.PageSearch;
 import top.baozoulolw.exam.entity.Question;
+import top.baozoulolw.exam.entity.QuestionGroup;
 import top.baozoulolw.exam.service.QuestionService;
 import top.baozoulolw.exam.vo.QuestionParamVO;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/question")
-public class QuestionController {
+public class  QuestionController {
 
     @Resource
     private QuestionService questionService;
@@ -40,5 +42,25 @@ public class QuestionController {
     @GetMapping(value = "/delById/{id}")
     public Result delQuestionById(@PathVariable(value = "id")Long id){
         return questionService.delQuestionById(id);
+    }
+
+    @GetMapping(value = "/group/list")
+    public Result<List<QuestionGroup>> getGroupList(){
+        return questionService.getGroupList();
+    }
+
+    @GetMapping(value = "/group/add/{groupName}")
+    public Result addGroup(@PathVariable("groupName")String groupName){
+        return questionService.addGroup(groupName);
+    }
+
+    @GetMapping(value = "/group/del/{id}")
+    public Result delGroup(@PathVariable("id")Long id){
+        return questionService.delGroup(id);
+    }
+
+    @GetMapping(value = "/group/trans/{from}/{to}")
+    public Result transGroup(@PathVariable("from")Long from,@PathVariable("to")Long to){
+        return questionService.transGroup(from,to);
     }
 }

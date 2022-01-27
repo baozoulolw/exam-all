@@ -3,10 +3,13 @@
 <mapper namespace = "top.baozoulolw.exam.dao.QuestionDao">
     <select id="getQuestionList" resultType="top.baozoulolw.exam.entity.Question"
             parameterType="top.baozoulolw.exam.vo.QuestionParamVO">
-        select q.*,u.real_name as change_user from
+        select q.*, u.real_name as change_user from
         tb_question q ,tb_user u where u.id = q.oper_user
         <if test="param.type != null">
             AND q.type = #{param.type}
+        </if>
+        <if test="param.groupId != null">
+            AND q.group_id = #{param.groupId}
         </if>
         <if test="param.hard != null">
             AND q.hard = #{param.hard}
@@ -26,5 +29,10 @@
             WHERE
             tqp.paper_id = #{param.selectPaperId} )
         </if>
+    </select>
+    <select id="getGroupList" resultType="top.baozoulolw.exam.entity.QuestionGroup">
+        select qg.*,count(q.id) questionNumber from tb_question_group qg, tb_question q
+        where q.group_id = qg.id
+        group by qg.id,qg.oper_user,qg.create_time,qg.change_time
     </select>
 </mapper>
