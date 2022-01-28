@@ -30,6 +30,8 @@ public class JwtLoginFilter extends UsernamePasswordAuthenticationFilter {
 
     private PasswordEncoder passwordEncoder;
 
+    private User user;
+
 
 
     public JwtLoginFilter(AuthenticationManager authenticationManager,UserService userService,PasswordEncoder passwordEncoder) {
@@ -54,8 +56,7 @@ public class JwtLoginFilter extends UsernamePasswordAuthenticationFilter {
         String username = obtainUsername(request);
         String password = obtainPassword(request);
         String platform = request.getParameter("platform");
-        System.out.println(platform);
-        User user = (User) userService.loadUserByUsername(username);
+        this.user = (User) userService.loadUserByUsername(username);
         //验证密码
         if (!passwordEncoder.matches(password, user.getPassword())) {
             throw new BadCredentialsException("输入密码错误!");
@@ -86,7 +87,7 @@ public class JwtLoginFilter extends UsernamePasswordAuthenticationFilter {
         try {
             String username = obtainUsername(request);
             String password = obtainPassword(request);
-            User user = (User) userService.loadUserByUsername(username);
+            User user = this.user;
             user.setPassword(null);
             Map<String, Object> claim = new HashMap<>(2);
             claim.put("username", username);

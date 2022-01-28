@@ -86,7 +86,9 @@ public class QuestionServiceImpl implements QuestionService {
         if(ObjectUtils.isNotEmpty(one)){
             return Result.fail("分组名重复");
         }
-        questionGroupService.save(new QuestionGroup(groupName));
+        QuestionGroup questionGroup = new QuestionGroup();
+        questionGroup.setGroupName(groupName);
+        questionGroupService.save(questionGroup);
         return Result.success();
     }
 
@@ -106,6 +108,19 @@ public class QuestionServiceImpl implements QuestionService {
     public Result transGroup(Long from, Long to) {
         UpdateWrapper<Question> wrapper = new UpdateWrapper<>();
         wrapper.eq("group_id",from).set("group_id",to);
+        questionDao.update(null,wrapper);
+        return Result.success();
+    }
+
+    @Override
+    public Result editGroup(QuestionGroup questionGroup) {
+        QueryWrapper<QuestionGroup> wrapper = new QueryWrapper<>();
+        wrapper.eq("group_name",questionGroup.getGroupName());
+        QuestionGroup one = questionGroupService.getOne(wrapper);
+        if(ObjectUtils.isNotEmpty(one)){
+            return Result.fail("分组名重复");
+        }
+        questionGroupService.updateById(questionGroup);
         return Result.success();
     }
 }

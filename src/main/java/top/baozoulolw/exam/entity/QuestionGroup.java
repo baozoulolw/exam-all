@@ -11,10 +11,6 @@ import java.io.Serializable;
 @TableName(value = "tb_question_group")
 public class QuestionGroup extends IdEntity implements Serializable {
 
-    public QuestionGroup(String groupName){
-        this.groupName = groupName;
-    }
-
     @TableField(value = "group_name")
     private String groupName;
 

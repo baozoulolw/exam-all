@@ -27,4 +27,6 @@ public interface QuestionService {
     Result delGroup(Long id);
 
     Result transGroup(Long from, Long to);
+
+    Result editGroup(QuestionGroup questionGroup);
 }

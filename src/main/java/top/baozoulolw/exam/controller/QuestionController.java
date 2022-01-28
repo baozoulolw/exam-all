@@ -49,6 +49,11 @@ public class  QuestionController {
         return questionService.getGroupList();
     }
 
+    @PostMapping(value = "/group/edit")
+    public Result editGroup(@RequestBody QuestionGroup questionGroup){
+        return questionService.editGroup(questionGroup);
+    }
+
     @GetMapping(value = "/group/add/{groupName}")
     public Result addGroup(@PathVariable("groupName")String groupName){
         return questionService.addGroup(groupName);
@@ -59,8 +64,8 @@ public class  QuestionController {
         return questionService.delGroup(id);
     }
 
-    @GetMapping(value = "/group/trans/{from}/{to}")
-    public Result transGroup(@PathVariable("from")Long from,@PathVariable("to")Long to){
+    @GetMapping(value = "/group/trans")
+    public Result transGroup(@RequestParam("from")Long from,@RequestParam("to")Long to){
         return questionService.transGroup(from,to);
     }
 }
