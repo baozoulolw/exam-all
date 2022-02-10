@@ -42,6 +42,12 @@ public class UserServiceImpl implements UserService {
     @Resource
     private ResourceDao resourceDao;
 
+    /**
+     * spring security使用的用来验证用户账号密码的service
+     * @param username 登录用户名
+     * @return
+     * @throws UsernameNotFoundException
+     */
     @Override
     public User loadUserByUsername(String username) throws UsernameNotFoundException {
         if (StringUtils.isBlank(username)) {
@@ -57,6 +63,11 @@ public class UserServiceImpl implements UserService {
         return user;
     }
 
+    /**
+     * 分页查询用户列表
+     * @param param 分页参数
+     * @return
+     */
     @Override
     public Result<PageResult> queryUserList(PageSearch<UserLIstParamVO> param) {
         Page<User> page = new Page<>(param.getPageNumber(), param.getPageSize());
@@ -68,6 +79,12 @@ public class UserServiceImpl implements UserService {
         return Result.success(pageResult);
     }
 
+
+    /**
+     * 验证用户名是否重复
+     * @param username 待验证用户名
+     * @return
+     */
     @Override
     public Result checkUsername(String username) {
         QueryWrapper<User> wrapper = new QueryWrapper<>();
@@ -79,6 +96,12 @@ public class UserServiceImpl implements UserService {
         return Result.success();
     }
 
+
+    /**
+     * 添加用户
+     * @param user
+     * @return
+     */
     @Override
     @Transactional
     public Result<PageResult> addUser(User user) {
@@ -93,6 +116,12 @@ public class UserServiceImpl implements UserService {
         return Result.success();
     }
 
+
+    /**
+     * 上传头像至oss
+     * @param file
+     * @return
+     */
     @Override
     public Result uploadAvatar(MultipartFile file) {
         String path = "exam/avatar";
@@ -101,17 +130,27 @@ public class UserServiceImpl implements UserService {
         return Result.success(fileName);
     }
 
+
+    /**
+     * 根据文件名删除oss服务器文件
+     * @param fileName
+     * @return
+     */
     @Override
     public Result delFile(String fileName) {
         fileUploadUtil.delFile(fileName);
         return Result.success();
     }
 
+    /**
+     * 判断用户是否有当前平台下的资源
+     * @param id 用户id
+     * @param platform 平台
+     * @return true：有资源 false：无资源
+     */
     @Override
     public Boolean hasResource(Long id,String platform) {
         List<Long> ids = resourceDao.hasResource(id, platform);
         return ids.size() > 0;
     }
-
-
 }

@@ -68,8 +68,6 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
      */
     @Override
     public void updateFill(MetaObject metaObject) {
-        System.out.println("update执行了");
-        System.out.println("GetUserUtils.getUserId()");
         boolean hasUpdate = metaObject.hasSetter(OPER_TIME);
         boolean hasSetter = metaObject.hasSetter(OPER_USER_ID);
         if (hasUpdate) {

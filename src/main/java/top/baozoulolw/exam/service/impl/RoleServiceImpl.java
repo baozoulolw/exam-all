@@ -40,6 +40,12 @@ public class RoleServiceImpl implements RoleService {
     @Resource
     private ResourceDao resourceDao;
 
+
+    /**
+     * 分页查询角色列表
+     * @param param
+     * @return
+     */
     @Override
     public Result<PageResult> getRoleListByPage(PageSearch<RoleListParamVO> param) {
         IPage<Role> page = new Page<>(param.getPageNumber(), param.getPageSize());
@@ -53,6 +59,11 @@ public class RoleServiceImpl implements RoleService {
         return Result.success(pageResult);
     }
 
+    /**
+     * 添加角色
+     * @param role
+     * @return
+     */
     @Override
     public Result addRole(Role role) {
         String roleName = role.getRoleName();
@@ -70,6 +81,11 @@ public class RoleServiceImpl implements RoleService {
         return Result.success();
     }
 
+    /**
+     * 编辑角色
+     * @param role
+     * @return
+     */
     @Override
     public Result editRole(Role role) {
         String roleName = role.getRoleName();
@@ -84,12 +100,25 @@ public class RoleServiceImpl implements RoleService {
         return Result.success();
     }
 
+    /**
+     * 获取当前角色的资源id集合
+     * @param id 角色id
+     * @param platform 平台
+     * @return
+     */
     @Override
     public Result<List<Long>> getResourcesById(Long id,String platform) {
         List<Long> keys = resourceDao.checkKeys(id, platform);
         return Result.success(keys);
     }
 
+    /**
+     * 编辑当前角色的资源
+     * @param add 需要新增的资源id
+     * @param del 需要删除的资源id
+     * @param roleId 角色id
+     * @return
+     */
     @Override
     public Result editResourceByIds(List<Long> add, List<Long> del, Long roleId) {
         add.forEach(i -> {

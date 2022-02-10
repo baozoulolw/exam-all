@@ -7,6 +7,13 @@ import top.baozoulolw.exam.common.publicfields.IdEntity;
 
 import java.io.Serializable;
 
+/**
+ * 角色实体
+ *
+ * @author baozoulolw
+ * @version 1.0
+ * @date 2022-01-29 10:42
+ */
 @Data
 @TableName(value = "tb_role")
 public class Role extends IdEntity implements Serializable {

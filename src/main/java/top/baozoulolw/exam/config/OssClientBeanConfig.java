@@ -6,6 +6,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * 阿里云oss对象
+ *
+ * @author baozoulolw
+ * @version 1.0
+ * @date 2022-01-29 14:49
+ */
 @Configuration
 public class OssClientBeanConfig {
 

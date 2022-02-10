@@ -21,33 +21,62 @@ import java.util.List;
 @Data
 @TableName(value = "tb_user")
 public class User extends IdEntity implements UserDetails, Serializable {
+
+    /**
+     * 登录用户名
+     */
     @TableField(value = "username")
     private String username;
 
+    /**
+     * 密码,需加密存储
+     */
     @TableField(value = "password")
     private String password;
 
+    /**
+     * 手机号
+     */
     @TableField(value = "phone")
     private String phone;
 
+    /**
+     * 邮箱
+     */
     @TableField(value = "email")
     private String email;
 
+    /**
+     * 地址
+     */
     @TableField(value = "address")
     private String address;
 
+    /**
+     * 状态
+     */
     @TableField(value = "status")
     private int status;
+
 
     @TableField(value = "class_id")
     private Long classId;
 
+    /**
+     * 头像地址(阿里云oss对象存储)
+     */
     @TableField(value = "avatar")
     private String avatar;
 
+    /**
+     * 真实姓名
+     */
     @TableField(value = "real_name")
     private String realName;
 
+    /**
+     * 性别
+     */
     @TableField(value = "gender")
     private String gender;
 
@@ -60,6 +89,9 @@ public class User extends IdEntity implements UserDetails, Serializable {
     @TableField(exist = false)
     private ClassExam classExam;
 
+    /**
+     * 拼接好的头像地址
+     */
     @TableField(exist = false)
     private String avatarUrl;
 

@@ -61,6 +61,7 @@ public class JwtLoginFilter extends UsernamePasswordAuthenticationFilter {
         if (!passwordEncoder.matches(password, user.getPassword())) {
             throw new BadCredentialsException("输入密码错误!");
         }
+        //验证是否有登录系统的资源
         if(!userService.hasResource(user.getId(), platform)){
             throw new BadCredentialsException("没有当前系统资源!");
         }
@@ -86,7 +87,7 @@ public class JwtLoginFilter extends UsernamePasswordAuthenticationFilter {
                                             Authentication authResult) throws IOException, ServletException {
         try {
             String username = obtainUsername(request);
-            String password = obtainPassword(request);
+            //String password = obtainPassword(request);
             User user = this.user;
             user.setPassword(null);
             Map<String, Object> claim = new HashMap<>(2);
@@ -95,6 +96,7 @@ public class JwtLoginFilter extends UsernamePasswordAuthenticationFilter {
             String token = JwtUtils.createJwt(claim, UUID.randomUUID().toString(), 1000 * 60 * 60 * 24L);
             Map<String, Object> result = new HashMap<>(4);
             result.put("token",token);
+            // 此处返回会直接response会跳过josn转换，导致id失真，故用string再封装属性
             String id = user.getId().toString();
             String operuser = user.getOperUser().toString();
             result.put("user",user);
