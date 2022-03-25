@@ -75,6 +75,13 @@ public class User extends IdEntity implements UserDetails, Serializable {
     private String realName;
 
     /**
+     * 分组id
+     */
+    @TableField(value = "group_id")
+    private Long groupId;
+
+
+    /**
      * 性别
      */
     @TableField(value = "gender")
@@ -94,6 +101,12 @@ public class User extends IdEntity implements UserDetails, Serializable {
      */
     @TableField(exist = false)
     private String avatarUrl;
+
+    /**
+     * 角色id
+     */
+    @TableField(exist = false)
+    private List<Long> roleIds;
 
 
 

@@ -11,12 +11,10 @@ import top.baozoulolw.exam.common.Result;
 import top.baozoulolw.exam.common.enums.ResultCode;
 import top.baozoulolw.exam.common.page.PageResult;
 import top.baozoulolw.exam.common.page.PageSearch;
-import top.baozoulolw.exam.dao.ResourceDao;
-import top.baozoulolw.exam.dao.RoleDao;
-import top.baozoulolw.exam.dao.RoleResourceDao;
-import top.baozoulolw.exam.dao.UserDao;
+import top.baozoulolw.exam.dao.*;
 import top.baozoulolw.exam.entity.Role;
 import top.baozoulolw.exam.entity.RoleResource;
+import top.baozoulolw.exam.entity.UserRole;
 import top.baozoulolw.exam.service.RoleService;
 import top.baozoulolw.exam.vo.RoleListParamVO;
 
@@ -33,6 +31,9 @@ public class RoleServiceImpl implements RoleService {
 
     @Resource
     private UserDao userDao;
+
+    @Resource
+    private UserRoleDao userRoleDao;
 
     @Resource
     private RoleResourceDao roleResourceDao;
@@ -132,6 +133,18 @@ public class RoleServiceImpl implements RoleService {
             wrapper.in("resource_id", del).eq("role_id", roleId);
             roleResourceDao.delete(wrapper);
         }
+        return Result.success();
+    }
+
+    @Override
+    public Result delRole(Long id) {
+        QueryWrapper<UserRole> urWrapper = new QueryWrapper<>();
+        urWrapper.eq("role_id",id);
+        userRoleDao.delete(urWrapper);
+        QueryWrapper<RoleResource> rrWrapper = new QueryWrapper<>();
+        rrWrapper.eq("role_id",id);
+        roleResourceDao.delete(rrWrapper);
+        roleDao.deleteById(id);
         return Result.success();
     }
 

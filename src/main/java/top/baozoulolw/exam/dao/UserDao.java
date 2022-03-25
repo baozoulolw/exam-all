@@ -6,7 +6,10 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 import top.baozoulolw.exam.entity.User;
+import top.baozoulolw.exam.entity.UserGroup;
 import top.baozoulolw.exam.vo.UserLIstParamVO;
+
+import java.util.List;
 
 @Repository
 public interface UserDao extends BaseMapper<User> {
@@ -18,4 +21,7 @@ public interface UserDao extends BaseMapper<User> {
      * @return 查询结果
      */
     IPage<User> getUserList(Page<User> page, @Param("upVo") UserLIstParamVO upVo);
+
+
+    List<UserGroup> getUserGroupList();
 }

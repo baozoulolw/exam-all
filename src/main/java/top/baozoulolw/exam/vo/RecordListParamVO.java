@@ -3,9 +3,10 @@ package top.baozoulolw.exam.vo;
 import lombok.Data;
 
 @Data
-public class UserLIstParamVO {
+public class RecordListParamVO {
+    private Long userId;
+    private Long examId;
     private String keyword;
-    private Long gradeId;
-    private Long classId;
     private Long groupId;
+    private Integer marking;
 }

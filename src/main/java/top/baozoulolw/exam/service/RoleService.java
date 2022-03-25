@@ -47,4 +47,6 @@ public interface RoleService {
      * @return
      */
     Result editResourceByIds(List<Long> add, List<Long> del, Long roleId);
+
+    Result delRole(Long id);
 }

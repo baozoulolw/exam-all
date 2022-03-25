@@ -15,10 +15,10 @@ import java.io.Serializable;
 public class ExamPlan extends IdEntity implements Serializable {
 
     /**
-     * 参考人id
+     * 参考分组id
      */
-    @TableField(value = "user_id")
-    private Long userId;
+    @TableField(value = "join_group_id")
+    private Long joinGroupId;
 
     /**
      * 考试id

@@ -43,6 +43,16 @@ public class RoleController {
     }
 
     /**
+     * 删除角色
+     * @param
+     * @return
+     */
+    @GetMapping(value = "/del/{id}")
+    public Result addRole(@PathVariable("id")Long id){
+        return roleService.delRole(id);
+    }
+
+    /**
      * 编辑角色
      * @param role
      * @return

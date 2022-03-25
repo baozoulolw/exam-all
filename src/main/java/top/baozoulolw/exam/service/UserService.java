@@ -5,8 +5,12 @@ import org.springframework.web.multipart.MultipartFile;
 import top.baozoulolw.exam.common.Result;
 import top.baozoulolw.exam.common.page.PageResult;
 import top.baozoulolw.exam.common.page.PageSearch;
+import top.baozoulolw.exam.entity.QuestionGroup;
 import top.baozoulolw.exam.entity.User;
+import top.baozoulolw.exam.entity.UserGroup;
 import top.baozoulolw.exam.vo.UserLIstParamVO;
+
+import java.util.List;
 
 public interface UserService extends UserDetailsService {
 
@@ -52,4 +56,47 @@ public interface UserService extends UserDetailsService {
      * @return true：有资源 false：无资源
      */
     Boolean hasResource(Long id,String platform);
+
+    /**
+     * 获取成员分类列表
+     * @return
+     */
+    Result<List<UserGroup>> getGroupList();
+
+    /**
+     * 编辑成员分类
+     * @param userGroup
+     * @return
+     */
+    Result editGroup(UserGroup userGroup);
+
+    /**
+     * 添加成员分类
+     * @param groupName
+     * @return
+     */
+    Result addGroup(String groupName);
+
+    /**
+     * 根据id删除成员分类
+     * @param id
+     * @return
+     */
+    Result delGroup(Long id);
+
+    /**
+     * 分类下的成员进行转移
+     * @param from
+     * @param to
+     * @return
+     */
+    Result transGroup(Long from, Long to);
+
+    Result<User> getUserSelf();
+
+    Result<User> updateUser(User user);
+
+    Result editPassword(User user);
+
+    Result bindRole(Long roleId, Long userId, int type);
 }

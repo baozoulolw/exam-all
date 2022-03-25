@@ -7,6 +7,7 @@ import lombok.Data;
 import top.baozoulolw.exam.common.publicfields.IdEntity;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * 考试记录试题
@@ -22,13 +23,13 @@ public class ExamRecord extends IdEntity implements Serializable {
     /**
      * 参考人id
      */
-    @TableField(value = "userId")
+    @TableField(value = "user_id")
     private Long userId;
 
     /**
      * 考试id
      */
-    @TableField(value = "examId")
+    @TableField(value = "exam_id")
     private Long examId;
 
     /**
@@ -50,16 +51,31 @@ public class ExamRecord extends IdEntity implements Serializable {
     private String answer;
 
     /**
+     * 是否需要阅卷0否，1是
+     */
+    @TableField(value = "marking")
+    private Integer marking;
+
+    /**
      * 开始考试时间
      */
     @TableField(value = "begin_time")
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
-    private Data beginTime;
+    private Date beginTime;
 
     /**
      * 交卷时间
      */
     @TableField(value = "end_time")
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
-    private Data endTime;
+    private Date endTime;
+
+    @TableField(exist = false)
+    private Exam exam;
+
+    @TableField(exist = false)
+    private String groupName;
+
+    @TableField(exist = false)
+    private String username;
 }

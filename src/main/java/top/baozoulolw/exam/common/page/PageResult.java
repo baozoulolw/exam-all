@@ -22,7 +22,7 @@ public class PageResult {
     /**
      * 当前页数
      */
-    private int currPage;
+    private int curPage;
     /**
      * 列表数据
      */
@@ -35,7 +35,7 @@ public class PageResult {
         this.list = page.getRecords();
         this.totalCount = (int)page.getTotal();
         this.pageSize = (int)page.getSize();
-        this.currPage = (int)page.getCurrent();
+        this.curPage = (int)page.getCurrent();
         this.totalPage = (int)page.getPages();
     }
 }

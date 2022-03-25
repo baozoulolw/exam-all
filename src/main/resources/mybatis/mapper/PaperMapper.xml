@@ -69,6 +69,7 @@
     <select id="getPaperById" resultMap="paper" parameterType="Long">
         select
         p.id pid,
+        IFNULL(sum( pq.score ),0) total_score,
         p.paper_name,
         p.remark,
         p.drawer,
@@ -86,6 +87,24 @@
         from tb_paper p
         left join tb_question_paper pq on pq.paper_id = p.id
         where p.id = #{param}
+        GROUP BY
+        p.id,
+        p.oper_user,
+        pChangeTime,
+        pOperUser,
+        pCreateTime,
+        p.hard,
+        p.paper_name,
+        p.remark,
+        p.drawer,
+        pqid,
+        pq.question_id,
+        pq.paper_id,
+        pq.score,
+        pq.sort,
+        pqChangeTime,
+        pqOperUser,
+        pqCreateTime
     </select>
 
     <select id="selectUser" resultType="top.baozoulolw.exam.entity.User" parameterType="java.util.Map">

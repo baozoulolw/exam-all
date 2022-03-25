@@ -4,7 +4,7 @@
     <sql id="Base_User_List">
         u.id uid, u.real_name, u.username, u.password, u.gender, u.address,
         u.phone, u.oper_user uOperUser, u.change_time uChangeTime, u.create_time uCreateTime, u.email,
-        u.avatar, u.class_id
+        u.avatar, u.class_id,u.group_id
     </sql>
     <sql id="Base_Role_List">
         r.id rid, r.role_name,r.oper_user rOperUser, r.change_time rChangeTime, r.create_time rCreateTime,
@@ -24,6 +24,7 @@
         <result  property="phone" column="phone"/>
         <result  property="realName" column="real_name"/>
         <result  property="email" column="email"/>
+        <result  property="groupId" column="group_id"/>
         <result  property="avatar" column="avatar"/>
         <result  property="createTime" column="uCreateTime"/>
         <result  property="changeTime" column="uChangeTime"/>
@@ -78,6 +79,9 @@
             <if test="upVo.classId != null and upVo.classId != ''">
                 AND c.id = #{upVo.classId}
             </if>
+            <if test="upVo.groupId != null">
+                AND u.group_id = #{upVo.groupId}
+            </if>
         </where>
     </select>
     <select id="selectRealName" resultType="String" parameterType="java.util.Map">
@@ -93,5 +97,10 @@
         *
         from tb_grade
         where id = #{user_id}
+    </select>
+
+    <select id="getUserGroupList" resultType="top.baozoulolw.exam.entity.UserGroup">
+        select ug.*,count(q.id) userNumber from tb_user_group ug left join tb_user q  on q.group_id = ug.id
+        group by ug.id
     </select>
 </mapper>

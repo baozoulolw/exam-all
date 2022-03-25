@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd">
+<mapper namespace="top.baozoulolw.exam.dao.ExamDao">
+    <resultMap id="exam" type="top.baozoulolw.exam.entity.Exam">
+        <id property="id" column="eid"/>
+        <result property="createTime" column="create_time"/>
+        <result property="changeTime" column="change_time"/>
+        <result property="paperId" column="paper_id"/>
+        <result property="examName" column="exam_name"/>
+        <result property="passScore" column="pass_score"/>
+        <result property="specifyTime" column="specify_time"/>
+        <result property="beginTime" column="begin_time"/>
+        <result property="endTime" column="end_time"/>
+        <result property="specifyStudent" column="specify_student"/>
+        <result property="duration" column="duration"/>
+        <result property="attention" column="attention"/>
+        <result property="changeUserName" column="changeUserName"/>
+        <result property="operUser" column="oper_user"/>
+        <collection property="userGroupList" ofType="top.baozoulolw.exam.entity.UserGroup">
+            <id property="id" column="gid"/>
+            <result property="groupName" column="group_name"/>
+            <association property="userNumber" column="{groupId=gid}" select="selectUser"/>
+        </collection>
+    </resultMap>
+
+    <select id="getExamList" resultMap="exam" parameterType="top.baozoulolw.exam.vo.ExamListParamVO">
+        select e.id eid, e.create_time,e.paper_id,e.exam_name,e.pass_score,e.specify_time,
+        e.begin_time,e.end_time,e.specify_student,e.duration,e.attention,
+        e.change_time,u.real_name changeUserName,e.oper_user,
+        g.id gid,g.group_name from tb_exam e left join tb_exam_plan tep on tep.exam_id = e.id
+        left join tb_user_group g on g.id = tep.join_group_id
+        left join tb_user u on u.id = e.oper_user
+        <where>
+            <if test="param.condition != null">
+                AND
+                <if test="param.condition == 0">
+                    e.begin_time > #{param.nowTime}
+                </if>
+                <if test="param.condition == 1">
+                    #{param.nowTime} >= e.begin_time AND e.end_time >= #{param.nowTime}
+                </if>
+                <if test="param.condition == 2">
+                    #{param.nowTime} > e.end_time
+                </if>
+            </if>
+            <if test="param.keyword != null and param.keyword != ''">
+                AND e.exam_name like "%"#{param.keyword}"%"
+            </if>
+        </where>
+    </select>
+
+    <select id="selectUser" resultType="java.lang.Integer">
+        select count(u.id) from tb_user u where u.group_id = #{groupId}
+    </select>
+
+    <resultMap id="examByGroup" type="top.baozoulolw.exam.entity.Exam">
+        <id property="id" column="id"/>
+        <result property="createTime" column="create_time"/>
+        <result property="changeTime" column="change_time"/>
+        <result property="paperId" column="paper_id"/>
+        <result property="examName" column="exam_name"/>
+        <result property="passScore" column="pass_score"/>
+        <result property="specifyTime" column="specify_time"/>
+        <result property="beginTime" column="begin_time"/>
+        <result property="endTime" column="end_time"/>
+        <result property="specifyStudent" column="specify_student"/>
+        <result property="duration" column="duration"/>
+        <result property="attention" column="attention"/>
+        <result property="changeUserName" column="changeUserName"/>
+        <result property="operUser" column="oper_user"/>
+        <association property="paper" column="{paperId=paper_id}" select="selectPaper"/>
+    </resultMap>
+
+    <select id="getExamByGroup" resultMap="examByGroup"
+            parameterType="top.baozoulolw.exam.vo.QueryExamVO">
+        select e.id, e.create_time,e.paper_id,e.exam_name,e.pass_score,e.specify_time,
+        e.begin_time,e.end_time,e.specify_student,e.duration,e.attention,
+        e.change_time,u.real_name changeUserName,e.oper_user, er.user_id
+        from tb_exam e
+        left join tb_user u on u.id = e.oper_user
+        left join tb_exam_plan ep on ep.exam_id = e.id
+        left join tb_user_group ug on ug.id = ep.join_group_id
+        left join tb_user u1 on u1.group_id = ug.id
+        left join tb_exam_record er on er.exam_id = e.id
+        where e.specify_time = #{param.specifyTime} and
+        u1.id = #{param.userId} and er.user_id is null and
+        <if test="param.status == 0">
+            e.begin_time > now()
+        </if>
+        <if test="param.status == 1">
+            now() >= e.begin_time AND e.end_time >= now()
+        </if>
+        <if test="param.status == 2">
+            now() > e.end_time
+        </if>
+        GROUP BY
+        e.id,
+        er.user_id
+    </select>
+
+    <sql id="paper_columns">
+        p.id,p.oper_user,p.change_time,p.create_time,p.hard,p.content,p.paper_name,p.remark,p.drawer
+    </sql>
+
+    <select id="selectPaper" resultType="top.baozoulolw.exam.entity.Paper">
+        select
+        <include refid="paper_columns"/>,
+        IFNULL(sum( qp.score ),0) total_score,
+        u1.real_name change_user,
+        u2.real_name drawer_user,
+        u2.gender teacherGender from
+        tb_paper p
+        left join tb_user u1 on u1.id = p.oper_user
+        left join tb_user u2 on u2.id = p.drawer
+        LEFT JOIN tb_question_paper qp ON qp.paper_id = p.id
+        where p.id=#{paperId}
+    </select>
+
+    <select id="getMarkingList" resultMap="examByGroup" parameterType="top.baozoulolw.exam.vo.MarkingListParamVO">
+        select e.id, e.create_time,e.paper_id,e.exam_name,e.pass_score,e.specify_time,
+        e.begin_time,e.end_time,e.specify_student,e.duration,e.attention,
+        e.change_time,u.real_name changeUserName,e.oper_user,ug.group_name,
+        r.id from tb_exam e
+        left join tb_exam_record r on r.exam_id = e.id
+        left join tb_user u on u.id = r.user_id
+        left join tb_user_group ug on ug.id = u.group_id
+        where r.marking = 1
+        <if test="param.examId != null and param.examId != ''">
+            and #{param.examId} = e.id
+        </if>
+        <if test="param.groupId != null and param.groupId != ''">
+            and #{param.groupId} = ug.id
+        </if>
+        <if test="param.keyword != null and param.keyword != ''">
+            and (e.exam_name like "%"#{param.keyword}"%"
+            OR ug.group_name like "%"#{param.keyword}"%")
+        </if>
+    </select>
+    <resultMap id="examAndRecord" type="top.baozoulolw.exam.entity.ExamRecord">
+        <id property="id" column="id"/>
+        <result property="createTime" column="create_time"/>
+        <result property="changeTime" column="change_time"/>
+        <result property="score" column="score"/>
+        <result property="userId" column="user_id"/>
+        <result property="examId" column="exam_id"/>
+        <result property="finish" column="finish"/>
+        <result property="answer" column="answer"/>
+        <result property="marking" column="marking"/>
+        <result property="endTime" column="end_time"/>
+        <result property="beginTime" column="begin_time"/>
+        <result property="operUser" column="oper_user"/>
+        <result property="groupName" column="group_name"/>
+        <result property="username" column="username"/>
+        <association property="exam" column="{examId=exam_id}" select="selectExam"/>
+    </resultMap>
+    <select id="getRecordList" resultMap="examAndRecord" parameterType="top.baozoulolw.exam.vo.RecordListParamVO">
+        select r.id, r.create_time,r.score,r.user_id,r.exam_id,r.answer,
+        r.begin_time,r.end_time,r.finish,e.duration,e.attention,
+        e.change_time,u.real_name username ,r.oper_user,ug.group_name,
+        r.marking
+        from tb_exam_record r
+        left join tb_exam e on r.exam_id = e.id
+        left join tb_user u on u.id = r.user_id
+        left join tb_user_group ug on ug.id = u.group_id
+        <where>
+        <if test="param.examId != null and param.examId != ''">
+            and #{param.examId} = e.id
+        </if>
+            <if test="param.userId != null and param.userId != ''">
+                and #{param.user} = r.user_id
+            </if>
+        <if test="param.groupId != null and param.groupId != ''">
+            and #{param.groupId} = ug.id
+        </if>
+        <if test="param.keyword != null and param.keyword != ''">
+            and (e.exam_name like "%"#{param.keyword}"%"
+            OR ug.group_name like "%"#{param.keyword}"%")
+        </if>
+            <if test="param.marking != null">
+                and r.marking = #{param.marking}
+            </if>
+        </where>
+    </select>
+    <select id="selectExam" resultType="top.baozoulolw.exam.entity.Exam">
+        select
+        *
+        from tb_exam where id = #{examId}
+    </select>
+</mapper>
