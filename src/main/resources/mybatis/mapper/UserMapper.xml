@@ -30,7 +30,7 @@
         <result  property="changeTime" column="uChangeTime"/>
         <association property="changeUser" column="{userId=uOperUser}" select="selectRealName">
         </association>
-        <collection property="roles" ofType="top.baozoulolw.exam.entity.Role">
+        <collection property="roles" ofType="top.baozoulolw.exam.entity.Role" select="selectRole" column="{userId=uid}">
             <id property="id" column="rid"/>
             <result  property="roleName" column="role_name"/>
             <result  property="operUser" column="rOperUser"/>
@@ -44,12 +44,9 @@
     </resultMap>
     <select id="getUserList" resultMap="user" parameterType="top.baozoulolw.exam.vo.UserLIstParamVO">
         select
-        <include refid="Base_User_List"/>,
-        <include refid="Base_Role_List"/>
+        <include refid="Base_User_List"/>
         from
         tb_user u
-        left join tb_user_role ur on ur.user_id = u.id
-        left Join tb_role r on r.id = ur.role_id
         <where>
             <if test="upVo.keyword != null and upVo.keyword != ''">
                 AND (u.username like "%"#{upVo.keyword}"%"
@@ -59,17 +56,10 @@
                 OR u.address like "%"#{upVo.keyword}"%"
                 )
             </if>
-            <if test="upVo.gradeId != null and upVo.gradeId != ''">
-                AND g.id = #{upVo.gradeId}
-            </if>
-            <if test="upVo.classId != null and upVo.classId != ''">
-                AND c.id = #{upVo.classId}
-            </if>
             <if test="upVo.groupId != null">
                 AND u.group_id = #{upVo.groupId}
             </if>
         </where>
-        group by uid,rid
     </select>
     <select id="selectRealName" resultType="String" parameterType="java.util.Map">
         select
@@ -77,6 +67,15 @@
         from
         tb_user
         where id = #{userId}
+    </select>
+
+    <select id="selectRole" resultType="top.baozoulolw.exam.entity.Role" parameterType="java.util.Map">
+        select
+        <include refid="Base_Role_List"/>
+        from
+        tb_role r
+        left join tb_user_role ur on ur.role_id = r.id
+        where ur.user_id = #{userId}
     </select>
 
     <select id="selectGrade" resultType="top.baozoulolw.exam.entity.Grade" parameterType="java.lang.Long">
