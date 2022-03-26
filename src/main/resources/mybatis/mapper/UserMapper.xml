@@ -41,29 +41,15 @@
             <association property="changeUserName" column="{userId=rOperUser}" select="selectRealName">
             </association>
         </collection>
-        <collection property="classExam" ofType="top.baozoulolw.exam.entity.ClassExam">
-            <result  property="className" column="class_name"/>
-            <result  property="operUser" column="cOperUser"/>
-            <result  property="createTime" column="cCreateTime"/>
-            <result  property="changeTime" column="cChangeTime"/>
-            <result  property="headTeacher" column="head_teacher"/>
-            <result  property="gradeId" column="grade_id"/>
-            <association property="changeUser" column="{userId=cOperUser}" select="selectRealName">
-            </association>
-            <association property="grade" column="grade_id" select="selectGrade"/>
-        </collection>
     </resultMap>
     <select id="getUserList" resultMap="user" parameterType="top.baozoulolw.exam.vo.UserLIstParamVO">
         select
         <include refid="Base_User_List"/>,
-        <include refid="Base_Role_List"/>,
-        <include refid="Base_Class_List"/>
+        <include refid="Base_Role_List"/>
         from
         tb_user u
         left join tb_user_role ur on ur.user_id = u.id
         left Join tb_role r on r.id = ur.role_id
-        left join tb_class c on c.id = u.class_id
-        left join tb_grade g on g.id = c.grade_id
         <where>
             <if test="upVo.keyword != null and upVo.keyword != ''">
                 AND (u.username like "%"#{upVo.keyword}"%"
@@ -83,6 +69,7 @@
                 AND u.group_id = #{upVo.groupId}
             </if>
         </where>
+        group by uid,rid
     </select>
     <select id="selectRealName" resultType="String" parameterType="java.util.Map">
         select

@@ -167,7 +167,7 @@
             and #{param.examId} = e.id
         </if>
             <if test="param.userId != null and param.userId != ''">
-                and #{param.user} = r.user_id
+                and #{param.userId} = r.user_id
             </if>
         <if test="param.groupId != null and param.groupId != ''">
             and #{param.groupId} = ug.id
