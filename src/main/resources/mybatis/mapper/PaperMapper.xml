@@ -49,6 +49,7 @@
         <result property="paperName" column="paper_name"/>
         <result property="remark" column="remark"/>
         <result property="drawer" column="drawer"/>
+        <result property="hard" column="hard"/>
         <result property="changeTime" column="pChangeTime"/>
         <result property="operUser" column="pOperUser"/>
         <result property="createTime" column="pCreateTime"/>
@@ -73,6 +74,7 @@
         p.paper_name,
         p.remark,
         p.drawer,
+        p.hard,
         p.change_time pChangeTime,
         p.oper_user pOperUser,
         p.create_time pCreateTime,

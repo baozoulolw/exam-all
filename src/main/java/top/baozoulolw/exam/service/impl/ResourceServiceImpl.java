@@ -9,6 +9,7 @@ import top.baozoulolw.exam.dao.ResourceDao;
 import top.baozoulolw.exam.dao.RoleResourceDao;
 import top.baozoulolw.exam.entity.Resource;
 import top.baozoulolw.exam.entity.RoleResource;
+import top.baozoulolw.exam.entity.User;
 import top.baozoulolw.exam.service.ResourceService;
 
 import java.util.List;
@@ -94,6 +95,17 @@ public class ResourceServiceImpl extends ServiceImpl<ResourceDao, Resource> impl
             return Result.fail("该资源已有角色与其关联，无法删除");
         }
         resourceDao.deleteById(id);
+        return Result.success();
+    }
+
+    @Override
+    public Result checkKey(String key) {
+        QueryWrapper<Resource> wrapper = new QueryWrapper<>();
+        wrapper.eq("only_key", key);
+        Page<Resource> resourcePage = resourceDao.selectPage(new Page<>(1, 1), wrapper);
+        if (resourcePage.getRecords().size() > 0) {
+            return Result.fail("重复标识！");
+        }
         return Result.success();
     }
 }

@@ -62,6 +62,12 @@ public class Resource extends IdEntity implements Serializable {
     private String path;
 
     /**
+     * 唯一标识
+     */
+    @TableField(value = "only_key")
+    private String onlyKey;
+
+    /**
      * 资源图标
      */
     @TableField(value = "icon")

@@ -43,4 +43,6 @@ public interface ResourceService extends IService<Resource> {
      * @return
      */
     Result delResource(Long id);
+
+    Result checkKey(String key);
 }

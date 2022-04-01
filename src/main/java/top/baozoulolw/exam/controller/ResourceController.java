@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * 系统资源对应controller
- * 
+ *
  * @author baozoulolw
  * @version 1.0
  * @date 2022-02-06 18:03
@@ -71,6 +71,16 @@ public class ResourceController {
     @GetMapping(value = "/del/{id}")
     public Result delResource(@PathVariable("id")Long id){
         return resourceService.delResource(id);
+    }
+
+    /**
+     * 验证key是否唯一
+     * @param key
+     * @return
+     */
+    @GetMapping(value = "/check/{key}")
+    public Result checkKey(@PathVariable("key")String key){
+        return resourceService.checkKey(key);
     }
 
 

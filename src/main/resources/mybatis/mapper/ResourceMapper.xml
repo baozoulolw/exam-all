@@ -30,6 +30,22 @@
             <result property="operUser" column="c_oper_user"/>
             <result property="changeTime" column="c_change_time"/>
             <result property="changUser" column="c_change_user"/>
+            <collection property="children" ofType="top.baozoulolw.exam.entity.Resource">
+                <id property="id" column="b_id"/>
+                <result property="createTime" column="b_create_time"/>
+                <result property="resourceName" column="b_resource_name"/>
+                <result property="type" column="b_type"/>
+                <result property="weights" column="b_weights"/>
+                <result property="parent" column="b_parent"/>
+                <result property="isRoot" column="b_is_root"/>
+                <result property="path" column="b_path"/>
+                <result property="note" column="b_note"/>
+                <result property="icon" column="b_icon"/>
+                <result property="onlyKey" column="b_only_key"/>
+                <result property="operUser" column="b_oper_user"/>
+                <result property="changeTime" column="b_change_time"/>
+                <result property="changUser" column="b_change_user"/>
+            </collection>
         </collection>
     </resultMap>
     <select id="getAllResource" resultMap="resource" parameterType="string">
@@ -59,13 +75,29 @@
         r1.path c_path,
         r1.note c_note,
         r1.icon c_icon,
-        u1.real_name c_change_user
+        u1.real_name c_change_user,
+        r2.id b_id,
+        r2.resource_name b_resource_name,
+        r2.type b_type,
+        r2.weights b_weights,
+        r2.parent b_parent,
+        r2.is_root b_is_root,
+        r2.change_time b_change_time,
+        r2.oper_user b_oper_user,
+        r2.create_time b_create_time,
+        r2.path b_path,
+        r2.note b_note,
+        r2.only_key b_only_key,
+        r2.icon b_icon,
+        u2.real_name b_change_user
         from tb_resource r
         left join tb_resource r1 on r1.parent = r.id
+        left join tb_resource r2 on r2.parent = r1.id
         left join tb_user u on u.id = r.oper_user
         left join tb_user u1 on u1.id = r1.oper_user
-        where r.is_root = 1 and (r1.platform = #{platform} or r.platform = #{platform})
-        order by r.weights ASC, r1.weights ASC
+        left join tb_user u2 on u2.id = r2.oper_user
+        where r.is_root = 1 and (r1.platform = #{platform} or r.platform = #{platform} or r2.platform = #{platform})
+        order by r.weights ASC, r1.weights ASC,r2.weights ASC
     </select>
     <select id="getResourceByUserId" resultMap="resource">
         select distinct
@@ -94,14 +126,32 @@
         r1.path c_path,
         r1.note c_note,
         r1.icon c_icon,
-        u1.real_name c_change_user
+        u1.real_name c_change_user,
+        r2.id b_id,
+        r2.resource_name b_resource_name,
+        r2.type b_type,
+        r2.weights b_weights,
+        r2.parent b_parent,
+        r2.is_root b_is_root,
+        r2.change_time b_change_time,
+        r2.oper_user b_oper_user,
+        r2.create_time b_create_time,
+        r2.path b_path,
+        r2.note b_note,
+        r2.only_key b_only_key,
+        r2.icon b_icon,
+        u2.real_name b_change_user
         from tb_resource r
         left join tb_resource r1 on r1.parent = r.id
+        left join tb_resource r2 on r2.parent = r1.id
         left join tb_user u on u.id = r.oper_user
         left join tb_user u1 on u1.id = r1.oper_user
-        left join tb_role_resource trr on trr.resource_id = r.id or trr.resource_id = r1.id
-        left join tb_user_role tur on tur.role_id = trr.role_id
-        where r.is_root = 1 and tur.user_id = #{param} and (r1.platform = #{platform} or r.platform = #{platform})
+        left join tb_user u2 on u2.id = r2.oper_user
+        LEFT JOIN tb_role_resource trr ON trr.resource_id = r.id
+        LEFT JOIN tb_role_resource trr1 ON trr1.resource_id = r1.id
+        LEFT JOIN tb_role_resource trr2 ON trr2.resource_id = r2.id
+        LEFT JOIN tb_user_role tur ON tur.role_id = trr.role_id and tur.role_id = trr1.role_id and tur.role_id = trr2.role_id
+        where r.is_root = 1 and tur.user_id = #{param} and r1.platform = #{platform}
         order by r.weights ASC, r1.weights ASC
     </select>
     <select id="hasResource" resultType="Long">

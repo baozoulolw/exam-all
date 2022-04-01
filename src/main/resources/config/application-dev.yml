@@ -20,8 +20,8 @@ spring:
 
 aliyun:
   oss:
-    access-key: LTAI5tPEJtQHQYgrLagy29Ev
-    secret-key: lWZLyKhTyhHNiESwj2LVCTvqX5T77I
+    access-key: LTAI5t7AB9LxS5bUADeBSCGo
+    secret-key: pnKFE8aWMqkK42snkMApjRjf1iakYD
     end-point: http://oss-cn-chengdu.aliyuncs.com
     pre-point: oss-cn-chengdu.aliyuncs.com
     bucket-name: baozoulol
