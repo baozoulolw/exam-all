@@ -22,5 +22,5 @@ public interface QuestionDao extends BaseMapper<Question> {
      */
     IPage<Question> getQuestionList(Page<Question> page, @Param("param") QuestionParamVO question);
 
-    List<QuestionGroup> getGroupList();
+    List<QuestionGroup> getGroupList(@Param("userId") Long userId);
 }

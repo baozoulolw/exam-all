@@ -8,5 +8,6 @@ public class QuestionParamVO {
     private Integer type;
     private String keyword;
     private Long groupId;
+    private Long createUser;
     private Long selectPaperId;
 }

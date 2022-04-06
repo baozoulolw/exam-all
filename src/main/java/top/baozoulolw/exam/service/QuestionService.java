@@ -20,7 +20,7 @@ public interface QuestionService {
 
     Result delQuestionById(Long id);
 
-    Result<List<QuestionGroup>> getGroupList();
+    Result<List<QuestionGroup>> getGroupList(int flag);
 
     Result addGroup(String groupName);
 

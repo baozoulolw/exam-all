@@ -1,37 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd">
-<mapper namespace = "top.baozoulolw.exam.dao.QuestionDao">
+<mapper namespace="top.baozoulolw.exam.dao.QuestionDao">
     <select id="getQuestionList" resultType="top.baozoulolw.exam.entity.Question"
             parameterType="top.baozoulolw.exam.vo.QuestionParamVO">
-        select q.*, u.real_name as change_user from
-        tb_question q ,tb_user u where u.id = q.oper_user
-        <if test="param.type != null">
-            AND q.type = #{param.type}
-        </if>
-        <if test="param.groupId != null">
-            AND q.group_id = #{param.groupId}
-        </if>
-        <if test="param.hard != null">
-            AND q.hard = #{param.hard}
-        </if>
-        <if test="param.keyword != null and param.keyword != ''">
-            AND (q.options like "%"#{param.keyword}"%"
-            OR q.answer like "%"#{param.keyword}"%"
-            OR q.topic like "%"#{param.keyword}"%"
-            )
-        </if>
-        <if test="param.selectPaperId != null and param.selectPaperId != ''">
-            and q.id NOT IN (
-            SELECT
-            tqp.question_id
-            FROM
-            tb_question_paper tqp
-            WHERE
-            tqp.paper_id = #{param.selectPaperId} )
-        </if>
+        select q.*, u.real_name as change_user ,u1.real_name as createName from
+        tb_question q
+        left join tb_user u on u.id = q.oper_user
+        left join tb_user u1 on u1.id = q.create_user
+        <where>
+            <if test="param.type != null">
+                AND q.type = #{param.type}
+            </if>
+            <if test="param.groupId != null">
+                AND q.group_id = #{param.groupId}
+            </if>
+            <if test="param.hard != null">
+                AND q.hard = #{param.hard}
+            </if>
+            <if test="param.createUser != null and param.createUser != ''">
+                AND q.create_user = #{param.createUser}
+            </if>
+            <if test="param.keyword != null and param.keyword != ''">
+                AND (q.options like "%"#{param.keyword}"%"
+                OR q.answer like "%"#{param.keyword}"%"
+                OR q.topic like "%"#{param.keyword}"%"
+                )
+            </if>
+            <if test="param.selectPaperId != null and param.selectPaperId != ''">
+                and q.id NOT IN (
+                SELECT
+                tqp.question_id
+                FROM
+                tb_question_paper tqp
+                WHERE
+                tqp.paper_id = #{param.selectPaperId} )
+            </if>
+        </where>
     </select>
     <select id="getGroupList" resultType="top.baozoulolw.exam.entity.QuestionGroup">
-        select qg.*,count(q.id) questionNumber from tb_question_group qg left join tb_question q  on q.group_id = qg.id
+        select qg.*,count(q.id) questionNumber from tb_question_group qg left join tb_question q on q.group_id = qg.id
+        <if test="userId != null and userId != ''">
+            AND q.create_user = #{userId}
+        </if>
         group by qg.id
     </select>
 </mapper>

@@ -16,6 +16,7 @@ import top.baozoulolw.exam.entity.Question;
 import top.baozoulolw.exam.entity.QuestionGroup;
 import top.baozoulolw.exam.service.QuestionGroupService;
 import top.baozoulolw.exam.service.QuestionService;
+import top.baozoulolw.exam.utils.UserUtils;
 import top.baozoulolw.exam.vo.QuestionParamVO;
 
 import javax.annotation.Resource;
@@ -74,8 +75,12 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public Result<List<QuestionGroup>> getGroupList() {
-        return Result.success(questionDao.getGroupList());
+    public Result<List<QuestionGroup>> getGroupList(int flag) {
+        Long userId = null;
+        if(flag == 1){
+            userId = UserUtils.getUserId();
+        }
+        return Result.success(questionDao.getGroupList(userId));
     }
 
     @Override

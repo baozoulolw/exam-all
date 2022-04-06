@@ -73,9 +73,9 @@ public class  QuestionController {
      * 获取试题分类列表
      * @return
      */
-    @GetMapping(value = "/group/list")
-    public Result<List<QuestionGroup>> getGroupList(){
-        return questionService.getGroupList();
+    @GetMapping(value = "/group/list/{userId}")
+    public Result<List<QuestionGroup>> getGroupList(@PathVariable("userId")int flag){
+        return questionService.getGroupList(flag);
     }
 
     /**

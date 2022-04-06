@@ -37,6 +37,13 @@ public class Question extends IdEntity implements Serializable {
     private String options;
 
     /**
+     * 创建人
+     */
+    @TableField(value = "create_user")
+    private Long createUser;
+
+
+    /**
      * 试题类型 0：单选题 1：多选题 2：判断题  3：填空题
      */
     @TableField(value = "type")
@@ -59,6 +66,13 @@ public class Question extends IdEntity implements Serializable {
      */
     @TableField(exist = false)
     private String changeUser;
+
+    /**
+     * 创建人姓名
+     */
+    @TableField(exist = false)
+    private String createName;
+
 
     /**
      * 所属分类名
