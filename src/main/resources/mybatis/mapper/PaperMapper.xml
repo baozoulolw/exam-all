@@ -23,6 +23,9 @@
                 OR p.paper_name like "%"#{param.keyword}"%"
                 )
             </if>
+            <if test="param.drawer != null and param.drawer != ''">
+                AND p.drawer = #{param.drawer}
+            </if>
             <if test="param.hard != null">
                 AND p.hard = #{param.hard}
             </if>

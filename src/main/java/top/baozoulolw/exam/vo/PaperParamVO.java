@@ -6,4 +6,5 @@ import lombok.Data;
 public class PaperParamVO {
     private String keyword;
     private Integer hard;
+    private Long drawer;
 }
