@@ -9,4 +9,5 @@ public class RecordListParamVO {
     private String keyword;
     private Long groupId;
     private Integer marking;
+    private Long createUser;
 }

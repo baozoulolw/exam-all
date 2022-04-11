@@ -46,6 +46,9 @@
             <if test="param.keyword != null and param.keyword != ''">
                 AND e.exam_name like "%"#{param.keyword}"%"
             </if>
+            <if test="param.createUser != null and param.createUser != ''">
+                AND e.create_user = #{param.createUser}
+            </if>
         </where>
     </select>
 
@@ -172,6 +175,9 @@
         <if test="param.groupId != null and param.groupId != ''">
             and #{param.groupId} = ug.id
         </if>
+            <if test="param.createUser != null and param.createUser != ''">
+                and #{param.createUser} = e.create_user
+            </if>
         <if test="param.keyword != null and param.keyword != ''">
             and (e.exam_name like "%"#{param.keyword}"%"
             OR ug.group_name like "%"#{param.keyword}"%")

@@ -69,6 +69,7 @@ public class ExamServiceImpl extends ServiceImpl<ExamDao, Exam> implements ExamS
     public Result arrangeExam(Exam exam, List<Long> joinClass) {
         Long id = IdWorker.getId();
         exam.setId(id);
+        exam.setCreateUser(UserUtils.getUserId());
         this.save(exam);
         List<ExamPlan> collect = joinClass.stream().map(i -> {
             ExamPlan examPlan = new ExamPlan();

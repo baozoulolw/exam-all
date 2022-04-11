@@ -78,6 +78,13 @@ public class Exam extends IdEntity implements Serializable {
     private String attention;
 
     /**
+     * 创建人
+     */
+    @TableField(value = "create_user")
+    private Long createUser;
+
+
+    /**
      * 参考学生分类列表
      */
     @TableField(exist = false)

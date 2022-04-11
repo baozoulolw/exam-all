@@ -18,6 +18,11 @@ public class ExamListParamVO {
     private String keyword;
 
     /**
+     * 创建人
+     */
+    private Long createUser;
+
+    /**
      * 开始考试时间
      */
     private Date beginTime;
