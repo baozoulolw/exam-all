@@ -36,6 +36,7 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Override
     public Result insertQuestion(Question question) {
+        question.setCreateUser(UserUtils.getUserId());
         questionDao.insert(question);
         return Result.success();
     }
