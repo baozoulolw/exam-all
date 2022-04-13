@@ -99,4 +99,10 @@ public interface UserService extends UserDetailsService {
     Result editPassword(User user);
 
     Result bindRole(Long roleId, Long userId, int type);
+
+    Result<List<Long>> getCourse(Long id);
+
+    Result bindCourse(Long roleId, Long userId, int type);
+
+    Result<List<QuestionGroup>> getCourseAll();
 }

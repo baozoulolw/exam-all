@@ -37,11 +37,72 @@
             </if>
         </where>
     </select>
-    <select id="getGroupList" resultType="top.baozoulolw.exam.entity.QuestionGroup">
-        select qg.*,count(q.id) questionNumber from tb_question_group qg left join tb_question q on q.group_id = qg.id
+    <resultMap id="group" type="top.baozoulolw.exam.entity.QuestionGroup">
+        <id property="id" column="id"/>
+        <result property="changeTime" column="changeTime"/>
+        <result property="operUser" column="operUser"/>
+        <result property="createTime" column="createTime"/>
+        <result property="groupName" column="group_name"/>
+        <result property="parent" column="parent"/>
+        <collection property="children" ofType="top.baozoulolw.exam.entity.QuestionGroup">
+            <id property="id" column="cid"/>
+            <result property="changeTime" column="c_changeTime"/>
+            <result property="operUser" column="c_operUser"/>
+            <result property="createTime" column="c_createTime"/>
+            <result property="groupName" column="c_groupName"/>
+            <result property="parent" column="c_parent"/>
+            <association property="questionNumber" column="{id=cid}" select="selectNumber"/>
+        </collection>
+    </resultMap>
+    <select id="getGroupList" resultMap="group">
+        SELECT
+        qg.id,
+        qg.parent,
+        qg.group_name,
+        qg.change_time as changeTime,
+        qg.create_time as createTime,
+        qg.oper_user as operUser,
+        qg1.id as cid,
+        qg1.parent as c_parent,
+        qg1.change_time as c_changeTime,
+        qg1.create_time as c_createTime,
+        qg1.group_name as c_groupName,
+        qg1.oper_user as c_operUser
+        FROM
+        tb_question_group qg
+        LEFT JOIN tb_question_group qg1 ON qg1.parent = qg.id
+        LEFT JOIN tb_user_course uc ON uc.course_id = qg.id
+        LEFT JOIN tb_user u ON u.id = uc.user_id
+        where qg.parent = 2 and u.id = #{self}
         <if test="userId != null and userId != ''">
             AND q.create_user = #{userId}
         </if>
-        group by qg.id
+        GROUP BY
+        qg.id,qg1.id
+    </select>
+    <select id="selectNumber" resultType="int">
+        select count(q.id) questionNumber from tb_question q
+        where q.group_id = #{id}
+    </select>
+    <select id="getAllGroupList" resultMap="group">
+        SELECT
+        qg.id,
+        qg.parent,
+        qg.group_name,
+        qg.change_time as changeTime,
+        qg.create_time as createTime,
+        qg.oper_user as operUser,
+        qg1.id as cid,
+        qg1.parent as c_parent,
+        qg1.change_time as c_changeTime,
+        qg1.create_time as c_createTime,
+        qg1.group_name as c_groupName,
+        qg1.oper_user as c_operUser
+        FROM
+        tb_question_group qg
+        LEFT JOIN tb_question_group qg1 ON qg1.parent = qg.id
+        where qg.parent = 2
+        GROUP BY
+        qg.id,qg1.id
     </select>
 </mapper>

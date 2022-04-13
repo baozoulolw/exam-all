@@ -167,4 +167,35 @@ public class UserController {
     public Result bindRole(@PathVariable("roleId")Long roleId,@PathVariable("userId")Long userId,@PathVariable("type")int type) {
         return userService.bindRole(roleId,userId,type);
     }
+
+    /**
+     * 获取用户课程列表
+     * @return
+     */
+    @GetMapping(value = "/course/{id}")
+    public Result<List<Long>> getCourseById(@PathVariable("id")Long id) {
+        return userService.getCourse(id);
+    }
+
+    /**
+     * 获取所有课程列表
+     * @return
+     */
+    @GetMapping(value = "/course/all")
+    public Result<List<QuestionGroup>> getCourse() {
+        return userService.getCourseAll();
+    }
+
+    /**
+     *  用户课程绑定相关
+     * @param roleId
+     * @param userId
+     * @param type 0解绑 1绑定
+     * @return
+     */
+    @GetMapping(value = "/course/bind/{courseId}/{userId}/{type}")
+    public Result bindCourse(@PathVariable("courseId")Long roleId,@PathVariable("userId")Long userId,@PathVariable("type")int type) {
+        return userService.bindCourse(roleId,userId,type);
+    }
+
 }

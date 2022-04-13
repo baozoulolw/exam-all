@@ -93,9 +93,9 @@ public class  QuestionController {
      * @param groupName
      * @return
      */
-    @GetMapping(value = "/group/add/{groupName}")
-    public Result addGroup(@PathVariable("groupName")String groupName){
-        return questionService.addGroup(groupName);
+    @GetMapping(value = "/group/add/{groupName}/{parent}")
+    public Result addGroup(@PathVariable("groupName")String groupName,@PathVariable("parent")Long parent){
+        return questionService.addGroup(groupName,parent);
     }
 
     /**
@@ -117,5 +117,14 @@ public class  QuestionController {
     @GetMapping(value = "/group/trans")
     public Result transGroup(@RequestParam("from")Long from,@RequestParam("to")Long to){
         return questionService.transGroup(from,to);
+    }
+
+    /**
+     * 获取所有课程列表
+     * @return
+     */
+    @GetMapping(value = "/course/all")
+    public Result<List<QuestionGroup>> getCourse() {
+        return questionService.getCourseAll();
     }
 }

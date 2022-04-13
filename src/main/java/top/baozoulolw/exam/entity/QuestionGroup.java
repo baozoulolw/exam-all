@@ -6,6 +6,7 @@ import lombok.Data;
 import top.baozoulolw.exam.common.publicfields.IdEntity;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * 试题分类实体类
@@ -29,4 +30,18 @@ public class QuestionGroup extends IdEntity implements Serializable {
      */
     @TableField(exist = false)
     private int questionNumber;
+
+    /**
+     * 父级节点
+     */
+    @TableField(value = "parent")
+    private Long parent;
+
+    /**
+     * 字分类
+     */
+    @TableField(exist = false)
+    private List<QuestionGroup> children;
+
+
 }

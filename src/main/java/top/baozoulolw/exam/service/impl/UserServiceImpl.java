@@ -15,13 +15,10 @@ import org.springframework.web.multipart.MultipartFile;
 import top.baozoulolw.exam.common.Result;
 import top.baozoulolw.exam.common.page.PageResult;
 import top.baozoulolw.exam.common.page.PageSearch;
-import top.baozoulolw.exam.dao.ResourceDao;
-import top.baozoulolw.exam.dao.RoleDao;
-import top.baozoulolw.exam.dao.UserRoleDao;
+import top.baozoulolw.exam.dao.*;
 import top.baozoulolw.exam.entity.*;
 import top.baozoulolw.exam.service.UserGroupService;
 import top.baozoulolw.exam.service.UserService;
-import top.baozoulolw.exam.dao.UserDao;
 import top.baozoulolw.exam.utils.FileUploadUtil;
 import top.baozoulolw.exam.utils.UserUtils;
 import top.baozoulolw.exam.vo.UserLIstParamVO;
@@ -51,6 +48,12 @@ public class UserServiceImpl implements UserService {
 
     @Resource
     private ResourceDao resourceDao;
+
+    @Resource
+    private QuestionGroupDao questionGroupDao;
+
+    @Resource
+    private UserCourseDao userCourseDao;
 
     @Resource
     private UserGroupService userGroupService;
@@ -293,5 +296,35 @@ public class UserServiceImpl implements UserService {
             userRoleDao.delete(wrapper);
         }
         return Result.success();
+    }
+
+    @Override
+    public Result<List<Long>> getCourse(Long id) {
+        QueryWrapper<UserCourse> wrapper = new QueryWrapper<>();
+        wrapper.select("course_id").eq("user_id",id);
+        return Result.success(userCourseDao.selectObjs(wrapper).stream().map(i -> (Long) i).collect(Collectors.toList()));
+    }
+
+    @Override
+    public Result bindCourse(Long roleId, Long userId, int type) {
+        if(type == 1){
+            UserCourse userCourse = new UserCourse();
+            userCourse.setCourseId(roleId);
+            userCourse.setUserId(userId);
+            userCourseDao.insert(userCourse);
+        }else{
+            QueryWrapper<UserCourse> wrapper = new QueryWrapper<>();
+            wrapper.eq("user_id",userId).eq("course_id",roleId);
+            userCourseDao.delete(wrapper);
+        }
+        return Result.success();
+    }
+
+    @Override
+    public Result<List<QuestionGroup>> getCourseAll() {
+        QueryWrapper<QuestionGroup> wrapper = new QueryWrapper<>();
+        wrapper.eq("parent", 2L);
+        List<QuestionGroup> questionGroups = questionGroupDao.selectList(wrapper);
+        return Result.success(questionGroups);
     }
 }

@@ -22,11 +22,13 @@ public interface QuestionService {
 
     Result<List<QuestionGroup>> getGroupList(int flag);
 
-    Result addGroup(String groupName);
+    Result addGroup(String groupName,Long parent);
 
     Result delGroup(Long id);
 
     Result transGroup(Long from, Long to);
 
     Result editGroup(QuestionGroup questionGroup);
+
+    Result<List<QuestionGroup>> getCourseAll();
 }

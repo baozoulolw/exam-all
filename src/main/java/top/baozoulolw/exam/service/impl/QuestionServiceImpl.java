@@ -81,19 +81,24 @@ public class QuestionServiceImpl implements QuestionService {
         if(flag == 1){
             userId = UserUtils.getUserId();
         }
-        return Result.success(questionDao.getGroupList(userId));
+        List<QuestionGroup> groupList = questionDao.getGroupList(userId,UserUtils.getUserId());
+        groupList.forEach(group -> {
+            group.setQuestionNumber(group.getChildren().stream().reduce(0,(pre,i )-> pre + i.getQuestionNumber(),Integer::sum));
+        });
+        return Result.success(groupList);
     }
 
     @Override
-    public Result addGroup(String groupName) {
+    public Result addGroup(String groupName,Long parent) {
         QueryWrapper<QuestionGroup> wrapper = new QueryWrapper<>();
-        wrapper.eq("group_name",groupName);
+        wrapper.eq("group_name",groupName).eq("parent",parent);
         QuestionGroup one = questionGroupService.getOne(wrapper);
         if(ObjectUtils.isNotEmpty(one)){
-            return Result.fail("分组名重复");
+            return Result.fail("当前层级分类名字存在重复");
         }
         QuestionGroup questionGroup = new QuestionGroup();
         questionGroup.setGroupName(groupName);
+        questionGroup.setParent(parent);
         questionGroupService.save(questionGroup);
         return Result.success();
     }
@@ -128,5 +133,11 @@ public class QuestionServiceImpl implements QuestionService {
         }
         questionGroupService.updateById(questionGroup);
         return Result.success();
+    }
+
+    @Override
+    public Result<List<QuestionGroup>> getCourseAll() {
+        List<QuestionGroup> allCourse = questionDao.getAllGroupList();
+        return Result.success(allCourse);
     }
 }
