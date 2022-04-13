@@ -51,7 +51,24 @@
             <result property="createTime" column="c_createTime"/>
             <result property="groupName" column="c_groupName"/>
             <result property="parent" column="c_parent"/>
-            <association property="questionNumber" column="{id=cid,userId=userId}" select="selectNumber"/>
+            <association property="questionNumber" column="{id=cid,userId=userId}" select="select2Number"/>
+        </collection>
+    </resultMap>
+    <resultMap id="group1" type="top.baozoulolw.exam.entity.QuestionGroup">
+        <id property="id" column="id"/>
+        <result property="changeTime" column="changeTime"/>
+        <result property="operUser" column="operUser"/>
+        <result property="createTime" column="createTime"/>
+        <result property="groupName" column="group_name"/>
+        <result property="parent" column="parent"/>
+        <collection property="children" ofType="top.baozoulolw.exam.entity.QuestionGroup">
+            <id property="id" column="cid"/>
+            <result property="changeTime" column="c_changeTime"/>
+            <result property="operUser" column="c_operUser"/>
+            <result property="createTime" column="c_createTime"/>
+            <result property="groupName" column="c_groupName"/>
+            <result property="parent" column="c_parent"/>
+            <association property="questionNumber" column="{id=cid}" select="select1Number"/>
         </collection>
     </resultMap>
     <select id="getGroupList" resultMap="group">
@@ -78,14 +95,18 @@
         GROUP BY
         qg.id,qg1.id
     </select>
-    <select id="selectNumber" resultType="int">
+    <select id="select1Number" resultType="int">
+        select count(q.id) questionNumber from tb_question q
+        where q.group_id = #{id}
+    </select>
+    <select id="select2Number" resultType="int">
         select count(q.id) questionNumber from tb_question q
         where q.group_id = #{id}
         <if test="userId != null and userId != ''">
              and q.create_user = #{userId}
         </if>
     </select>
-    <select id="getAllGroupList" resultMap="group">
+    <select id="getAllGroupList" resultMap="group1">
         SELECT
         qg.id,
         qg.parent,
